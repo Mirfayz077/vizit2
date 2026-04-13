@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+@import 'flowbite/src/themes/default';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../../node_modules/flowbite/**/*.js';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@plugin "flowbite/plugin";
+@plugin "daisyui" {
+    themes: silk --default, autumn, night --prefersdark;
+}
+
+@theme {
+    --font-sans: 'Segoe UI Variable Text', 'Segoe UI', 'Trebuchet MS', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+}
