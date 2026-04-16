@@ -1,260 +1,419 @@
-<div class="stack-page">
-    <div class="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-8 px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
-        <section x-data="themePanel" class="glass-panel mesh-card rounded-[2rem] p-5 sm:p-7 lg:p-10">
-            <div class="flex flex-col gap-8">
-                <div class="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-                    <div class="max-w-3xl">
-                        <div class="mb-4 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-amber-800/80">
-                            <span class="stack-badge rounded-full px-3 py-1">Laravel 12</span>
-                            <span class="stack-badge rounded-full px-3 py-1">All-local assets</span>
-                            <span class="stack-badge rounded-full px-3 py-1">Vite build</span>
-                        </div>
+<div class="mirsaar-page" id="home" x-data="{ mobileOpen: false }">
+    <div class="mirsaar-orb mirsaar-orb--left" aria-hidden="true"></div>
+    <div class="mirsaar-orb mirsaar-orb--right" aria-hidden="true"></div>
 
-                        <h1 class="max-w-4xl font-serif text-4xl leading-tight text-stone-900 sm:text-5xl lg:text-7xl">
-                           Премиальная Full-Stack IT платформа нового поколения
-                        </h1>
+    <div class="mirsaar-shell">
+        <section class="mirsaar-hero">
+            <div class="mirsaar-nav-shell">
+                <header class="mirsaar-nav">
+                    <a href="#home" class="mirsaar-brand" aria-label="Mirsaar">
+                        <span class="mirsaar-brand-mark" aria-hidden="true">
+                            <svg viewBox="0 0 64 64" fill="none" role="presentation">
+                                <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="2.5" />
+                                <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                                <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                            </svg>
+                        </span>
 
-                        <p class="mt-5 max-w-2xl text-base leading-7 text-stone-700 sm:text-lg">
-                            Архитектура цифровой системы, объединяющая backend, frontend и UI/UX в 
-                            единую высокопроизводительную экосистему уровня enterprise-дизайна
-                        </p>
-                    </div>
+                        <span class="mirsaar-brand-copy">
+                            <strong>Mirsaar</strong>
+                            <small>premium experience</small>
+                        </span>
+                    </a>
 
-                    <div class="soft-panel w-full max-w-sm rounded-[1.75rem] p-5">
-                        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-stone-500">Система динамического управления темами интерфейса с сохранением состояния в localStorage и мгновенной реакцией UI через Alpine.js.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <template x-for="item in themes" :key="item">
+                    <nav class="mirsaar-nav-links" aria-label="Primary navigation">
+                        @foreach ($navItems as $item)
+                            <a href="{{ $item['href'] }}" class="mirsaar-nav-link">{{ $item['label'] }}</a>
+                        @endforeach
+                    </nav>
+
+                    <div class="mirsaar-nav-side">
+                        <span class="mirsaar-nav-chip">Luxury UI</span>
+
+                        <div class="mirsaar-lang-switch" aria-label="Language switcher">
+                            @foreach ($languages as $language)
                                 <button
                                     type="button"
-                                    class="btn btn-sm rounded-full"
-                                    :class="isActive(item) ? 'btn-primary' : 'btn-ghost'"
-                                    @click="applyTheme(item)"
-                                    x-text="item"
-                                ></button>
-                            </template>
+                                    class="mirsaar-lang-pill {{ $language['active'] ? 'is-active' : '' }}"
+                                    aria-pressed="{{ $language['active'] ? 'true' : 'false' }}"
+                                >
+                                    {{ $language['label'] }}
+                                </button>
+                            @endforeach
                         </div>
-                        <p class="mt-4 text-sm leading-6 text-stone-600">
-                            Интеллектуальная система переключения визуальных тем с мгновенной адаптацией интерфейса и сохранением пользовательских предпочтений.
-                        </p>
-                    </div>
-                </div>
 
-                <div class="grid gap-4 md:grid-cols-3">
-                    <div class="soft-panel rounded-[1.5rem] p-5">
-                        <p class="text-sm uppercase tracking-[0.2em] text-stone-500">Интегрированная экосистема модулей и библиотек, объединённых в единую архитектуру проекта.</p>
-                        <p class="mt-3 text-2xl font-semibold text-stone-900">Архитектура нового поколения с полной модульностью</p>
-                        <p class="mt-2 text-sm leading-6 text-stone-600">Полностью локальная среда разработки без внешних CDN-зависимостей.</p>
-                    </div>
-
-                    <div class="soft-panel rounded-[1.5rem] p-5">
-                        <p class="text-sm uppercase tracking-[0.2em] text-stone-500">Комплексная система подключённых технологий и UI-модулей.</p>
-                        <p class="mt-3 text-2xl font-semibold text-stone-900">Изолированная локальная архитектура без внешних зависимостей.</p>
-                        <p class="mt-2 text-sm leading-6 text-stone-600">Единый интерфейс для демонстрации всех компонентов системы.</p>
-                    </div>
-
-                    <div class="soft-panel rounded-[1.5rem] p-5">
-                        <p class="text-sm uppercase tracking-[0.2em] text-stone-500">Модульная архитектура с интеграцией frontend и backend библиотек.</p>
-                        <p class="mt-3 text-2xl font-semibold text-stone-900">Локально-ориентированная сборка через Vite без CDN-слоя.</p>
-                        <p class="mt-2 text-sm leading-6 text-stone-600">Unified runtime preview всех UI компонентов и сервисов..</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-            <div class="glass-panel rounded-[2rem] p-5 sm:p-7">
-                <div class="flex items-start justify-between gap-4">
-                    <div>
-                        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-stone-500">Современная модульная экосистема фронтенд и full-stack технологий</p>
-                        <h2 class="mt-2 text-2xl font-semibold text-stone-900 sm:text-3xl">Единая интеграция библиотек, фреймворков и инструментов разработки, собранных в масштабируемую локальную архитектуру.</h2>
-                    </div>
-                    <span class="badge badge-warning badge-outline px-4 py-3">Компонент архитектуры</span>
-                </div>
-
-                <div class="mt-6 flex flex-wrap gap-3">
-                    @foreach ($packages as $package)
-                        <div class="stack-badge rounded-2xl px-4 py-3">
-                            <p class="font-semibold text-stone-800">{{ $package['name'] }}</p>
-                            <p class="mt-1 text-xs uppercase tracking-[0.18em] text-stone-500">{{ $package['type'] }}</p>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <div class="glass-panel rounded-[2rem] p-5 sm:p-7">
-                <p class="text-sm font-semibold uppercase tracking-[0.22em] text-stone-500">Инструмент разработки</p>
-                <h2 class="mt-2 text-2xl font-semibold text-stone-900 sm:text-3xl">Компонент архитектуры</h2>
-
-                <div x-data="{ synced: $wire.entangle('count').live }" class="mt-6 space-y-5">
-                    <div class="rounded-[1.5rem] bg-stone-900 px-5 py-6 text-stone-50">
-                        <p class="text-xs uppercase tracking-[0.22em] text-stone-400">Единый стек фронтенд и backend компонентов</p>
-                        <p class="mt-3 hero-number text-6xl font-semibold" x-text="synced"></p>
-                        <p class="mt-2 text-sm text-stone-300">
-                            Совокупность современных технологий, объединённых в единую дизайн и development систему.
-                        </p>
-                    </div>
-
-                    <div class="flex flex-wrap gap-3">
-                        <button type="button" class="btn btn-outline rounded-full" @click="synced = Math.max(0, synced - 1)">Модуль системы</button>
-                        <button type="button" class="btn btn-primary rounded-full" @click="synced++">Технологический блок</button>
-                        <button type="button" class="btn btn-secondary rounded-full" wire:click="increment">
-                           Активация реактивного обновления состояния системы
-                            <span wire:loading wire:target="increment" class="loading loading-bars loading-xs"></span>
+                        <button
+                            type="button"
+                            class="mirsaar-menu-toggle"
+                            aria-controls="mobile-menu"
+                            :aria-expanded="mobileOpen.toString()"
+                            @click="mobileOpen = !mobileOpen"
+                        >
+                            <span class="sr-only">Open menu</span>
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M4 7H20" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                                <path d="M4 12H20" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                                <path d="M8 17H20" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                            </svg>
                         </button>
-                        <button type="button" class="btn btn-ghost rounded-full" wire:click="resetCounter">Сброс состояния к базовой конфигурации</button>
                     </div>
+                </header>
 
-                    <div class="rounded-[1.5rem] border border-stone-200/80 bg-white/80 p-4 text-sm leading-6 text-stone-600">
-                        Текущее серверное состояние синхронизировано в реальном времени через Livewire
-                        <span class="font-semibold text-stone-900">{{ $count }}</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section wire:ignore class="glass-panel rounded-[2rem] p-5 sm:p-7">
-            <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                <div>
-                    <p class="text-sm font-semibold uppercase tracking-[0.22em] text-stone-500">Обновить состояние системы</p>
-                    <h2 class="mt-2 text-2xl font-semibold text-stone-900 sm:text-3xl">Сбросить значение</h2>
-                </div>
-
-                <button
-                    type="button"
-                    class="btn btn-primary rounded-full"
-                    data-modal-target="stack-flowbite-modal"
-                    data-modal-toggle="stack-flowbite-modal"
+                <div
+                    id="mobile-menu"
+                    class="mirsaar-mobile-menu"
+                    x-cloak
+                    x-show="mobileOpen"
+                    x-transition.opacity.duration.300ms
+                    x-transition.scale.origin.top.duration.300ms
+                    @click.outside="mobileOpen = false"
                 >
-                    Серверное состояние обновляется в реальном времени
-                </button>
-            </div>
+                    @foreach ($navItems as $item)
+                        <a href="{{ $item['href'] }}" class="mirsaar-mobile-link" @click="mobileOpen = false">
+                            {{ $item['label'] }}
+                        </a>
+                    @endforeach
 
-            <div class="mt-6 grid gap-4 md:grid-cols-3">
-                <div class="soft-panel rounded-[1.5rem] p-5">
-                    <p class="text-sm uppercase tracking-[0.18em] text-stone-500">Инициализация компонентов интерфейса</p>
-                    <p class="mt-2 text-lg font-semibold text-stone-900">`Локальный модуль Flowbite()`</p>
-                </div>
-                <div class="soft-panel rounded-[1.5rem] p-5">
-                    <p class="text-sm uppercase tracking-[0.18em] text-stone-500">Работа без CDN</p>
-                    <p class="mt-2 text-lg font-semibold text-stone-900">Запуск интерфейсных модулей системы</p>
-                </div>
-                <div class="soft-panel rounded-[1.5rem] p-5">
-                    <p class="text-sm uppercase tracking-[0.18em] text-stone-500">Локальная библиотека компонентов</p>
-                    <p class="mt-2 text-lg font-semibold text-stone-900">Автономный режим работы системы</p>
-                </div>
-            </div>
-
-            <div
-                id="stack-flowbite-modal"
-                tabindex="-1"
-                aria-hidden="true"
-                class="fixed inset-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0"
-            >
-                <div class="relative mx-auto max-h-full w-full max-w-2xl">
-                    <div class="relative rounded-[1.75rem] bg-white shadow-2xl">
-                        <div class="flex items-center justify-between border-b border-stone-200 px-6 py-5">
-                            <div>
-                                <h3 class="text-xl font-semibold text-stone-900">Модуль интерактивного UI-компонента на базе локальной архитектуры Flowbite</h3>
-                                <p class="mt-1 text-sm text-stone-500">Bu modal lokal `flowbite` paketi orqali ishlayapti.</p>
-                            </div>
+                    <div class="mirsaar-mobile-lang-row">
+                        @foreach ($languages as $language)
                             <button
                                 type="button"
-                                class="inline-flex h-10 w-10 items-center justify-center rounded-full text-stone-500 transition hover:bg-stone-100 hover:text-stone-900"
-                                data-modal-hide="stack-flowbite-modal"
+                                class="mirsaar-lang-pill {{ $language['active'] ? 'is-active' : '' }}"
+                                aria-pressed="{{ $language['active'] ? 'true' : 'false' }}"
                             >
-                                <span class="sr-only">Close modal</span>
-                                <svg class="h-4 w-4" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                                    <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" />
-                                </svg>
+                                {{ $language['label'] }}
                             </button>
-                        </div>
-
-                        <div class="space-y-4 px-6 py-6 text-sm leading-7 text-stone-600">
-                            <p>
-                                `resources/js/modules/flowbite.js` ichida `initFlowbite()` chaqirildi.
-                            </p>
-                            <p>
-                                Tailwind v4 ichida `@plugin "flowbite/plugin"` va `@source "../../node_modules/flowbite"`
-                                ishlatilmoqda.
-                            </p>
-                        </div>
-
-                        <div class="flex flex-wrap gap-3 border-t border-stone-200 px-6 py-5">
-                            <button type="button" class="btn btn-primary rounded-full" data-modal-hide="stack-flowbite-modal">Yopish</button>
-                            <button type="button" class="btn btn-outline rounded-full" data-modal-hide="stack-flowbite-modal">Tushundim</button>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section wire:ignore data-swiper-root class="glass-panel swiper-shell rounded-[2rem] p-5 sm:p-7">
-            <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                <div>
-                    <p class="text-sm font-semibold uppercase tracking-[0.22em] text-stone-500">Swiper</p>
-                    <h2 class="mt-2 text-2xl font-semibold text-stone-900 sm:text-3xl">Slider lokal modul sifatida ulandi</h2>
+            <div class="mirsaar-hero-grid">
+                <div class="mirsaar-copy">
+                    <p class="mirsaar-kicker mirsaar-reveal">
+                        <span class="mirsaar-kicker-dot" aria-hidden="true"></span>
+                        premium header / icon motion / full screen feel
+                    </p>
+
+                    <h1 class="mirsaar-title mirsaar-reveal mirsaar-reveal--delay-1">
+                        <span>Premium</span>
+                        <em>Mirsaar</em>
+                        <span>taassuroti uchun full-screen intro.</span>
+                    </h1>
+
+                    <p class="mirsaar-lead mirsaar-reveal mirsaar-reveal--delay-2">
+                        Header qismi screenshot ruhida saqlandi, lekin ko'rinish ancha boyitildi:
+                        oltin aksentlar, premium iconlar, yumshoq glow, chuqur glass layerlar va silliq
+                        animatsiyalar bilan brend birinchi ekrandanoq kuchli ko'rinadi.
+                    </p>
+
+                    <div class="mirsaar-chip-row mirsaar-reveal mirsaar-reveal--delay-2">
+                        @foreach ($heroTags as $tag)
+                            <span class="mirsaar-info-chip">{{ $tag }}</span>
+                        @endforeach
+                    </div>
+
+                    <div class="mirsaar-cta-row mirsaar-reveal mirsaar-reveal--delay-3">
+                        <a href="#contact" class="mirsaar-button mirsaar-button--primary">
+                            Loyihani boshlash
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                                <path d="M9 7H17V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            </svg>
+                        </a>
+
+                        <a href="#projects" class="mirsaar-button mirsaar-button--secondary">
+                            Previewni ko'rish
+                        </a>
+                    </div>
+
+                    <div class="mirsaar-stat-grid mirsaar-reveal mirsaar-reveal--delay-4">
+                        @foreach ($stats as $stat)
+                            <article class="mirsaar-stat-card">
+                                <p class="mirsaar-stat-value">{{ $stat['value'] }}</p>
+                                <p class="mirsaar-stat-label">{{ $stat['label'] }}</p>
+                            </article>
+                        @endforeach
+                    </div>
                 </div>
 
-                <div class="flex gap-2">
-                    <button type="button" class="btn btn-circle btn-sm btn-outline" data-swiper-prev aria-label="Previous slide">‹</button>
-                    <button type="button" class="btn btn-circle btn-sm btn-outline" data-swiper-next aria-label="Next slide">›</button>
+                <div class="mirsaar-stage mirsaar-reveal mirsaar-reveal--delay-2">
+                    <article class="mirsaar-float-card mirsaar-float-card--top">
+                        <span class="mirsaar-float-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3L19 7V17L12 21L5 17V7L12 3Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" />
+                                <path d="M12 8V12L15 14" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                            </svg>
+                        </span>
+                        <div>
+                            <p class="mirsaar-float-label">Fast Contact</p>
+                            <strong>One tap NFC</strong>
+                        </div>
+                    </article>
+
+                    <article class="mirsaar-stage-main">
+                        <div class="mirsaar-stage-top">
+                            <div class="mirsaar-stage-status">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <p>Signature arrival</p>
+                            </div>
+
+                            <span class="mirsaar-stage-badge">MIRSAAR</span>
+                        </div>
+
+                        <div class="mirsaar-stage-body">
+                            <div class="mirsaar-stage-heading">
+                                <p class="mirsaar-stage-overline">Luxury landing system</p>
+                                <h2 class="mirsaar-stage-title">Premium header with visual depth.</h2>
+                            </div>
+
+                            <div class="mirsaar-stage-emblem" aria-hidden="true">
+                                <div class="mirsaar-stage-core">
+                                    <svg viewBox="0 0 72 72" fill="none">
+                                        <circle cx="36" cy="36" r="31" stroke="currentColor" stroke-width="2.4" />
+                                        <path d="M22 44L32.5 25H39L29.5 48" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.4" />
+                                        <path d="M34 48L43.5 25H50L40.5 48" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.4" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <ul class="mirsaar-stage-list">
+                                <li>
+                                    <span class="mirsaar-list-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none">
+                                            <path d="M4 12H20" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                                            <path d="M12 4V20" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Luxury navbar</strong>
+                                        <p>Screenshot kayfiyati saqlangan, ammo premiumroq ishlab chiqilgan.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="mirsaar-list-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none">
+                                            <path d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" />
+                                            <path d="M8.5 12L11 14.5L15.5 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Icon va glow effects</strong>
+                                        <p>Depth, light va motion birinchi ko'rinishni qimmatlashtiradi.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="mirsaar-list-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none">
+                                            <path d="M6 18L18 6" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                                            <path d="M9 6H18V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Responsive first-screen</strong>
+                                        <p>Desktopda sahnali kompozitsiya, mobil qurilmada toza stacked hero.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="mirsaar-float-card mirsaar-float-card--side">
+                        <span class="mirsaar-float-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M7 10.5H10L8.5 18H5.5L7 10.5ZM14 10.5H17L15.5 18H12.5L14 10.5ZM8.5 10C8.5 7.5 9.5 5.5 12 4M15.5 10C15.5 7.5 16.5 5.5 19 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                            </svg>
+                        </span>
+                        <div>
+                            <p class="mirsaar-float-label">Client feeling</p>
+                            <strong>Premium first impression</strong>
+                        </div>
+                    </article>
+
+                    <article class="mirsaar-float-card mirsaar-float-card--bottom">
+                        <span class="mirsaar-float-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 7.5C4 6.12 5.12 5 6.5 5H17.5C18.88 5 20 6.12 20 7.5V16.5C20 17.88 18.88 19 17.5 19H6.5C5.12 19 4 17.88 4 16.5V7.5Z" stroke="currentColor" stroke-width="1.8" />
+                                <path d="M6 8L12 12.5L18 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                            </svg>
+                        </span>
+                        <div>
+                            <p class="mirsaar-float-label">Ready to launch</p>
+                            <strong>hello@mirsaar.uz</strong>
+                        </div>
+                    </article>
+
+                    <div class="mirsaar-stage-ring" aria-hidden="true"></div>
                 </div>
             </div>
 
-            <div data-swiper class="swiper mt-7">
-                <div class="swiper-wrapper">
-                    @foreach ($slides as $slide)
-                        <article class="swiper-slide">
-                            <div class="soft-panel accent-grid flex h-full flex-col justify-between rounded-[1.75rem] p-6">
-                                <div>
-                                    <p class="text-sm uppercase tracking-[0.2em] text-stone-500">Slide {{ $loop->iteration }}</p>
-                                    <h3 class="mt-3 text-2xl font-semibold text-stone-900">{{ $slide['title'] }}</h3>
+            <div class="mirsaar-scroll-hint">
+                <span aria-hidden="true"></span>
+                premium details pastda davom etadi
+            </div>
+        </section>
+
+        <section class="mirsaar-detail-section">
+            <article class="mirsaar-brand-showcase">
+                <div class="mirsaar-brand-pattern mirsaar-brand-pattern--tl" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+                <div class="mirsaar-brand-pattern mirsaar-brand-pattern--tr" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+                <div class="mirsaar-brand-pattern mirsaar-brand-pattern--bl" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+                <div class="mirsaar-brand-pattern mirsaar-brand-pattern--br" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+
+                <div class="mirsaar-brand-showcase-inner">
+                    <span class="mirsaar-brand-showcase-mark" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="2.5" />
+                            <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                            <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                        </svg>
+                    </span>
+
+                    <p class="mirsaar-brand-showcase-kicker">signature premium section</p>
+
+                    <h2 class="mirsaar-brand-showcase-title">
+                        <span>MIRSAAR</span>
+                        <em>TECH</em>
+                    </h2>
+
+                    <p class="mirsaar-brand-showcase-copy">
+                        Brendingiz uchun premium saytlar, NFC vizitkalar va taassurot qoldiradigan
+                        digital tajriba yaratamiz. Har bir detalda aniqlik, premium ritm va vizual daraja saqlanadi.
+                    </p>
+
+                    <div class="mirsaar-brand-showcase-actions">
+                        <a href="#contact" class="mirsaar-showcase-button mirsaar-showcase-button--primary">
+                            Loyihani boshlash
+                        </a>
+                        <a href="#services" class="mirsaar-showcase-button mirsaar-showcase-button--secondary">
+                            Bizning xizmatlar
+                        </a>
+                        <a href="#reviews" class="mirsaar-showcase-button mirsaar-showcase-button--dark">
+                            Sharhlar
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="mirsaar-story-section" id="services">
+                <div class="mirsaar-story-pattern mirsaar-story-pattern--left" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+                <div class="mirsaar-story-pattern mirsaar-story-pattern--right" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+
+                <div class="mirsaar-story-grid">
+                    <div class="mirsaar-story-copy">
+                        <p class="mirsaar-section-kicker">about studio</p>
+                        <h2 class="mirsaar-story-title">Raqamli tajribada nafislik va aniqlik birga ishlaydi.</h2>
+                        <p class="mirsaar-story-lead">
+                            Bu qism oldingi premium kayfiyatni davom ettiradi, lekin kontentni ortiqcha
+                            ko'paytirmaydi. Biz dizayn, texnik asos va premium taqdimotni bitta sokin ritmda birlashtiramiz.
+                        </p>
+
+                        <article class="mirsaar-story-note">
+                            <span class="mirsaar-story-note-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 4L14.3 8.2L19 8.8L15.6 12.1L16.4 16.8L12 14.5L7.6 16.8L8.4 12.1L5 8.8L9.7 8.2L12 4Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" />
+                                </svg>
+                            </span>
+                            <p>
+                                Mirsaar premium web-yechimlar yaratadi: ko'rinish faqat chiroyli emas,
+                                balki brendni qimmatroq his qildiradigan aniqlik bilan quriladi.
+                            </p>
+                        </article>
+
+                        <article class="mirsaar-story-quote" id="reviews">
+                            <p>
+                                "Yaxshi sahifa shunchaki bezak emas. U foydalanuvchiga ishonch,
+                                brendga esa daraja beradi."
+                            </p>
+                        </article>
+
+                        <div class="mirsaar-story-points">
+                            @foreach ($storyMetrics as $metric)
+                                <article class="mirsaar-story-point" id="{{ $metric['id'] }}">
+                                    <strong>{{ $metric['value'] }}</strong>
+                                    <span>{{ $metric['label'] }}</span>
+                                </article>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="mirsaar-story-visual" id="projects">
+                        <div class="mirsaar-story-glow" aria-hidden="true"></div>
+
+                        <article class="mirsaar-device-stage">
+                            <div class="mirsaar-visual-badge">premium composition</div>
+
+                            <div class="mirsaar-device-desktop">
+                                <div class="mirsaar-device-topbar">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
                                 </div>
-                                <p class="mt-6 text-base leading-7 text-stone-700">{{ $slide['copy'] }}</p>
+                                <div class="mirsaar-device-hero-band"></div>
+                                <div class="mirsaar-device-grid">
+                                    <div class="mirsaar-device-panel mirsaar-device-panel--large"></div>
+                                    <div class="mirsaar-device-panel"></div>
+                                    <div class="mirsaar-device-panel"></div>
+                                </div>
+                            </div>
+
+                            <div class="mirsaar-device-tablet">
+                                <div class="mirsaar-device-screen">
+                                    <div class="mirsaar-device-line"></div>
+                                    <div class="mirsaar-device-line"></div>
+                                    <div class="mirsaar-device-line mirsaar-device-line--short"></div>
+                                </div>
+                            </div>
+
+                            <div class="mirsaar-device-phone">
+                                <div class="mirsaar-device-screen">
+                                    <div class="mirsaar-device-dot"></div>
+                                    <div class="mirsaar-device-stack"></div>
+                                    <div class="mirsaar-device-stack mirsaar-device-stack--small"></div>
+                                </div>
                             </div>
                         </article>
-                    @endforeach
-                </div>
-            </div>
-
-            <div data-swiper-pagination class="swiper-pagination"></div>
-        </section>
-
-        <section class="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-            <div class="glass-panel rounded-[2rem] p-5 sm:p-7">
-                <p class="text-sm font-semibold uppercase tracking-[0.22em] text-stone-500">Sass</p>
-                <h2 class="mt-2 text-2xl font-semibold text-stone-900 sm:text-3xl">Qo`shimcha lokal uslublar</h2>
-
-                <div class="mt-6 space-y-4 text-sm leading-7 text-stone-600">
-                    <p>`resources/sass/app.scss` ichida sahifa fonlari, glass-panellar va Swiper skin yozildi.</p>
-                    <p>`vite.config.js` ga Sass entry qo`shildi va layout ichida alohida yuklanadi.</p>
-                    <p>Tashqi font yoki CDN ishlatilmagan, hammasi lokal build bilan tayyor.</p>
-                </div>
-            </div>
-
-            <div class="glass-panel rounded-[2rem] p-5 sm:p-7">
-                <p class="text-sm font-semibold uppercase tracking-[0.22em] text-stone-500">Qisqa eslatma</p>
-                <h2 class="mt-2 text-2xl font-semibold text-stone-900 sm:text-3xl">Loyiha strukturasida qayerga joylandi?</h2>
-
-                <div class="mt-6 grid gap-3 text-sm text-stone-700 sm:grid-cols-2">
-                    <div class="rounded-2xl border border-stone-200/80 bg-white/80 p-4">
-                        <p class="font-semibold text-stone-900">CSS</p>
-                        <p class="mt-2">`resources/css/app.css`</p>
-                    </div>
-                    <div class="rounded-2xl border border-stone-200/80 bg-white/80 p-4">
-                        <p class="font-semibold text-stone-900">Sass</p>
-                        <p class="mt-2">`resources/sass/app.scss`</p>
-                    </div>
-                    <div class="rounded-2xl border border-stone-200/80 bg-white/80 p-4">
-                        <p class="font-semibold text-stone-900">JS modules</p>
-                        <p class="mt-2">`resources/js/modules/*`</p>
-                    </div>
-                    <div class="rounded-2xl border border-stone-200/80 bg-white/80 p-4">
-                        <p class="font-semibold text-stone-900">Livewire page</p>
-                        <p class="mt-2">`app/Livewire` va `resources/views/livewire`</p>
                     </div>
                 </div>
-            </div>
+            </article>
         </section>
     </div>
 </div>

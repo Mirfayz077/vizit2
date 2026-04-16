@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="10" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2C1A0E"/>
+      <stop offset="1" stop-color="#7B4B18"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5DCB0" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#C88D3A" stop-opacity="0.58"/>
+    </linearGradient>
+    <linearGradient id="code" x1="16" y1="20" x2="48" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1D5"/>
+      <stop offset="1" stop-color="#F0B86A"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="18" fill="url(#bg)"/>
+  <rect x="5" y="5" width="54" height="54" rx="17" stroke="url(#edge)" stroke-width="2"/>
+
+  <path d="M24 21L14.5 32L24 43" stroke="url(#code)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"/>
+  <path d="M40 21L49.5 32L40 43" stroke="url(#code)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2"/>
+  <path d="M37 16L28 48" stroke="url(#code)" stroke-linecap="round" stroke-width="4.2"/>
+
+  <circle cx="47.5" cy="16.5" r="3.5" fill="#F5D6A1"/>
+  <circle cx="47.5" cy="16.5" r="1.5" fill="#FFF7EA"/>
+</svg>

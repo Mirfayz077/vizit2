@@ -4,8 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="color-scheme" content="light dark">
+        <meta name="theme-color" content="#1f140b">
 
         <title>{{ $title ?? config('app.name', 'Vizitka') }}</title>
+
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=cormorant-garamond:500,600,700|manrope:400,500,600,700,800" rel="stylesheet" />
+        <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+        <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
 
         @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
         @livewireStyles
@@ -33,8 +39,9 @@
             .brand {
                 font-size: clamp(32px, 6vw, 64px);
                 font-weight: 700;
-                letter-spacing: 0.5em;
+                letter-spacing: 0.22em;
                 text-align: center;
+                font-family: 'Cormorant Garamond', serif;
 
                 background: linear-gradient(90deg, #fff, #aaa, #fff);
                 background-size: 200% 100%;
@@ -61,6 +68,7 @@
                 letter-spacing: 0.3em;
                 opacity: 0.6;
                 text-align: center;
+                font-family: 'Manrope', sans-serif;
             }
 
             /* ===== BAR ===== */
@@ -94,6 +102,7 @@
                 text-align: center;
                 font-size: 13px;
                 opacity: 0.7;
+                font-family: 'Manrope', sans-serif;
             }
 
             @media (max-width: 480px) {
@@ -104,7 +113,7 @@
 
     <body class="antialiased">
 
-    <!-- 🔴 PRELOADER -->
+    <!-- PRELOADER -->
     <div id="preloader">
         <div>
             <div class="brand">MIRSAAR</div>
@@ -123,7 +132,7 @@
         const el = document.getElementById("loadPercent");
         const preloader = document.getElementById("preloader");
 
-        const duration = 3500; // 🔥 MIN 3.5s
+        const duration = 2200;
         const interval = 50;
         const steps = duration / interval;
         let step = 0;

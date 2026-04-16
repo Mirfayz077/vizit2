@@ -14,6 +14,6 @@
 }
 
 @theme {
-    --font-sans: 'Segoe UI Variable Text', 'Segoe UI', 'Trebuchet MS', ui-sans-serif, system-ui, sans-serif;
-    --font-serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+    --font-sans: 'Manrope', 'Segoe UI Variable Text', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Cormorant Garamond', 'Iowan Old Style', 'Palatino Linotype', serif;
 }
