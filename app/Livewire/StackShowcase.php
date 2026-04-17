@@ -42,7 +42,7 @@ class StackShowcase extends Component
             'label' => 'Bir tegishda kontakt va premium first impression.',
         ],
         [
-            'id' => 'support',
+            'id' => 'care',
             'value' => 'Premium Support',
             'label' => 'Jarayon davomida tez, sokin va ishonchli hamrohlik.',
         ],

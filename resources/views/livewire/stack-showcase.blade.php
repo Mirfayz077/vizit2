@@ -311,12 +311,6 @@
                         <a href="#contact" class="mirsaar-showcase-button mirsaar-showcase-button--primary">
                             Loyihani boshlash
                         </a>
-                        <a href="#services" class="mirsaar-showcase-button mirsaar-showcase-button--secondary">
-                            Bizning xizmatlar
-                        </a>
-                        <a href="#reviews" class="mirsaar-showcase-button mirsaar-showcase-button--dark">
-                            Sharhlar
-                        </a>
                     </div>
                 </div>
             </article>
@@ -411,6 +405,145 @@
                                 </div>
                             </div>
                         </article>
+                    </div>
+                </div>
+            </article>
+
+            <article class="mirsaar-craft-section" id="support">
+                <div class="mirsaar-craft-pattern mirsaar-craft-pattern--left" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+                <div class="mirsaar-craft-pattern mirsaar-craft-pattern--right" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+
+                <div class="mirsaar-craft-grid">
+                    <div class="mirsaar-craft-copy">
+                        <p class="mirsaar-section-kicker">about company</p>
+                        <h2 class="mirsaar-craft-title">Raqam ichida san'at, taqdimotda esa premium sokinlik.</h2>
+                        <p class="mirsaar-craft-lead">
+                            Screenshot kayfiyatidagi ushbu blok Mirsaar uslubiga moslashtirildi: kontent ixcham,
+                            CTA bitta, lekin ranglar, qatlamlar va mayin motionlar hisobiga sahifa qimmat va nazoratli ko'rinadi.
+                        </p>
+
+                        <div class="mirsaar-craft-stack">
+                            <article class="mirsaar-craft-card">
+                                <span class="mirsaar-feature-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 4L14.3 8.2L19 8.8L15.6 12.1L16.4 16.8L12 14.5L7.6 16.8L8.4 12.1L5 8.8L9.7 8.2L12 4Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <small>premium composition</small>
+                                    <strong>Kamroq tugma, ko'proq ishonch</strong>
+                                    <p>Foydalanuvchi ortiqcha tanlovda qolmaydi, sahifa esa boshqarilgan va premium his beradi.</p>
+                                </div>
+                            </article>
+
+                            <article class="mirsaar-craft-card is-featured">
+                                <span class="mirsaar-feature-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" />
+                                        <path d="M12 8V12L15 14" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <small>signature direction</small>
+                                    <strong>Dizayn va texnika bir tempda ishlaydi</strong>
+                                    <p>Tipografika, rang, glow va animatsiya bir-birini to'ldirib, brendni qimmatroq ko'rsatadi.</p>
+                                </div>
+                            </article>
+
+                            <article class="mirsaar-craft-card">
+                                <span class="mirsaar-feature-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 3L19 6V11.8C19 15.1 16.9 18.1 12 21C7.1 18.1 5 15.1 5 11.8V6L12 3Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" />
+                                        <path d="M9 12.2L11.2 14.4L15.2 10.4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <small>stable delivery</small>
+                                    <strong>Web va NFC bitta premium oqimga ulanadi</strong>
+                                    <p>Vizitka, landing va aloqa jarayoni uzilmaydi, shu sabab first impression kuchliroq qoladi.</p>
+                                </div>
+                            </article>
+                        </div>
+
+                        <a href="#contact" class="mirsaar-button mirsaar-button--primary mirsaar-craft-button">
+                            Yondashuv haqida ko'proq
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                                <path d="M9 7H17V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="mirsaar-craft-visual">
+                        <div class="mirsaar-craft-glow" aria-hidden="true"></div>
+
+                        <div class="mirsaar-craft-stage">
+                            <div class="mirsaar-craft-pill-row" aria-hidden="true">
+                                <span>Art direction</span>
+                                <span>UX clarity</span>
+                                <span>NFC ready</span>
+                            </div>
+
+                            <article class="mirsaar-craft-desktop">
+                                <div class="mirsaar-craft-desktop-top">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <p>mirsaar signature layout</p>
+                                </div>
+
+                                <div class="mirsaar-craft-screen">
+                                    <div class="mirsaar-craft-screen-sidebar">
+                                        <div class="mirsaar-craft-line"></div>
+                                        <div class="mirsaar-craft-line"></div>
+                                        <div class="mirsaar-craft-line mirsaar-craft-line--short"></div>
+                                    </div>
+
+                                    <div class="mirsaar-craft-main">
+                                        <div class="mirsaar-craft-hero-band"></div>
+
+                                        <div class="mirsaar-craft-preview-grid">
+                                            <div class="mirsaar-craft-preview-panel mirsaar-craft-preview-panel--xl"></div>
+                                            <div class="mirsaar-craft-preview-panel"></div>
+                                            <div class="mirsaar-craft-preview-panel mirsaar-craft-preview-panel--accent"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="mirsaar-craft-mobile">
+                                <div class="mirsaar-craft-mobile-screen">
+                                    <div class="mirsaar-craft-mobile-hero"></div>
+                                    <div class="mirsaar-craft-mobile-stack"></div>
+                                    <div class="mirsaar-craft-mobile-stack mirsaar-craft-mobile-stack--small"></div>
+                                    <div class="mirsaar-craft-mobile-stack mirsaar-craft-mobile-stack--small"></div>
+                                </div>
+                            </article>
+
+                            <article class="mirsaar-craft-float mirsaar-craft-float--left">
+                                <strong>Art in digital</strong>
+                                <p>Premium motion va sokin kompozitsiya.</p>
+                            </article>
+
+                            <article class="mirsaar-craft-float mirsaar-craft-float--right">
+                                <strong>01 main action</strong>
+                                <p>Foydalanuvchi yo'li ortiqcha chalg'imaydi.</p>
+                            </article>
+
+                            <div class="mirsaar-craft-ring" aria-hidden="true"></div>
+                        </div>
                     </div>
                 </div>
             </article>
