@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="90" x2="1490" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#13081E"/>
+      <stop offset="1" stop-color="#2B1250"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" rx="44" fill="url(#bg)"/>
+  <rect x="70" y="70" width="1460" height="860" rx="40" fill="#120B1B" stroke="#8A62FF" stroke-opacity=".22" stroke-width="2"/>
+  <rect x="110" y="110" width="1380" height="56" rx="20" fill="#1A1127"/>
+  <circle cx="148" cy="138" r="8" fill="#FF8DA2"/>
+  <circle cx="176" cy="138" r="8" fill="#F0D46D"/>
+  <circle cx="204" cy="138" r="8" fill="#82DEA3"/>
+  <text x="244" y="147" fill="#F7F0FF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Voxel Admin UI</text>
+  <rect x="110" y="202" width="260" height="648" rx="28" fill="#181024"/>
+  <rect x="144" y="242" width="180" height="18" rx="9" fill="#8A62FF"/>
+  <rect x="144" y="292" width="192" height="70" rx="20" fill="#231536"/>
+  <rect x="144" y="384" width="192" height="70" rx="20" fill="#231536"/>
+  <rect x="144" y="476" width="192" height="70" rx="20" fill="#231536"/>
+  <rect x="400" y="202" width="1090" height="648" rx="32" fill="#100A18"/>
+  <rect x="440" y="242" width="486" height="180" rx="28" fill="#231539"/>
+  <rect x="954" y="242" width="496" height="180" rx="28" fill="#231539"/>
+  <rect x="440" y="450" width="326" height="360" rx="28" fill="#1B122C"/>
+  <rect x="792" y="450" width="300" height="360" rx="28" fill="#1B122C"/>
+  <rect x="1118" y="450" width="332" height="360" rx="28" fill="#1B122C"/>
+  <path d="M1012 356C1066 320 1114 312 1150 274C1186 236 1244 232 1322 290C1370 326 1400 348 1420 382" stroke="#A582FF" stroke-width="10" stroke-linecap="round"/>
+</svg>

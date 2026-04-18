@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="90" x2="1490" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFF7FA"/>
+      <stop offset="1" stop-color="#C5D7DE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" rx="44" fill="url(#bg)"/>
+  <rect x="72" y="72" width="1456" height="856" rx="40" fill="#F6FBFD" stroke="#6A93A1" stroke-opacity=".18" stroke-width="2"/>
+  <rect x="112" y="112" width="1376" height="56" rx="20" fill="#EAF3F6"/>
+  <circle cx="150" cy="140" r="8" fill="#F39B80"/>
+  <circle cx="178" cy="140" r="8" fill="#E9CF74"/>
+  <circle cx="206" cy="140" r="8" fill="#91C6A7"/>
+  <text x="244" y="149" fill="#1B252A" font-family="Arial, sans-serif" font-size="30" font-weight="700">CloudOps Hub</text>
+  <rect x="112" y="204" width="580" height="280" rx="32" fill="#FFFFFF"/>
+  <text x="156" y="286" fill="#243036" font-family="Arial, sans-serif" font-size="48" font-weight="700">Operational visibility for every service</text>
+  <text x="156" y="336" fill="#5F6E75" font-family="Arial, sans-serif" font-size="24">Status, alerts and deployment health for distributed teams.</text>
+  <rect x="156" y="392" width="186" height="50" rx="18" fill="#1A7A8B"/>
+  <text x="202" y="425" fill="#F7FCFD" font-family="Arial, sans-serif" font-size="22" font-weight="700">Open command</text>
+  <rect x="724" y="204" width="764" height="280" rx="32" fill="#FFFFFF"/>
+  <path d="M770 424C836 366 892 356 950 294C998 244 1082 250 1134 302C1186 354 1238 364 1280 330C1322 296 1370 252 1440 230" stroke="#2E899A" stroke-width="10" stroke-linecap="round"/>
+  <rect x="112" y="516" width="412" height="332" rx="30" fill="#FFFFFF"/>
+  <rect x="552" y="516" width="442" height="332" rx="30" fill="#FFFFFF"/>
+  <rect x="1022" y="516" width="466" height="332" rx="30" fill="#FFFFFF"/>
+  <rect x="150" y="558" width="336" height="88" rx="22" fill="#EDF5F8"/>
+  <rect x="150" y="670" width="336" height="136" rx="22" fill="#EDF5F8"/>
+  <rect x="592" y="558" width="362" height="248" rx="22" fill="#EDF5F8"/>
+  <rect x="1062" y="558" width="386" height="106" rx="22" fill="#EDF5F8"/>
+  <rect x="1062" y="690" width="386" height="116" rx="22" fill="#EDF5F8"/>
+</svg>

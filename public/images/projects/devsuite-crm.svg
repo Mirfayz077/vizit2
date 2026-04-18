@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1500" y2="940" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121826"/>
+      <stop offset="1" stop-color="#2B1A10"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="470" y1="250" x2="1180" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4C56A"/>
+      <stop offset="1" stop-color="#7C531B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" rx="44" fill="url(#bg)"/>
+  <rect x="70" y="70" width="1460" height="860" rx="40" fill="#0D1320" stroke="#E8BC6A" stroke-opacity=".18" stroke-width="2"/>
+  <rect x="110" y="110" width="1380" height="54" rx="18" fill="#131C2D"/>
+  <circle cx="148" cy="137" r="8" fill="#FF8C70"/>
+  <circle cx="176" cy="137" r="8" fill="#F2C94C"/>
+  <circle cx="204" cy="137" r="8" fill="#5AD79F"/>
+  <text x="244" y="146" fill="#F7E6C5" font-family="Arial, sans-serif" font-size="30" font-weight="700">DevSuite CRM</text>
+  <rect x="110" y="202" width="280" height="648" rx="28" fill="#101A2C"/>
+  <rect x="142" y="242" width="120" height="18" rx="9" fill="#E8BC6A"/>
+  <rect x="142" y="290" width="216" height="92" rx="24" fill="#18243A"/>
+  <rect x="142" y="402" width="216" height="92" rx="24" fill="#18243A"/>
+  <rect x="142" y="514" width="216" height="92" rx="24" fill="#18243A"/>
+  <rect x="142" y="626" width="216" height="184" rx="24" fill="#151F32"/>
+  <rect x="430" y="202" width="500" height="290" rx="32" fill="url(#hero)"/>
+  <text x="470" y="288" fill="#1D1309" font-family="Arial, sans-serif" font-size="50" font-weight="700">Scale your client pipeline</text>
+  <text x="470" y="338" fill="#2F1D0E" font-family="Arial, sans-serif" font-size="24">Automations, followups and revenue analytics in one flow.</text>
+  <rect x="470" y="386" width="164" height="48" rx="16" fill="#0E1423"/>
+  <text x="510" y="417" fill="#F7E6C5" font-family="Arial, sans-serif" font-size="22" font-weight="700">Start demo</text>
+  <rect x="962" y="202" width="528" height="290" rx="32" fill="#111929"/>
+  <path d="M1008 430C1058 370 1100 376 1142 338C1184 300 1238 322 1280 250C1304 212 1360 218 1442 274" stroke="#E8BC6A" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="1280" cy="250" r="16" fill="#E8BC6A"/>
+  <rect x="430" y="524" width="328" height="326" rx="32" fill="#121B2C"/>
+  <rect x="470" y="566" width="248" height="20" rx="10" fill="#24324B"/>
+  <rect x="470" y="612" width="188" height="20" rx="10" fill="#24324B"/>
+  <rect x="470" y="668" width="248" height="132" rx="24" fill="#1B2740"/>
+  <rect x="790" y="524" width="700" height="326" rx="32" fill="#111929"/>
+  <rect x="832" y="566" width="182" height="106" rx="24" fill="#18243B"/>
+  <rect x="1040" y="566" width="182" height="106" rx="24" fill="#18243B"/>
+  <rect x="1248" y="566" width="200" height="106" rx="24" fill="#18243B"/>
+  <rect x="832" y="700" width="616" height="108" rx="28" fill="#161F33"/>
+</svg>

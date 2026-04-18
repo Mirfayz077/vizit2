@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="160" y1="90" x2="1490" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8EC"/>
+      <stop offset="1" stop-color="#E7D0AD"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="406" y1="212" x2="1290" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E8D9BE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" rx="44" fill="url(#bg)"/>
+  <rect x="72" y="72" width="1456" height="856" rx="40" fill="#FAF2E6" stroke="#B68F58" stroke-opacity=".22" stroke-width="2"/>
+  <rect x="112" y="112" width="1376" height="56" rx="20" fill="#F4E7D4"/>
+  <circle cx="150" cy="140" r="8" fill="#E89D81"/>
+  <circle cx="178" cy="140" r="8" fill="#EACB70"/>
+  <circle cx="206" cy="140" r="8" fill="#8BC9A0"/>
+  <text x="244" y="149" fill="#2B2218" font-family="Arial, sans-serif" font-size="30" font-weight="700">Nimbus SaaS Onboarding</text>
+  <rect x="112" y="204" width="480" height="606" rx="32" fill="url(#hero)"/>
+  <text x="156" y="286" fill="#241B12" font-family="Arial, sans-serif" font-size="52" font-weight="700">Design onboarding that converts</text>
+  <text x="156" y="338" fill="#65584A" font-family="Arial, sans-serif" font-size="24">Guide users from signup to activation with clarity.</text>
+  <rect x="156" y="392" width="188" height="50" rx="18" fill="#C99D4D"/>
+  <text x="208" y="425" fill="#FFF8EC" font-family="Arial, sans-serif" font-size="22" font-weight="700">Launch flow</text>
+  <rect x="156" y="480" width="392" height="286" rx="28" fill="#F7ECDE"/>
+  <rect x="632" y="204" width="856" height="606" rx="32" fill="#F8EFE2"/>
+  <rect x="672" y="248" width="236" height="240" rx="28" fill="#FFFFFF"/>
+  <rect x="932" y="248" width="246" height="240" rx="28" fill="#FFFFFF"/>
+  <rect x="1202" y="248" width="246" height="240" rx="28" fill="#FFFFFF"/>
+  <rect x="672" y="522" width="776" height="248" rx="28" fill="#FFFFFF"/>
+  <circle cx="790" cy="370" r="58" fill="#E8D7BD"/>
+  <circle cx="1054" cy="370" r="58" fill="#E8D7BD"/>
+  <circle cx="1324" cy="370" r="58" fill="#E8D7BD"/>
+  <path d="M746 666H1374" stroke="#D4BE9A" stroke-width="16" stroke-linecap="round"/>
+  <path d="M746 712H1286" stroke="#E4D4BA" stroke-width="16" stroke-linecap="round"/>
+  <path d="M746 758H1162" stroke="#E4D4BA" stroke-width="16" stroke-linecap="round"/>
+</svg>

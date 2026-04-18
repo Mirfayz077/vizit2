@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="100" x2="1480" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#120A1F"/>
+      <stop offset="1" stop-color="#22153D"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="360" y1="190" x2="1300" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7E5BFF"/>
+      <stop offset="1" stop-color="#C68DFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" rx="44" fill="url(#bg)"/>
+  <rect x="72" y="72" width="1456" height="856" rx="40" fill="#0D0A17" stroke="#8E74FF" stroke-opacity=".22" stroke-width="2"/>
+  <rect x="112" y="112" width="1376" height="56" rx="20" fill="#151024"/>
+  <circle cx="150" cy="140" r="8" fill="#FF8FA3"/>
+  <circle cx="178" cy="140" r="8" fill="#F1D36F"/>
+  <circle cx="206" cy="140" r="8" fill="#80E2A5"/>
+  <text x="248" y="149" fill="#F7F0FF" font-family="Arial, sans-serif" font-size="30" font-weight="700">CodePilot AI Workspace</text>
+  <rect x="112" y="204" width="268" height="644" rx="28" fill="#171126"/>
+  <rect x="144" y="244" width="180" height="18" rx="9" fill="#7E5BFF"/>
+  <rect x="144" y="296" width="204" height="82" rx="22" fill="#22193B"/>
+  <rect x="144" y="398" width="204" height="82" rx="22" fill="#22193B"/>
+  <rect x="144" y="500" width="204" height="82" rx="22" fill="#22193B"/>
+  <rect x="144" y="602" width="204" height="210" rx="24" fill="#1E1633"/>
+  <rect x="412" y="204" width="694" height="420" rx="32" fill="#0F0B1B"/>
+  <rect x="452" y="244" width="614" height="340" rx="26" fill="#111827"/>
+  <rect x="492" y="284" width="210" height="20" rx="10" fill="#4B5563"/>
+  <rect x="492" y="332" width="390" height="16" rx="8" fill="#2D3748"/>
+  <rect x="492" y="366" width="330" height="16" rx="8" fill="#2D3748"/>
+  <rect x="492" y="400" width="434" height="16" rx="8" fill="#2D3748"/>
+  <rect x="492" y="450" width="534" height="94" rx="24" fill="url(#hero)"/>
+  <text x="532" y="504" fill="#FAF6FF" font-family="Arial, sans-serif" font-size="34" font-weight="700">Generate launch-ready product copy</text>
+  <rect x="1138" y="204" width="350" height="420" rx="32" fill="#120E1E"/>
+  <rect x="1174" y="244" width="278" height="122" rx="24" fill="#221A38"/>
+  <rect x="1174" y="390" width="278" height="190" rx="24" fill="#1A142C"/>
+  <path d="M1198 528L1248 480L1292 504L1342 438L1408 468" stroke="#C893FF" stroke-width="10" stroke-linecap="round"/>
+  <rect x="412" y="656" width="1076" height="192" rx="32" fill="#110D1C"/>
+  <rect x="452" y="698" width="306" height="110" rx="24" fill="#1B1430"/>
+  <rect x="786" y="698" width="306" height="110" rx="24" fill="#1B1430"/>
+  <rect x="1120" y="698" width="328" height="110" rx="24" fill="#1B1430"/>
+</svg>
