@@ -9,7 +9,7 @@
         <title>{{ $title ?? config('app.name', 'Vizitka') }}</title>
 
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=cormorant-garamond:500,600,700|manrope:400,500,600,700,800" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=playfair-display:500,600,700,800|sora:400,500,600,700,800" rel="stylesheet" />
         <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
         <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
 
@@ -41,7 +41,7 @@
                 font-weight: 700;
                 letter-spacing: 0.22em;
                 text-align: center;
-                font-family: 'Cormorant Garamond', serif;
+                font-family: 'Playfair Display', serif;
 
                 background: linear-gradient(90deg, #fff, #aaa, #fff);
                 background-size: 200% 100%;
@@ -68,7 +68,7 @@
                 letter-spacing: 0.3em;
                 opacity: 0.6;
                 text-align: center;
-                font-family: 'Manrope', sans-serif;
+                font-family: 'Sora', sans-serif;
             }
 
             /* ===== BAR ===== */
