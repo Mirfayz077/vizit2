@@ -38,18 +38,18 @@ class StackShowcase extends Component
     public array $storyMetrics = [
         [
             'id' => 'nfc',
-            'value' => 'NFC Vizitka',
-            'label' => 'Bir tegishda kontakt va premium first impression.',
+            'value' => 'NFC-визитка',
+            'label' => 'Контакты и первое впечатление — в одно касание.',
         ],
         [
             'id' => 'care',
             'value' => 'Premium Support',
-            'label' => 'Jarayon davomida tez, sokin va ishonchli hamrohlik.',
+            'label' => 'Быстрое, спокойное и надёжное сопровождение на всех этапах.',
         ],
         [
             'id' => 'contact',
             'value' => 'hello@mirsaar.uz',
-            'label' => 'Aloqa bir nuqtada, ortiqcha shakl va shovqinsiz.',
+            'label' => 'Всё общение — в одной точке, без лишних форм и шума.',
         ],
     ];
 

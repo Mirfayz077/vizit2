@@ -96,15 +96,16 @@
                     </p>
 
                     <h1 class="mirsaar-title mirsaar-reveal mirsaar-reveal--delay-1">
-                        <span>Premium</span>
-                        <em>Mirsaar</em>
-                        <span>taassuroti uchun full-screen intro.</span>
+                        <span>MIRSAAR</span>
+                        <em>digital</em>
+                        <span>решения для современного бизнеса.</span>
                     </h1>
 
                     <p class="mirsaar-lead mirsaar-reveal mirsaar-reveal--delay-2">
-                        Header qismi screenshot ruhida saqlandi, lekin ko'rinish ancha boyitildi:
-                        oltin aksentlar, premium iconlar, yumshoq glow, chuqur glass layerlar va silliq
-                        animatsiyalar bilan brend birinchi ekrandanoq kuchli ko'rinadi.
+                        MIRSAAR — это команда специалистов в области веб-разработки, дизайна и цифровых технологий.
+                    Мы помогаем компаниям выходить на новый уровень с помощью современных IT-решений.
+                    Наша цель — не просто создать продукт, а дать бизнесу инструмент, который реально работает и приносит прибыль.
+                    Мы используем современные технологии, такие как:
                     </p>
 
                     <div class="mirsaar-chip-row mirsaar-reveal mirsaar-reveal--delay-2">
@@ -138,18 +139,7 @@
                 </div>
 
                 <div class="mirsaar-stage mirsaar-reveal mirsaar-reveal--delay-2">
-                    <article class="mirsaar-float-card mirsaar-float-card--top">
-                        <span class="mirsaar-float-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M12 3L19 7V17L12 21L5 17V7L12 3Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" />
-                                <path d="M12 8V12L15 14" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
-                            </svg>
-                        </span>
-                        <div>
-                            <p class="mirsaar-float-label">Fast Contact</p>
-                            <strong>One tap NFC</strong>
-                        </div>
-                    </article>
+        
 
                     <article class="mirsaar-stage-main">
                         <div class="mirsaar-stage-top">
@@ -220,30 +210,6 @@
                         </div>
                     </article>
 
-                    <article class="mirsaar-float-card mirsaar-float-card--side">
-                        <span class="mirsaar-float-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M7 10.5H10L8.5 18H5.5L7 10.5ZM14 10.5H17L15.5 18H12.5L14 10.5ZM8.5 10C8.5 7.5 9.5 5.5 12 4M15.5 10C15.5 7.5 16.5 5.5 19 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
-                            </svg>
-                        </span>
-                        <div>
-                            <p class="mirsaar-float-label">Client feeling</p>
-                            <strong>Premium first impression</strong>
-                        </div>
-                    </article>
-
-                    <article class="mirsaar-float-card mirsaar-float-card--bottom">
-                        <span class="mirsaar-float-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M4 7.5C4 6.12 5.12 5 6.5 5H17.5C18.88 5 20 6.12 20 7.5V16.5C20 17.88 18.88 19 17.5 19H6.5C5.12 19 4 17.88 4 16.5V7.5Z" stroke="currentColor" stroke-width="1.8" />
-                                <path d="M6 8L12 12.5L18 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
-                            </svg>
-                        </span>
-                        <div>
-                            <p class="mirsaar-float-label">Ready to launch</p>
-                            <strong>hello@mirsaar.uz</strong>
-                        </div>
-                    </article>
 
                     <div class="mirsaar-stage-ring" aria-hidden="true"></div>
                 </div>
@@ -295,16 +261,20 @@
                         </svg>
                     </span>
 
-                    <p class="mirsaar-brand-showcase-kicker">signature premium section</p>
+                    <p class="mirsaar-brand-showcase-kicker">ПОЧЕМУ ВЫБИРАЮТ НАС</p>
 
                     <h2 class="mirsaar-brand-showcase-title">
                         <span>MIRSAAR</span>
-                        <em>TECH</em>
+                        <em>digital</em>
                     </h2>
 
                     <p class="mirsaar-brand-showcase-copy">
-                        Brendingiz uchun premium saytlar, NFC vizitkalar va taassurot qoldiradigan
-                        digital tajriba yaratamiz. Har bir detalda aniqlik, premium ritm va vizual daraja saqlanadi.
+                       Индивидуальный подход к каждому клиенту
+                        Современные технологии
+                        Чистый и качественный код
+                        Быстрая реализация проектов
+                        Поддержка и развитие после запуска
+                Мы ценим доверие клиентов и строим долгосрочное сотрудничество.
                     </p>
 
                     <div class="mirsaar-brand-showcase-actions">
@@ -334,10 +304,10 @@
                 <div class="mirsaar-story-grid">
                     <div class="mirsaar-story-copy">
                         <p class="mirsaar-section-kicker">about studio</p>
-                        <h2 class="mirsaar-story-title">Raqamli tajribada nafislik va aniqlik birga ishlaydi.</h2>
+                        <h2 class="mirsaar-story-title">Изысканность и точность работают вместе в цифровом опыте.</h2>
                         <p class="mirsaar-story-lead">
-                            Bu qism oldingi premium kayfiyatni davom ettiradi, lekin kontentni ortiqcha
-                            ko'paytirmaydi. Biz dizayn, texnik asos va premium taqdimotni bitta sokin ritmda birlashtiramiz.
+                            Этот раздел продолжает премиальное настроение, не перегружая контент. Мы объединяем дизайн, 
+                            техническую основу и презентацию в едином спокойном ритме
                         </p>
 
                         <article class="mirsaar-story-note">
@@ -347,15 +317,15 @@
                                 </svg>
                             </span>
                             <p>
-                                Mirsaar premium web-yechimlar yaratadi: ko'rinish faqat chiroyli emas,
-                                balki brendni qimmatroq his qildiradigan aniqlik bilan quriladi.
+                               Mirsaar создаёт премиальные веб-решения: визуал — это не просто эстетика,
+                             а продуманная система, которая усиливает восприятие бренда и делает его дороже в глазах клиента.
                             </p>
                         </article>
 
                         <article class="mirsaar-story-quote" id="reviews">
                             <p>
-                                "Yaxshi sahifa shunchaki bezak emas. U foydalanuvchiga ishonch,
-                                brendga esa daraja beradi."
+                                «Хорошая страница — это не просто оформление.
+                                Она создаёт доверие у пользователя и формирует уровень бренда.»
                             </p>
                         </article>
 

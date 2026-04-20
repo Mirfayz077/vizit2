@@ -108,6 +108,7 @@ p {
     position: sticky;
     top: 0;
     z-index: 50;
+    opacity: 0.95;
     padding-top: 0.35rem;
 }
 
@@ -119,7 +120,7 @@ p {
     padding: 0.85rem 1rem 0.85rem 1.1rem;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: rgba(255, 251, 246, 0.72);
+    background: rgba(24, 19, 13, 0.021);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     box-shadow: var(--shadow-lg);
@@ -130,6 +131,7 @@ p {
     align-items: center;
     gap: 0.9rem;
     min-width: fit-content;
+    flex-shrink: 0; /* FIX: brand logoni squeeze bo'lishidan saqlaydi */
 }
 
 .mirsaar-brand-mark {
@@ -162,6 +164,7 @@ p {
     font-size: 1.32rem;
     font-weight: 800;
     letter-spacing: -0.03em;
+    white-space: nowrap; /* FIX: matn wrap bo'lmasligi uchun */
 }
 
 .mirsaar-brand-copy small {
@@ -169,22 +172,25 @@ p {
     font-size: 0.76rem;
     letter-spacing: 0.24em;
     text-transform: uppercase;
+    white-space: nowrap; /* FIX */
 }
 
+/* ─── FIX: Nav links overflow muammosi ─── */
 .mirsaar-nav-links {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(1rem, 1.6vw, 2rem);
+    gap: clamp(0.6rem, 1.2vw, 2rem); /* FIX: min gap kamaytrildi */
     flex: 1;
     min-width: 0;
+    overflow: hidden; /* FIX: tashqariga chiqishini oldini oladi */
 }
 
 .mirsaar-nav-link {
     position: relative;
     padding: 0.25rem 0;
     color: #30231a;
-    font-size: 0.97rem;
+    font-size: clamp(0.82rem, 0.9vw, 0.97rem); /* FIX: fluid font */
     font-weight: 600;
     white-space: nowrap;
     transition: color 220ms ease;
@@ -215,10 +221,12 @@ p {
     transform-origin: left;
 }
 
+/* ─── FIX: Nav side yopishib qolmasligi ─── */
 .mirsaar-nav-side {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
+    flex-shrink: 0; /* FIX: squeeze bo'lmaydi */
 }
 
 .mirsaar-nav-chip {
@@ -235,6 +243,7 @@ p {
     font-weight: 800;
     letter-spacing: 0.22em;
     text-transform: uppercase;
+    white-space: nowrap; /* FIX */
 }
 
 .mirsaar-lang-switch,
@@ -329,11 +338,15 @@ p {
     width: fit-content;
 }
 
+/* ─── FIX: Hero grid — desktop da yopishib qolishining asosiy sababi ─── */
 .mirsaar-hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+    /* FIX: minmax(320px,...) o'rniga minmax(0,...) ishlatiladi —
+       chunki 320px fixed minimum kichik desktoplarda kolonnani majburan kengaytiradi
+       va ular bir-biriga yopishadi. */
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
     align-items: center;
-    gap: clamp(2.5rem, 4vw, 5rem);
+    gap: clamp(2rem, 3.5vw, 5rem); /* FIX: gap ham fluid qilinadi */
     flex: 1;
     padding: 3.5rem 0 2rem;
 }
@@ -361,6 +374,7 @@ p {
     background: linear-gradient(135deg, #f0d49d, #c2842f);
     box-shadow: 0 0 0 0 rgba(194, 132, 47, 0.38);
     animation: mirsaarPulse 2.6s infinite;
+    flex-shrink: 0;
 }
 
 .mirsaar-title {
@@ -516,14 +530,18 @@ p {
     font-size: 0.9rem;
 }
 
+/* ─── FIX: Stage — float cardlar chiqib ketmaslik uchun ─── */
 .mirsaar-stage {
     position: relative;
-    min-height: 38rem;
+    /* FIX: min-height float cardlarni ichida saqlash uchun etarli bo'lishi kerak */
+    min-height: 42rem;
 }
 
 .mirsaar-stage-main {
     position: relative;
-    width: min(100%, 35rem);
+    /* FIX: width 100% bo'lsa ham min-width yo'q — kichik kolonnada squeeze bo'ladi */
+    width: 100%;
+    max-width: 35rem; /* FIX: max-width bilan cheklanadi */
     margin-left: auto;
     padding: 1.15rem;
     border: 1px solid rgba(255, 255, 255, 0.09);
@@ -608,6 +626,7 @@ p {
     font-weight: 800;
     letter-spacing: 0.24em;
     text-transform: uppercase;
+    white-space: nowrap; /* FIX */
 }
 
 .mirsaar-stage-body {
@@ -634,7 +653,7 @@ p {
 .mirsaar-stage-title {
     margin-top: 0.8rem;
     font-family: var(--font-serif);
-    font-size: clamp(2.1rem, 4vw, 3.4rem);
+    font-size: clamp(1.8rem, 3.5vw, 3.4rem); /* FIX: clamp pastki qiymat tushirildi */
     line-height: 0.98;
     letter-spacing: -0.045em;
 }
@@ -722,12 +741,15 @@ p {
     height: 1.2rem;
 }
 
+/* ─── FIX: Float cardlar — desktop da absolute pozitsiya saqlanadi ─── */
 .mirsaar-float-card {
     position: absolute;
     display: flex;
     align-items: center;
     gap: 0.85rem;
-    min-width: 14rem;
+    /* FIX: min-width kamaytildi — kichik desktoplarda cardlar tashqariga chiqmaydi */
+    min-width: 12rem;
+    max-width: 16rem; /* FIX: haddan oshib ketmaydi */
     padding: 0.9rem 1rem;
     border: 1px solid rgba(154, 103, 38, 0.12);
     border-radius: 1.45rem;
@@ -736,6 +758,7 @@ p {
     -webkit-backdrop-filter: blur(18px);
     box-shadow: 0 22px 36px rgba(104, 71, 32, 0.12);
     animation: mirsaarDrift 7.4s ease-in-out infinite;
+    z-index: 10; /* FIX: stage-main ustida ko'rinadi */
 }
 
 .mirsaar-float-card strong {
@@ -744,6 +767,7 @@ p {
     font-size: 0.98rem;
     font-weight: 800;
     letter-spacing: -0.02em;
+    white-space: nowrap; /* FIX */
 }
 
 .mirsaar-float-card p {
@@ -756,23 +780,28 @@ p {
     font-weight: 800;
     letter-spacing: 0.18em;
     text-transform: uppercase;
+    white-space: nowrap; /* FIX */
 }
 
+/* FIX: Float card pozitsiyalari stage ichida qolishi uchun
+   left/right qiymatlari negative emas, stage chegarasida joylashadi */
 .mirsaar-float-card--top {
     top: 1.2rem;
     left: 0;
+    /* FIX: stage-main bilan overlap bo'lmasligi uchun z-index yuqori */
 }
 
 .mirsaar-float-card--side {
-    top: 48%;
+    top: 46%;
     right: 0;
+    transform: translateY(-50%);
     animation-duration: 8.6s;
     animation-direction: reverse;
 }
 
 .mirsaar-float-card--bottom {
     bottom: 1.2rem;
-    left: 2rem;
+    left: 1rem; /* FIX: 2rem edi, kichik ekranlarda chiqib ketmas uchun 1rem */
     animation-duration: 9.5s;
 }
 
@@ -1077,23 +1106,29 @@ p {
     bottom: -4rem;
 }
 
+/* ─── FIX: Story grid — minmax(320px) o'rniga minmax(0) ─── */
 .mirsaar-story-grid {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
-    gap: clamp(2rem, 4vw, 4rem);
+    /* FIX: minmax(320px, 1.05fr) → minmax(0, 1.05fr)
+       320px fixed minimum desktop 1120–1300px oralig'ida kolonnani majburan
+       kengaytiradi va ular bir-biriga yopishadi */
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: clamp(1.5rem, 3.5vw, 4rem); /* FIX: fluid gap */
     align-items: center;
 }
 
 .mirsaar-story-copy {
     max-width: 35rem;
+    /* FIX: copy container ham min-width 0 bo'lishi kerak */
+    min-width: 0;
 }
 
 .mirsaar-story-title {
     margin-top: 1rem;
     font-family: var(--font-serif);
-    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    font-size: clamp(2.4rem, 4.5vw, 4.6rem); /* FIX: kichikroq min qiymat */
     line-height: 0.96;
     letter-spacing: -0.05em;
     color: #18110c;
@@ -1133,6 +1168,7 @@ p {
     border-radius: 999px;
     color: var(--gold-strong);
     background: linear-gradient(135deg, rgba(255, 247, 230, 0.98), rgba(245, 218, 167, 0.82));
+    flex-shrink: 0; /* FIX */
 }
 
 .mirsaar-story-note-icon svg {
@@ -1166,7 +1202,7 @@ p {
 .mirsaar-story-quote p {
     margin: 0;
     color: #271c13;
-    font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+    font-size: clamp(1rem, 1.6vw, 1.45rem); /* FIX: fluid — kichik desktoplarda squeeze bo'lmas */
     font-style: italic;
     line-height: 1.6;
 }
@@ -1186,6 +1222,7 @@ p {
     border-radius: 1.25rem;
     background: rgba(255, 255, 255, 0.62);
     box-shadow: 0 14px 28px rgba(104, 71, 32, 0.06);
+    min-width: 0; /* FIX */
 }
 
 .mirsaar-story-point strong {
@@ -1245,6 +1282,7 @@ p {
     font-weight: 800;
     letter-spacing: 0.18em;
     text-transform: uppercase;
+    white-space: nowrap; /* FIX */
 }
 
 .mirsaar-device-desktop,
@@ -1258,6 +1296,7 @@ p {
 
 .mirsaar-device-desktop {
     z-index: 2;
+    /* FIX: width 100% bilan cheklanadi, fixed px emas */
     width: min(100%, 31rem);
     height: 19rem;
     padding: 0.9rem;
@@ -1373,6 +1412,7 @@ p {
     margin-top: 0.8rem;
 }
 
+/* ─── FIX: Craft section ─── */
 .mirsaar-craft-section {
     position: relative;
     overflow: hidden;
@@ -1415,23 +1455,28 @@ p {
     bottom: -5rem;
 }
 
+/* ─── FIX: Craft grid — minmax(320px) → minmax(0) ─── */
 .mirsaar-craft-grid {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
-    gap: clamp(2rem, 4vw, 4rem);
+    /* FIX: asosiy muammo shu edi — minmax(320px, 1.1fr) kichik desktoplarda
+       ikkinchi kolonnani 320px dan kam bo'lishiga yo'l bermaydi,
+       shu sabab ikkala kolonna yig'ilib container kengligidan oshadi */
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(1.5rem, 3.5vw, 4rem); /* FIX: fluid gap */
     align-items: center;
 }
 
 .mirsaar-craft-copy {
     max-width: 35rem;
+    min-width: 0; /* FIX */
 }
 
 .mirsaar-craft-title {
     margin-top: 1rem;
     font-family: var(--font-serif);
-    font-size: clamp(2.9rem, 5vw, 4.8rem);
+    font-size: clamp(2.4rem, 4.5vw, 4.8rem); /* FIX: kichikroq min */
     line-height: 0.96;
     letter-spacing: -0.05em;
     color: #17110c;
@@ -1464,6 +1509,7 @@ p {
         transform 220ms ease,
         border-color 220ms ease,
         box-shadow 220ms ease;
+    min-width: 0; /* FIX */
 }
 
 .mirsaar-craft-card:hover {
@@ -1563,11 +1609,13 @@ p {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     box-shadow: 0 14px 28px rgba(104, 71, 32, 0.08);
+    white-space: nowrap; /* FIX */
 }
 
 .mirsaar-craft-desktop {
     position: relative;
     z-index: 2;
+    /* FIX: width 100% bilan cheklanadi */
     width: min(100%, 34rem);
     padding: 0.9rem;
     border-radius: 1.85rem;
@@ -1602,9 +1650,11 @@ p {
     text-transform: uppercase;
 }
 
+/* ─── FIX: Craft screen sidebar — fixed 8rem kichik containerda yopishadi ─── */
 .mirsaar-craft-screen {
     display: grid;
-    grid-template-columns: 8rem 1fr;
+    /* FIX: 8rem fixed → min(8rem, 28%) — container kichik bo'lsa sidebar ham kichiklashadi */
+    grid-template-columns: min(8rem, 28%) 1fr;
     gap: 0.85rem;
     margin-top: 0.9rem;
     padding: 0.75rem;
@@ -1617,6 +1667,7 @@ p {
     display: grid;
     gap: 0.6rem;
     align-content: start;
+    min-width: 0; /* FIX */
 }
 
 .mirsaar-craft-line {
@@ -1632,6 +1683,7 @@ p {
 .mirsaar-craft-main {
     display: grid;
     gap: 0.8rem;
+    min-width: 0; /* FIX */
 }
 
 .mirsaar-craft-hero-band {
@@ -1720,6 +1772,7 @@ p {
     -webkit-backdrop-filter: blur(18px);
     box-shadow: 0 20px 34px rgba(90, 61, 26, 0.1);
     animation: mirsaarDrift 8.4s ease-in-out infinite;
+    /* FIX: min-width yo'q qilindi — mazmun o'lchami boshqaradi */
 }
 
 .mirsaar-craft-float strong {
@@ -1727,6 +1780,7 @@ p {
     font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: -0.02em;
+    white-space: nowrap; /* FIX */
 }
 
 .mirsaar-craft-float p {
@@ -1734,6 +1788,7 @@ p {
     color: var(--ink-muted);
     font-size: 0.78rem;
     line-height: 1.6;
+    white-space: nowrap; /* FIX */
 }
 
 .mirsaar-craft-float--left {
@@ -1758,103 +1813,60 @@ p {
     animation: mirsaarSpin 24s linear infinite;
 }
 
+/* ─── Animatsiyalar ─── */
 .mirsaar-reveal {
     opacity: 0;
     transform: translateY(22px);
     animation: mirsaarReveal 820ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-.mirsaar-reveal--delay-1 {
-    animation-delay: 0.14s;
-}
-
-.mirsaar-reveal--delay-2 {
-    animation-delay: 0.28s;
-}
-
-.mirsaar-reveal--delay-3 {
-    animation-delay: 0.42s;
-}
-
-.mirsaar-reveal--delay-4 {
-    animation-delay: 0.56s;
-}
+.mirsaar-reveal--delay-1 { animation-delay: 0.14s; }
+.mirsaar-reveal--delay-2 { animation-delay: 0.28s; }
+.mirsaar-reveal--delay-3 { animation-delay: 0.42s; }
+.mirsaar-reveal--delay-4 { animation-delay: 0.56s; }
 
 @keyframes mirsaarReveal {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes mirsaarPulse {
-    0%,
-    100% {
-        box-shadow: 0 0 0 0 rgba(194, 132, 47, 0.34);
-    }
-
-    60% {
-        box-shadow: 0 0 0 13px rgba(194, 132, 47, 0);
-    }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(194, 132, 47, 0.34); }
+    60%       { box-shadow: 0 0 0 13px rgba(194, 132, 47, 0); }
 }
 
 @keyframes mirsaarFloat {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
 }
 
 @keyframes mirsaarCraftFloat {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
 }
 
 @keyframes mirsaarCraftTilt {
-    0%,
-    100% {
-        transform: rotate(7deg) translateY(0);
-    }
-
-    50% {
-        transform: rotate(4deg) translateY(-8px);
-    }
+    0%, 100% { transform: rotate(7deg) translateY(0); }
+    50%      { transform: rotate(4deg) translateY(-8px); }
 }
 
 @keyframes mirsaarDrift {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-9px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-9px); }
 }
 
 @keyframes mirsaarSpin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 
+/* ════════════════════════════════════
+   MEDIA QUERIES
+   ════════════════════════════════════ */
+
+/* ─── FIX: 1120–1270px oralig'i — eng ko'p muammo bo'lgan zona ─── */
 @media (max-width: 1270px) {
     .mirsaar-nav-links {
-        gap: 1rem;
+        gap: clamp(0.5rem, 1vw, 1.2rem); /* FIX: yanada kichikroq */
     }
 
     .mirsaar-nav-chip {
@@ -1862,11 +1874,17 @@ p {
     }
 
     .mirsaar-stage {
-        min-height: 34rem;
+        min-height: 40rem; /* FIX: float cardlarga joy */
     }
 
     .mirsaar-float-card--top {
-        left: 1rem;
+        left: 0;
+    }
+
+    /* FIX: bu oraliqda story va craft gridlari ham squeeze bo'lishi mumkin */
+    .mirsaar-story-grid,
+    .mirsaar-craft-grid {
+        gap: clamp(1.2rem, 2.5vw, 3rem);
     }
 }
 
@@ -1895,6 +1913,7 @@ p {
 
     .mirsaar-stage-main {
         width: 100%;
+        max-width: 100%; /* FIX */
     }
 
     .mirsaar-story-grid {
@@ -2069,6 +2088,7 @@ p {
         position: relative;
         inset: auto;
         width: 100%;
+        max-width: 100%;
         transform: none !important;
     }
 
@@ -2170,6 +2190,7 @@ p {
         border-radius: 1.3rem;
     }
 
+    /* FIX: 540px da ham sidebar fluid bo'ladi */
     .mirsaar-craft-screen {
         grid-template-columns: 1fr;
         gap: 0.7rem;
@@ -2281,9 +2302,7 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
+    html { scroll-behavior: auto; }
 
     .mirsaar-reveal,
     .mirsaar-kicker-dot,
