@@ -1,10 +1,26 @@
 <div class="mirsaar-page" id="home" x-data="{ mobileOpen: false }">
     <div class="mirsaar-orb mirsaar-orb--left" aria-hidden="true"></div>
     <div class="mirsaar-orb mirsaar-orb--right" aria-hidden="true"></div>
+    <div class="mirsaar-tech-sky" aria-hidden="true">
+        <div class="mirsaar-tech-sky__mesh"></div>
+        <div class="mirsaar-tech-sky__beam mirsaar-tech-sky__beam--one"></div>
+        <div class="mirsaar-tech-sky__beam mirsaar-tech-sky__beam--two"></div>
+        <div class="mirsaar-tech-sky__beam mirsaar-tech-sky__beam--three"></div>
+        <div class="mirsaar-tech-panel mirsaar-tech-panel--left">
+            <span>const pipeline = leads.sync('mirsaar')</span>
+            <span>deploy.crm({ latency: 'low', uptime: '24/7' })</span>
+            <span>animate.hero({ mode: 'premium', depth: 3 })</span>
+        </div>
+        <div class="mirsaar-tech-panel mirsaar-tech-panel--right">
+            <span>&lt;Dashboard /&gt; ready for launch</span>
+            <span>git commit -m "ship premium flow"</span>
+            <span>admin.monitor({ services, inquiries, reviews })</span>
+        </div>
+        <div class="mirsaar-tech-orbit"></div>
+    </div>
 
     <div class="mirsaar-shell">
-        <section class="mirsaar-hero">
-            <div class="mirsaar-nav-shell">
+        <div class="mirsaar-nav-shell">
                 <header class="mirsaar-nav">
                     <a href="#home" class="mirsaar-brand" aria-label="Mirsaar">
                         <span class="mirsaar-brand-mark" aria-hidden="true">
@@ -28,7 +44,7 @@
                     </nav>
 
                     <div class="mirsaar-nav-side">
-                        <span class="mirsaar-nav-chip">Luxury UI</span>
+                        <a href="{{ route('admin.login') }}" class="mirsaar-admin-link">Admin</a>
 
                         <div class="mirsaar-lang-switch" aria-label="Language switcher">
                             @foreach ($languages as $language)
@@ -74,6 +90,10 @@
                         </a>
                     @endforeach
 
+                    <a href="{{ route('admin.login') }}" class="mirsaar-mobile-link mirsaar-mobile-link--admin" @click="mobileOpen = false">
+                        Admin panel
+                    </a>
+
                     <div class="mirsaar-mobile-lang-row">
                         @foreach ($languages as $language)
                             <button
@@ -86,25 +106,26 @@
                         @endforeach
                     </div>
                 </div>
-            </div>
+        </div>
 
+        <section class="mirsaar-hero">
             <div class="mirsaar-hero-grid">
                 <div class="mirsaar-copy">
                     <p class="mirsaar-kicker mirsaar-reveal">
                         <span class="mirsaar-kicker-dot" aria-hidden="true"></span>
-                        premium header / icon motion / full screen feel
+                        software studio / code motion / full screen feel
                     </p>
 
                     <h1 class="mirsaar-title mirsaar-reveal mirsaar-reveal--delay-1">
-                        <span>Premium</span>
+                        <span>Software</span>
                         <em>Mirsaar</em>
-                        <span>taassuroti uchun full-screen intro.</span>
+                        <span>uchun premium first-screen.</span>
                     </h1>
 
                     <p class="mirsaar-lead mirsaar-reveal mirsaar-reveal--delay-2">
-                        Header qismi screenshot ruhida saqlandi, lekin ko'rinish ancha boyitildi:
-                        oltin aksentlar, premium iconlar, yumshoq glow, chuqur glass layerlar va silliq
-                        animatsiyalar bilan brend birinchi ekrandanoq kuchli ko'rinadi.
+                        Header endi to'liq eni bo'ylab ishlaydi: dasturlash ruhidagi harakatlanuvchi fon,
+                        premium glass qatlamlar, CRM va admin yo'nalishiga mos vizual ritm bilan birinchi
+                        ekrandanoq kuchli taassurot beradi.
                     </p>
 
                     <div class="mirsaar-chip-row mirsaar-reveal mirsaar-reveal--delay-2">
@@ -146,8 +167,8 @@
                             </svg>
                         </span>
                         <div>
-                            <p class="mirsaar-float-label">Fast Contact</p>
-                            <strong>One tap NFC</strong>
+                            <p class="mirsaar-float-label">Fast Launch</p>
+                            <strong>Live deploy</strong>
                         </div>
                     </article>
 
@@ -157,7 +178,7 @@
                                 <span></span>
                                 <span></span>
                                 <span></span>
-                                <p>Signature arrival</p>
+                                <p>Build is live</p>
                             </div>
 
                             <span class="mirsaar-stage-badge">MIRSAAR</span>
@@ -165,8 +186,8 @@
 
                         <div class="mirsaar-stage-body">
                             <div class="mirsaar-stage-heading">
-                                <p class="mirsaar-stage-overline">Luxury landing system</p>
-                                <h2 class="mirsaar-stage-title">Premium header with visual depth.</h2>
+                                <p class="mirsaar-stage-overline">Software launch system</p>
+                                <h2 class="mirsaar-stage-title">Full-width header with code-driven motion.</h2>
                             </div>
 
                             <div class="mirsaar-stage-emblem" aria-hidden="true">
@@ -188,8 +209,8 @@
                                         </svg>
                                     </span>
                                     <div>
-                                        <strong>Luxury navbar</strong>
-                                        <p>Screenshot kayfiyati saqlangan, ammo premiumroq ishlab chiqilgan.</p>
+                                        <strong>Full-width navbar</strong>
+                                        <p>Sticky ishlashi yaxshilandi, admin kirish esa yuqori o'ng tomonga chiqdi.</p>
                                     </div>
                                 </li>
                                 <li>
@@ -200,8 +221,8 @@
                                         </svg>
                                     </span>
                                     <div>
-                                        <strong>Icon va glow effects</strong>
-                                        <p>Depth, light va motion birinchi ko'rinishni qimmatlashtiradi.</p>
+                                        <strong>Code motion va glow effects</strong>
+                                        <p>Dasturlash ruhidagi beam, panel va grid animatsiyasi vizualni boyitadi.</p>
                                     </div>
                                 </li>
                                 <li>
@@ -302,8 +323,8 @@
                     </h2>
 
                     <p class="mirsaar-brand-showcase-copy">
-                        Brendingiz uchun premium saytlar, NFC vizitkalar va taassurot qoldiradigan
-                        digital tajriba yaratamiz. Har bir detalda aniqlik, premium ritm va vizual daraja saqlanadi.
+                        Brendingiz uchun premium saytlar, CRM oqimlari va taassurot qoldiradigan
+                        digital tajriba yaratamiz. Har bir detalda aniqlik, premium ritm va texnik ishonch saqlanadi.
                     </p>
 
                     <div class="mirsaar-brand-showcase-actions">
@@ -357,7 +378,7 @@
                             </p>
                         </article>
 
-                        <article class="mirsaar-story-quote" id="reviews">
+                        <article class="mirsaar-story-quote">
                             <p>
                                 "Yaxshi sahifa shunchaki bezak emas. U foydalanuvchiga ishonch,
                                 brendga esa daraja beradi."
@@ -476,8 +497,8 @@
                                 </span>
                                 <div>
                                     <small>stable delivery</small>
-                                    <strong>Web va NFC bitta premium oqimga ulanadi</strong>
-                                    <p>Vizitka, landing va aloqa jarayoni uzilmaydi, shu sabab first impression kuchliroq qoladi.</p>
+                                    <strong>Web, CRM va admin bitta premium oqimga ulanadi</strong>
+                                    <p>Landing, boshqaruv paneli va aloqa jarayoni uzilmaydi, shu sabab first impression kuchliroq qoladi.</p>
                                 </div>
                             </article>
                         </div>
@@ -498,7 +519,7 @@
                             <div class="mirsaar-craft-pill-row" aria-hidden="true">
                                 <span>Art direction</span>
                                 <span>UX clarity</span>
-                                <span>NFC ready</span>
+                                <span>Code motion</span>
                             </div>
 
                             <article class="mirsaar-craft-desktop">
@@ -558,54 +579,75 @@
                     <p class="mirsaar-works-kicker">bizning ishlar</p>
                     <h2 class="mirsaar-works-title">BIZNING ISHLAR</h2>
                     <p class="mirsaar-works-lead">
-                        Dasturlash va web-product yo'nalishidagi chiroyli project previewlar 2 ta yo'lakda ko'rinadi.
-                        Endi kartalar ichida haqiqiy portfolio rasmlari ishlaydi, shu sabab showcase ancha jonli ko'rinadi.
+                        DevSuite CRM blokining tagida portfolio previewlar screenshotdagi kayfiyatda
+                        ikki qatorli oqim bo'lib ko'rinadi. Asosiy preview yuqorida yirik ko'rsatiladi,
+                        pastda esa loyihalar carousel ritmida yuradi.
                     </p>
                 </div>
 
-                <div class="mirsaar-works-marquee">
+                @php($crmProject = $portfolioRows[0][0])
+
+                <div class="mirsaar-crm-feature mirsaar-reveal mirsaar-reveal--delay-1">
+                    <div class="mirsaar-crm-feature__copy">
+                        <p class="mirsaar-crm-feature__eyebrow">{{ $crmProject['label'] }}</p>
+                        <h3 class="mirsaar-crm-feature__title">{{ $crmProject['title'] }}</h3>
+                        <p class="mirsaar-crm-feature__lead">
+                            CRM showcase yuqorida yirik preview bilan ajratildi, tagiga esa qora-oltin
+                            ruhdagi oqadigan rasm lentasi qo'shildi. Shu bilan section ancha jonli,
+                            premium va screenshotga yaqin ko'rinish oldi.
+                        </p>
+
+                        <div class="mirsaar-crm-feature__meta">
+                            <span>Sales Pipeline</span>
+                            <span>Lead Tracking</span>
+                            <span>Client Activity</span>
+                        </div>
+                    </div>
+
+                    <div class="mirsaar-crm-feature__stage">
+                        <div class="mirsaar-crm-feature__window">
+                            <div class="mirsaar-crm-feature__window-bar" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="mirsaar-crm-feature__window-screen">
+                                <img
+                                    src="{{ asset($crmProject['image']) }}"
+                                    alt="{{ $crmProject['title'] }} preview"
+                                    class="mirsaar-crm-feature__image"
+                                    loading="lazy"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="mirsaar-crm-feature__badge">signature CRM showcase</div>
+                    </div>
+                </div>
+
+                <div class="mirsaar-crm-gallery">
                     @foreach ($portfolioRows as $rowIndex => $projects)
-                        <div class="mirsaar-works-row {{ $rowIndex % 2 === 1 ? 'is-reverse' : '' }}">
-                            <div class="mirsaar-works-track">
+                        <div class="mirsaar-crm-gallery-row {{ $rowIndex % 2 === 1 ? 'is-reverse' : '' }}">
+                            <div class="mirsaar-crm-gallery-track">
                                 @for ($copy = 0; $copy < 2; $copy++)
                                     @foreach ($projects as $project)
                                         <article
-                                            class="mirsaar-work-card mirsaar-work-card--{{ $project['theme'] }} mirsaar-work-card--{{ $project['layout'] }}"
+                                            class="mirsaar-crm-gallery-card mirsaar-work-card--{{ $project['theme'] }}"
                                             @if ($copy === 1) aria-hidden="true" @endif
                                         >
-                                            <div class="mirsaar-work-card__copy">
-                                                <p class="mirsaar-work-card__label">{{ $project['label'] }}</p>
-                                                <h3 class="mirsaar-work-card__title">{{ $project['title'] }}</h3>
+                                            <div class="mirsaar-crm-gallery-card__frame">
+                                                <img
+                                                    src="{{ asset($project['image']) }}"
+                                                    alt="{{ $project['title'] }} preview"
+                                                    class="mirsaar-crm-gallery-card__image"
+                                                    loading="lazy"
+                                                >
                                             </div>
 
-                                            <div class="mirsaar-work-card__preview" aria-hidden="true">
-                                                <div class="mirsaar-work-card__desktop">
-                                                    <div class="mirsaar-work-card__desktop-top">
-                                                        <span></span>
-                                                        <span></span>
-                                                        <span></span>
-                                                    </div>
-
-                                                    <div class="mirsaar-work-card__desktop-screen">
-                                                        <img
-                                                            src="{{ asset($project['image']) }}"
-                                                            alt="{{ $project['title'] }} preview"
-                                                            class="mirsaar-work-card__image"
-                                                            loading="lazy"
-                                                        >
-                                                    </div>
-                                                </div>
-
-                                                <div class="mirsaar-work-card__phone">
-                                                    <div class="mirsaar-work-card__phone-screen">
-                                                        <img
-                                                            src="{{ asset($project['image']) }}"
-                                                            alt=""
-                                                            class="mirsaar-work-card__phone-image"
-                                                            loading="lazy"
-                                                        >
-                                                    </div>
-                                                </div>
+                                            <div class="mirsaar-crm-gallery-card__caption">
+                                                <p class="mirsaar-crm-gallery-card__label">{{ $project['label'] }}</p>
+                                                <h3 class="mirsaar-crm-gallery-card__title">{{ $project['title'] }}</h3>
                                             </div>
                                         </article>
                                     @endforeach
@@ -616,7 +658,90 @@
                 </div>
             </article>
 
-            <article class="mirsaar-service-promo">
+            <article class="mirsaar-contact-strip" id="contact">
+                <div class="mirsaar-contact-strip__head">
+                    <p class="mirsaar-section-kicker">contact profiles</p>
+                    <h2 class="mirsaar-contact-strip__title">Tez bog'lanish uchun tayyor kontakt kartalari</h2>
+                    <p class="mirsaar-contact-strip__lead">
+                        Karuseldan keyin asosiy aloqa nuqtalari profil formatida joylashtirildi:
+                        kimga yozish, qaysi oqimdan boshlash va qanday tempda javob olish aniq ko'rinadi.
+                    </p>
+                </div>
+
+                <div class="mirsaar-contact-strip__grid">
+                    @foreach ($contactCards as $card)
+                        <a href="{{ $card['href'] }}" class="mirsaar-contact-card">
+                            <span class="mirsaar-contact-card__avatar">{{ $card['initials'] }}</span>
+
+                            <div class="mirsaar-contact-card__copy">
+                                <p class="mirsaar-contact-card__role">{{ $card['role'] }}</p>
+                                <h3 class="mirsaar-contact-card__title">{{ $card['title'] }}</h3>
+                                <strong class="mirsaar-contact-card__value">{{ $card['value'] }}</strong>
+                                <p class="mirsaar-contact-card__meta">{{ $card['meta'] }}</p>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </article>
+
+            <article class="mirsaar-reviews-section" id="reviews" data-swiper-root>
+                <div class="mirsaar-reviews-section__head">
+                    <div>
+                        <p class="mirsaar-section-kicker">mijozlar fikri</p>
+                        <h2 class="mirsaar-reviews-section__title">Sharhlar</h2>
+                        <p class="mirsaar-reviews-section__lead">
+                            Asosiy sahifa uchun premium ko'rinishda slider qilindi: strelkalar, yumshoq
+                            autoplay va kartalarda yengil depth bilan.
+                        </p>
+                    </div>
+
+                    <div class="mirsaar-reviews-section__controls">
+                        <button type="button" class="mirsaar-reviews-button" data-swiper-prev aria-label="Oldingi sharh">
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            </svg>
+                        </button>
+
+                        <button type="button" class="mirsaar-reviews-button is-next" data-swiper-next aria-label="Keyingi sharh">
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="swiper mirsaar-reviews-swiper" data-swiper data-swiper-variant="reviews">
+                    <div class="swiper-wrapper">
+                        @foreach ($testimonials as $review)
+                            <div class="swiper-slide">
+                                <article class="mirsaar-review-card">
+                                    <div class="mirsaar-review-card__stars" aria-label="{{ $review['rating'] }} yulduz">
+                                        @for ($star = 1; $star <= 5; $star++)
+                                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                                <path d="M12 4L14.25 8.6L19.3 9.35L15.65 12.9L16.5 17.95L12 15.55L7.5 17.95L8.35 12.9L4.7 9.35L9.75 8.6L12 4Z" fill="currentColor" />
+                                            </svg>
+                                        @endfor
+                                    </div>
+
+                                    <span class="mirsaar-review-card__quote-mark" aria-hidden="true">99</span>
+
+                                    <p class="mirsaar-review-card__quote">{{ $review['quote'] }}</p>
+
+                                    <div class="mirsaar-review-card__author">
+                                        <strong>{{ $review['author'] }}</strong>
+                                        <span>{{ $review['company'] }}</span>
+                                        <small>{{ $review['date'] }}</small>
+                                    </div>
+                                </article>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="mirsaar-reviews-section__pagination" data-swiper-pagination></div>
+            </article>
+
+            <article class="mirsaar-support-panel" id="support">
                 <div class="mirsaar-brand-pattern mirsaar-brand-pattern--tl" aria-hidden="true">
                     <svg viewBox="0 0 64 64" fill="none">
                         <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
@@ -646,23 +771,137 @@
                     </svg>
                 </div>
 
-                <div class="mirsaar-service-promo-card">
-                    <h2 class="mirsaar-service-promo-title">Наши Услуги</h2>
-                    <p class="mirsaar-service-promo-copy">
-                        От разработки брендинга до продвижения в топовые позиции.
-                    </p>
+                <div class="mirsaar-support-panel__grid">
+                    <div class="mirsaar-support-panel__copy">
+                        <p class="mirsaar-section-kicker">bizga murojaat</p>
+                        <h2 class="mirsaar-support-panel__title">Qo'llab-quvvatlash va yangi proekt briefi bir formda</h2>
+                        <p class="mirsaar-support-panel__lead">
+                            Ism, telefon, xizmat turi va proekt haqida qisqacha ma'lumot qoldiring.
+                            Admin panel orqali har bir murojaat alohida ko'rinadi va status bilan kuzatiladi.
+                        </p>
 
-                    <a href="#services" class="mirsaar-showcase-button mirsaar-showcase-button--primary">
-                        Смотреть все услуги
-                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M7 12H17" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
-                            <path d="M12 7L17 12L12 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-                        </svg>
-                    </a>
+                        <div class="mirsaar-support-panel__points">
+                            <article>
+                                <strong>Tez javob</strong>
+                                <span>Yangi lead bir joyga tushadi va admin darhol ko'radi.</span>
+                            </article>
+                            <article>
+                                <strong>Xizmat tanlash</strong>
+                                <span>Landing, CRM, admin panel yoki support bo'limini to'g'ri tanlaysiz.</span>
+                            </article>
+                            <article>
+                                <strong>Premium oqim</strong>
+                                <span>Public form, baza va admin qismi bir ritmda yig'ildi.</span>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="mirsaar-support-panel__form-card">
+                        @if ($inquirySent)
+                            <div class="mirsaar-support-success">
+                                Murojaatingiz yuborildi. Tez orada siz bilan bog'lanamiz.
+                            </div>
+                        @endif
+
+                        @error('form')
+                            <div class="mirsaar-support-error">{{ $message }}</div>
+                        @enderror
+
+                        <form wire:submit="submitInquiry" class="mirsaar-support-form">
+                            <div class="mirsaar-support-form__grid">
+                                <label class="mirsaar-support-field">
+                                    <span>Xizmat yoki qism</span>
+                                    <select wire:model="service_id">
+                                        <option value="">Tanlang</option>
+                                        @foreach ($serviceOptions as $service)
+                                            <option value="{{ $service['id'] }}">{{ $service['title'] }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('service_id')
+                                        <small>{{ $message }}</small>
+                                    @enderror
+                                </label>
+
+                                <label class="mirsaar-support-field">
+                                    <span>Ism</span>
+                                    <input type="text" wire:model="name" placeholder="Ismingiz">
+                                    @error('name')
+                                        <small>{{ $message }}</small>
+                                    @enderror
+                                </label>
+
+                                <label class="mirsaar-support-field">
+                                    <span>Telefon</span>
+                                    <input type="text" wire:model="phone" placeholder="+998 ...">
+                                    @error('phone')
+                                        <small>{{ $message }}</small>
+                                    @enderror
+                                </label>
+
+                                <label class="mirsaar-support-field">
+                                    <span>Email</span>
+                                    <input type="email" wire:model="email" placeholder="hello@example.com">
+                                    @error('email')
+                                        <small>{{ $message }}</small>
+                                    @enderror
+                                </label>
+
+                                <label class="mirsaar-support-field">
+                                    <span>Kompaniya</span>
+                                    <input type="text" wire:model="company" placeholder="Kompaniya nomi">
+                                    @error('company')
+                                        <small>{{ $message }}</small>
+                                    @enderror
+                                </label>
+
+                                <label class="mirsaar-support-field">
+                                    <span>Qulay aloqa</span>
+                                    <select wire:model="preferred_contact">
+                                        <option value="phone">Telefon</option>
+                                        <option value="telegram">Telegram</option>
+                                        <option value="email">Email</option>
+                                    </select>
+                                    @error('preferred_contact')
+                                        <small>{{ $message }}</small>
+                                    @enderror
+                                </label>
+
+                                <label class="mirsaar-support-field">
+                                    <span>Taxminiy byudjet</span>
+                                    <select wire:model="budget_range">
+                                        <option value="1000-3000">$1,000 - $3,000</option>
+                                        <option value="3000-7000">$3,000 - $7,000</option>
+                                        <option value="7000-15000">$7,000 - $15,000</option>
+                                        <option value="15000+">$15,000+</option>
+                                    </select>
+                                    @error('budget_range')
+                                        <small>{{ $message }}</small>
+                                    @enderror
+                                </label>
+                            </div>
+
+                            <label class="mirsaar-support-field">
+                                <span>Proekt haqida</span>
+                                <textarea wire:model="project_summary" rows="6" placeholder="Loyiha maqsadi, kerakli bo'limlar va deadline haqida yozing"></textarea>
+                                @error('project_summary')
+                                    <small>{{ $message }}</small>
+                                @enderror
+                            </label>
+
+                            <button type="submit" class="mirsaar-button mirsaar-button--primary mirsaar-support-submit">
+                                Yuborish
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M7 17L17 7" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                                    <path d="M9 7H17V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
                 </div>
+
             </article>
 
-            <footer class="mirsaar-footer" id="contact">
+            <footer class="mirsaar-footer" id="footer">
                 <div class="mirsaar-footer__grid">
                     <div class="mirsaar-footer__brand mirsaar-reveal">
                         <a href="#home" class="mirsaar-footer__brand-link" aria-label="Mirsaar">
@@ -681,7 +920,7 @@
                         </a>
 
                         <p class="mirsaar-footer__lead">
-                            Premium saytlar, NFC vizitkalar va kuchli first impression beradigan
+                            Premium saytlar, CRM oqimlari va kuchli first impression beradigan
                             raqamli taqdimotlar yaratamiz. Har bir detal brend qadrini oshirishi uchun ishlanadi.
                         </p>
 

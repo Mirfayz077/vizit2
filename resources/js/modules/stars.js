@@ -1,4 +1,8 @@
 function initStars() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+
     const canvas = document.createElement('canvas');
 
     canvas.style.position = 'fixed';
@@ -10,35 +14,61 @@ function initStars() {
 
     const ctx = canvas.getContext('2d');
 
-    const COLORS = [
-        '139, 92, 246',   // purple
-        '56, 189, 248',   // cyan
-        '52, 211, 153',   // green
-        '248, 113, 113',  // coral
-        '251, 191, 36'    // amber
+    if (!ctx) {
+        return;
+    }
+
+    const colors = [
+        '139, 92, 246',
+        '56, 189, 248',
+        '52, 211, 153',
+        '248, 113, 113',
+        '251, 191, 36',
     ];
 
+    let settings;
     let stars = [];
+    let frame = 0;
+
+    function getSettings() {
+        const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+        const lowPowerDevice = typeof navigator.deviceMemory === 'number' && navigator.deviceMemory <= 4;
+
+        return {
+            width: window.innerWidth,
+            height: window.innerHeight,
+            isMobile,
+            density: Math.min(window.devicePixelRatio || 1, isMobile ? 1 : 1.5),
+            starCount: isMobile ? (lowPowerDevice ? 24 : 36) : 90,
+            glowRadius: isMobile ? 0 : 6,
+            frameStep: isMobile ? 2 : 1,
+            speedBoost: isMobile ? 0.7 : 1,
+        };
+    }
 
     function randomColor() {
-        return COLORS[Math.floor(Math.random() * COLORS.length)];
+        return colors[Math.floor(Math.random() * colors.length)];
     }
 
     function createStars() {
-        stars = Array.from({ length: 120 }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            r: Math.random() * 1.8 + 0.3,
-            baseAlpha: Math.random() * 0.5 + 0.3,
+        stars = Array.from({ length: settings.starCount }, () => ({
+            x: Math.random() * settings.width,
+            y: Math.random() * settings.height,
+            r: settings.isMobile ? Math.random() * 1.1 + 0.25 : Math.random() * 1.8 + 0.3,
+            baseAlpha: Math.random() * (settings.isMobile ? 0.3 : 0.5) + 0.24,
             color: randomColor(),
-            speed: Math.random() * 0.3 + 0.05,
-            phase: Math.random() * Math.PI * 2
+            speed: (Math.random() * 0.3 + 0.05) * settings.speedBoost,
+            phase: Math.random() * Math.PI * 2,
         }));
     }
 
     function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        settings = getSettings();
+        canvas.width = Math.floor(settings.width * settings.density);
+        canvas.height = Math.floor(settings.height * settings.density);
+        canvas.style.width = `${settings.width}px`;
+        canvas.style.height = `${settings.height}px`;
+        ctx.setTransform(settings.density, 0, 0, settings.density, 0, 0);
         createStars();
     }
 
@@ -46,35 +76,49 @@ function initStars() {
     resize();
 
     function draw(time) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        frame = (frame + 1) % settings.frameStep;
 
-        stars.forEach(s => {
-            // ✨ TWINKLE EFFECT
-            const glow = Math.sin(time * 0.002 + s.phase) * 0.5 + 0.5;
-            const alpha = s.baseAlpha * glow;
+        if (frame !== 0) {
+            requestAnimationFrame(draw);
+            return;
+        }
 
-            // soft movement (floating)
-            s.y += s.speed;
-            if (s.y > canvas.height) s.y = 0;
+        ctx.clearRect(0, 0, settings.width, settings.height);
 
-            // MAIN STAR
+        stars.forEach((star) => {
+            const glow = Math.sin(time * 0.002 + star.phase) * 0.5 + 0.5;
+            const alpha = star.baseAlpha * glow;
+
+            star.y += star.speed;
+
+            if (star.y > settings.height) {
+                star.y = 0;
+            }
+
             ctx.beginPath();
-            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${s.color}, ${alpha})`;
+            ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${star.color}, ${alpha})`;
             ctx.fill();
 
-            // 🌟 GLOW EFFECT (premium look)
+            if (settings.glowRadius === 0) {
+                return;
+            }
+
             const gradient = ctx.createRadialGradient(
-                s.x, s.y, 0,
-                s.x, s.y, s.r * 6
+                star.x,
+                star.y,
+                0,
+                star.x,
+                star.y,
+                star.r * settings.glowRadius,
             );
 
-            gradient.addColorStop(0, `rgba(${s.color}, ${alpha * 0.4})`);
+            gradient.addColorStop(0, `rgba(${star.color}, ${alpha * 0.4})`);
             gradient.addColorStop(1, 'rgba(0,0,0,0)');
 
             ctx.beginPath();
             ctx.fillStyle = gradient;
-            ctx.arc(s.x, s.y, s.r * 6, 0, Math.PI * 2);
+            ctx.arc(star.x, star.y, star.r * settings.glowRadius, 0, Math.PI * 2);
             ctx.fill();
         });
 
@@ -84,4 +128,20 @@ function initStars() {
     requestAnimationFrame(draw);
 }
 
-document.addEventListener('DOMContentLoaded', initStars);
+function bootStars() {
+    const run = () => {
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(initStars, { timeout: 1200 });
+        } else {
+            window.setTimeout(initStars, 250);
+        }
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', run, { once: true });
+    } else {
+        run();
+    }
+}
+
+bootStars();
