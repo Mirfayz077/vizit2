@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="100" y1="80" x2="1510" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07171B"/>
+      <stop offset="1" stop-color="#102830"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="430" y1="214" x2="1280" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#58D1C9"/>
+      <stop offset="1" stop-color="#184E5A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" rx="44" fill="url(#bg)"/>
+  <rect x="74" y="74" width="1452" height="852" rx="40" fill="#081319" stroke="#5DC9C2" stroke-opacity=".2" stroke-width="2"/>
+  <rect x="116" y="116" width="1368" height="56" rx="20" fill="#0D1B22"/>
+  <circle cx="154" cy="144" r="8" fill="#FF9271"/>
+  <circle cx="182" cy="144" r="8" fill="#F0D36F"/>
+  <circle cx="210" cy="144" r="8" fill="#71E0A4"/>
+  <text x="252" y="153" fill="#E9FAF8" font-family="Arial, sans-serif" font-size="30" font-weight="700">DeployBoard Cloud</text>
+  <rect x="116" y="208" width="500" height="310" rx="32" fill="url(#hero)"/>
+  <text x="158" y="286" fill="#062027" font-family="Arial, sans-serif" font-size="48" font-weight="700">Track uptime, deploys and incidents</text>
+  <text x="158" y="336" fill="#0A2A34" font-family="Arial, sans-serif" font-size="24">Operational clarity for product, infra and support teams.</text>
+  <rect x="158" y="392" width="178" height="48" rx="16" fill="#072029"/>
+  <text x="206" y="423" fill="#E7F7F4" font-family="Arial, sans-serif" font-size="22" font-weight="700">Open status</text>
+  <rect x="650" y="208" width="834" height="310" rx="32" fill="#0E1B22"/>
+  <rect x="690" y="252" width="356" height="226" rx="28" fill="#112630"/>
+  <rect x="1076" y="252" width="368" height="86" rx="24" fill="#122730"/>
+  <rect x="1076" y="364" width="368" height="114" rx="24" fill="#122730"/>
+  <path d="M726 432C772 384 814 402 850 352C886 302 936 322 982 274" stroke="#65D8CF" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="982" cy="274" r="16" fill="#65D8CF"/>
+  <rect x="116" y="552" width="276" height="296" rx="30" fill="#0C1A21"/>
+  <rect x="428" y="552" width="420" height="296" rx="30" fill="#0C1A21"/>
+  <rect x="884" y="552" width="600" height="296" rx="30" fill="#0C1A21"/>
+  <rect x="152" y="594" width="204" height="90" rx="24" fill="#11242D"/>
+  <rect x="152" y="704" width="204" height="104" rx="24" fill="#11242D"/>
+  <rect x="466" y="594" width="344" height="214" rx="24" fill="#11242D"/>
+  <rect x="924" y="594" width="258" height="214" rx="24" fill="#11242D"/>
+  <rect x="1208" y="594" width="236" height="214" rx="24" fill="#11242D"/>
+</svg>

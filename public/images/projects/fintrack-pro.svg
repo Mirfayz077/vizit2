@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1490" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14100B"/>
+      <stop offset="1" stop-color="#2C2116"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" rx="44" fill="url(#bg)"/>
+  <rect x="72" y="72" width="1456" height="856" rx="40" fill="#120E0A" stroke="#E0B666" stroke-opacity=".18" stroke-width="2"/>
+  <rect x="112" y="112" width="1376" height="56" rx="20" fill="#19130F"/>
+  <circle cx="150" cy="140" r="8" fill="#FF9571"/>
+  <circle cx="178" cy="140" r="8" fill="#F0D270"/>
+  <circle cx="206" cy="140" r="8" fill="#79D59F"/>
+  <text x="244" y="150" fill="#F9EDD9" font-family="Arial, sans-serif" font-size="30" font-weight="700">Fintrack Pro Dashboard</text>
+  <rect x="112" y="204" width="1376" height="232" rx="32" fill="#17120D"/>
+  <rect x="154" y="246" width="248" height="148" rx="24" fill="#21180F"/>
+  <rect x="430" y="246" width="248" height="148" rx="24" fill="#21180F"/>
+  <rect x="706" y="246" width="248" height="148" rx="24" fill="#21180F"/>
+  <rect x="982" y="246" width="230" height="148" rx="24" fill="#21180F"/>
+  <rect x="1238" y="246" width="210" height="148" rx="24" fill="#E0B666"/>
+  <text x="1284" y="330" fill="#20160C" font-family="Arial, sans-serif" font-size="42" font-weight="700">+18%</text>
+  <rect x="112" y="468" width="848" height="380" rx="32" fill="#17120D"/>
+  <path d="M176 766C258 708 314 692 392 622C470 552 534 570 608 514C676 462 772 484 896 588" stroke="#E0B666" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="896" cy="588" r="16" fill="#E0B666"/>
+  <rect x="992" y="468" width="496" height="380" rx="32" fill="#17120D"/>
+  <rect x="1034" y="510" width="412" height="92" rx="24" fill="#22180F"/>
+  <rect x="1034" y="626" width="412" height="92" rx="24" fill="#22180F"/>
+  <rect x="1034" y="742" width="412" height="64" rx="24" fill="#22180F"/>
+</svg>

@@ -265,7 +265,9 @@
 
                     <h2 class="mirsaar-brand-showcase-title">
                         <span>MIRSAAR</span>
+
                         <em>digital</em>
+
                     </h2>
 
                     <p class="mirsaar-brand-showcase-copy">
@@ -280,6 +282,12 @@
                     <div class="mirsaar-brand-showcase-actions">
                         <a href="#contact" class="mirsaar-showcase-button mirsaar-showcase-button--primary">
                             Loyihani boshlash
+                        </a>
+                        <a href="#services" class="mirsaar-showcase-button mirsaar-showcase-button--secondary">
+                            Xizmatlar
+                        </a>
+                        <a href="#reviews" class="mirsaar-showcase-button mirsaar-showcase-button--dark">
+                            Sharhlar
                         </a>
                     </div>
                 </div>
@@ -339,7 +347,7 @@
                         </div>
                     </div>
 
-                    <div class="mirsaar-story-visual" id="projects">
+                    <div class="mirsaar-story-visual">
                         <div class="mirsaar-story-glow" aria-hidden="true"></div>
 
                         <article class="mirsaar-device-stage">
@@ -517,6 +525,195 @@
                     </div>
                 </div>
             </article>
+
+            <article class="mirsaar-works-section" id="projects">
+                <div class="mirsaar-works-head mirsaar-reveal">
+                    <p class="mirsaar-works-kicker">bizning ishlar</p>
+                    <h2 class="mirsaar-works-title">BIZNING ISHLAR</h2>
+                    <p class="mirsaar-works-lead">
+                        Dasturlash va web-product yo'nalishidagi chiroyli project previewlar 2 ta yo'lakda ko'rinadi.
+                        Endi kartalar ichida haqiqiy portfolio rasmlari ishlaydi, shu sabab showcase ancha jonli ko'rinadi.
+                    </p>
+                </div>
+
+                <div class="mirsaar-works-marquee">
+                    @foreach ($portfolioRows as $rowIndex => $projects)
+                        <div class="mirsaar-works-row {{ $rowIndex % 2 === 1 ? 'is-reverse' : '' }}">
+                            <div class="mirsaar-works-track">
+                                @for ($copy = 0; $copy < 2; $copy++)
+                                    @foreach ($projects as $project)
+                                        <article
+                                            class="mirsaar-work-card mirsaar-work-card--{{ $project['theme'] }} mirsaar-work-card--{{ $project['layout'] }}"
+                                            @if ($copy === 1) aria-hidden="true" @endif
+                                        >
+                                            <div class="mirsaar-work-card__copy">
+                                                <p class="mirsaar-work-card__label">{{ $project['label'] }}</p>
+                                                <h3 class="mirsaar-work-card__title">{{ $project['title'] }}</h3>
+                                            </div>
+
+                                            <div class="mirsaar-work-card__preview" aria-hidden="true">
+                                                <div class="mirsaar-work-card__desktop">
+                                                    <div class="mirsaar-work-card__desktop-top">
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+
+                                                    <div class="mirsaar-work-card__desktop-screen">
+                                                        <img
+                                                            src="{{ asset($project['image']) }}"
+                                                            alt="{{ $project['title'] }} preview"
+                                                            class="mirsaar-work-card__image"
+                                                            loading="lazy"
+                                                        >
+                                                    </div>
+                                                </div>
+
+                                                <div class="mirsaar-work-card__phone">
+                                                    <div class="mirsaar-work-card__phone-screen">
+                                                        <img
+                                                            src="{{ asset($project['image']) }}"
+                                                            alt=""
+                                                            class="mirsaar-work-card__phone-image"
+                                                            loading="lazy"
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    @endforeach
+                                @endfor
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </article>
+
+            <article class="mirsaar-service-promo">
+                <div class="mirsaar-brand-pattern mirsaar-brand-pattern--tl" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+                <div class="mirsaar-brand-pattern mirsaar-brand-pattern--tr" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+                <div class="mirsaar-brand-pattern mirsaar-brand-pattern--bl" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+                <div class="mirsaar-brand-pattern mirsaar-brand-pattern--br" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                        <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" />
+                    </svg>
+                </div>
+
+                <div class="mirsaar-service-promo-card">
+                    <h2 class="mirsaar-service-promo-title">Наши Услуги</h2>
+                    <p class="mirsaar-service-promo-copy">
+                        От разработки брендинга до продвижения в топовые позиции.
+                    </p>
+
+                    <a href="#services" class="mirsaar-showcase-button mirsaar-showcase-button--primary">
+                        Смотреть все услуги
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M7 12H17" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                            <path d="M12 7L17 12L12 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <footer class="mirsaar-footer" id="contact">
+                <div class="mirsaar-footer__grid">
+                    <div class="mirsaar-footer__brand mirsaar-reveal">
+                        <a href="#home" class="mirsaar-footer__brand-link" aria-label="Mirsaar">
+                            <span class="mirsaar-footer__mark" aria-hidden="true">
+                                <svg viewBox="0 0 64 64" fill="none">
+                                    <circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="2.5" />
+                                    <path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                                    <path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                                </svg>
+                            </span>
+
+                            <span class="mirsaar-footer__brand-copy">
+                                <strong>Mirsaar</strong>
+                                <small>premium web studio</small>
+                            </span>
+                        </a>
+
+                        <p class="mirsaar-footer__lead">
+                            Premium saytlar, NFC vizitkalar va kuchli first impression beradigan
+                            raqamli taqdimotlar yaratamiz. Har bir detal brend qadrini oshirishi uchun ishlanadi.
+                        </p>
+
+                        <a href="mailto:hello@mirsaar.uz" class="mirsaar-footer__cta">
+                            hello@mirsaar.uz
+                        </a>
+                    </div>
+
+                    <div class="mirsaar-footer__menu mirsaar-reveal mirsaar-reveal--delay-1">
+                        <p class="mirsaar-footer__title">Menyu</p>
+
+                        <nav class="mirsaar-footer__links" aria-label="Footer navigation">
+                            @foreach ($footerMenu as $item)
+                                <a href="{{ $item['href'] }}" class="mirsaar-footer__link">
+                                    {{ $item['label'] }}
+                                </a>
+                            @endforeach
+                        </nav>
+                    </div>
+
+                    <div class="mirsaar-footer__contact mirsaar-reveal mirsaar-reveal--delay-2">
+                        <p class="mirsaar-footer__title">Aloqa</p>
+
+                        <div class="mirsaar-footer__contact-list">
+                            @foreach ($footerContacts as $item)
+                                <a href="{{ $item['href'] }}" class="mirsaar-footer__contact-item">
+                                    <span class="mirsaar-footer__contact-icon" aria-hidden="true">
+                                        @if ($item['icon'] === 'mail')
+                                            <svg viewBox="0 0 24 24" fill="none">
+                                                <path d="M4 7H20V17H4V7Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" />
+                                                <path d="M5 8L12 13L19 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                                            </svg>
+                                        @elseif ($item['icon'] === 'shield')
+                                            <svg viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 3L19 6V11.8C19 15.1 16.9 18.1 12 21C7.1 18.1 5 15.1 5 11.8V6L12 3Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" />
+                                                <path d="M9.4 11.8L11.3 13.7L14.8 10.2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                                            </svg>
+                                        @else
+                                            <svg viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 4L14.2 8.4L19 9.1L15.5 12.5L16.3 17.2L12 14.9L7.7 17.2L8.5 12.5L5 9.1L9.8 8.4L12 4Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" />
+                                            </svg>
+                                        @endif
+                                    </span>
+
+                                    <span class="mirsaar-footer__contact-copy">
+                                        <small>{{ $item['label'] }}</small>
+                                        <strong>{{ $item['value'] }}</strong>
+                                    </span>
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mirsaar-footer__bottom">
+                    <p>&copy; {{ now()->year }} Mirsaar. Barcha huquqlar himoyalangan.</p>
+                    <span class="mirsaar-footer__pill">Maxfiylik va sifat standarti</span>
+                </div>
+            </footer>
         </section>
     </div>
 </div>
