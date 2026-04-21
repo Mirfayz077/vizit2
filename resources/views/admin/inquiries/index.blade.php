@@ -68,8 +68,8 @@
 
                 <div class="admin-chip-row">
                     <span class="admin-chip">{{ $inquiry->company ?: "Kompaniya yo'q" }}</span>
-                    <span class="admin-chip">Byudjet: {{ $inquiry->budget_range ?: "Noma'lum" }}</span>
-                    <span class="admin-chip">Aloqa: {{ ucfirst($inquiry->preferred_contact) }}</span>
+                    <span class="admin-chip">Бюджет: {{ $inquiry->budget_range ?: "Noma'lum" }}</span>
+                    <span class="admin-chip">Связь: {{ ucfirst($inquiry->preferred_contact) }}</span>
                     @if ($inquiry->email)
                         <span class="admin-chip">{{ $inquiry->email }}</span>
                     @endif

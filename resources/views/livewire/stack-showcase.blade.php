@@ -33,7 +33,7 @@
 
                         <span class="mirsaar-brand-copy">
                             <strong>Mirsaar</strong>
-                            <small>premium experience</small>
+                            <small>просто. точно. мощно.</small>
                         </span>
                     </a>
 
@@ -113,7 +113,7 @@
                 <div class="mirsaar-copy">
                     <p class="mirsaar-kicker mirsaar-reveal">
                         <span class="mirsaar-kicker-dot" aria-hidden="true"></span>
-                        software studio / code motion / full screen feel
+                        software studio / движение кода / эффект полного погружения
                     </p>
 
                     <h1 class="mirsaar-title mirsaar-reveal mirsaar-reveal--delay-1">
@@ -131,15 +131,8 @@
 
                         <span>Software</span>
                         <em>Mirsaar</em>
-                        <span>uchun premium first-screen.</span>
+                        <span>для премиального первого экрана</span>
                     </h1>
-
-                    <p class="mirsaar-lead mirsaar-reveal mirsaar-reveal--delay-2">
-                        Header endi to'liq eni bo'ylab ishlaydi: dasturlash ruhidagi harakatlanuvchi fon,
-                        premium glass qatlamlar, CRM va admin yo'nalishiga mos vizual ritm bilan birinchi
-                        ekrandanoq kuchli taassurot beradi.
-
-                    </p>
 
                     <div class="mirsaar-chip-row mirsaar-reveal mirsaar-reveal--delay-2">
                         @foreach ($heroTags as $tag)
@@ -149,7 +142,7 @@
 
                     <div class="mirsaar-cta-row mirsaar-reveal mirsaar-reveal--delay-3">
                         <a href="#contact" class="mirsaar-button mirsaar-button--primary">
-                            Loyihani boshlash
+                            Начать проект
                             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                 <path d="M7 17L17 7" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
                                 <path d="M9 7H17V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
@@ -157,7 +150,7 @@
                         </a>
 
                         <a href="#projects" class="mirsaar-button mirsaar-button--secondary">
-                            Previewni ko'rish
+                            Посмотреть проекты
                         </a>
                     </div>
 
@@ -172,8 +165,6 @@
                 </div>
 
                 <div class="mirsaar-stage mirsaar-reveal mirsaar-reveal--delay-2">
-        
-
                     <article class="mirsaar-float-card mirsaar-float-card--top">
                         <span class="mirsaar-float-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none">
@@ -182,8 +173,8 @@
                             </svg>
                         </span>
                         <div>
-                            <p class="mirsaar-float-label">Fast Launch</p>
-                            <strong>Live deploy</strong>
+                            <p class="mirsaar-float-label">Быстрый запуск</p>
+                            <strong>Мгновенный деплой</strong>
                         </div>
                     </article>
 
@@ -194,7 +185,7 @@
                                 <span></span>
                                 <span></span>
                                 <span></span>
-                                <p>Build is live</p>
+                                <p>Сборка активна</p>
                             </div>
 
                             <span class="mirsaar-stage-badge">MIRSAAR</span>
@@ -202,8 +193,8 @@
 
                         <div class="mirsaar-stage-body">
                             <div class="mirsaar-stage-heading">
-                                <p class="mirsaar-stage-overline">Software launch system</p>
-                                <h2 class="mirsaar-stage-title">Full-width header with code-driven motion.</h2>
+                                <p class="mirsaar-stage-overline">Система запуска ПО</p>
+                                <h2 class="mirsaar-stage-title">Полноэкранный header с анимацией на основе кода</h2>
                             </div>
 
                             <div class="mirsaar-stage-emblem" aria-hidden="true">
@@ -225,8 +216,8 @@
                                         </svg>
                                     </span>
                                     <div>
-                                        <strong>Full-width navbar</strong>
-                                        <p>Sticky ishlashi yaxshilandi, admin kirish esa yuqori o'ng tomonga chiqdi.</p>
+                                        <strong>Полноширинный navbar</strong>
+                                        <p>Улучшена sticky-навигация, вход в админ-панель перенесён в правый верхний угол.</p>
                                     </div>
                                 </li>
                                 <li>
@@ -237,8 +228,8 @@
                                         </svg>
                                     </span>
                                     <div>
-                                        <strong>Code motion va glow effects</strong>
-                                        <p>Dasturlash ruhidagi beam, panel va grid animatsiyasi vizualni boyitadi.</p>
+                                        <strong>Анимации кода и glow-эффекты</strong>
+                                        <p>Beam, панели и grid-анимации в стиле разработки усиливают визуальное восприятие.</p>
                                     </div>
                                 </li>
                                 <li>
@@ -249,8 +240,8 @@
                                         </svg>
                                     </span>
                                     <div>
-                                        <strong>Responsive first-screen</strong>
-                                        <p>Desktopda sahnali kompozitsiya, mobil qurilmada toza stacked hero.</p>
+                                        <strong>Адаптивный первый экран</strong>
+                                        <p>На десктопе — сценическая композиция, на мобильных — аккуратный stacked hero.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -312,34 +303,27 @@
 
                     <h2 class="mirsaar-brand-showcase-title">
                         <span>MIRSAAR</span>
-
                         <em>digital</em>
-
                     </h2>
 
                     <p class="mirsaar-brand-showcase-copy">
-
-                       Индивидуальный подход к каждому клиенту
+                        Индивидуальный подход к каждому клиенту
                         Современные технологии
                         Чистый и качественный код
                         Быстрая реализация проектов
                         Поддержка и развитие после запуска
-                Мы ценим доверие клиентов и строим долгосрочное сотрудничество.
-
-                        Brendingiz uchun premium saytlar, CRM oqimlari va taassurot qoldiradigan
-                        digital tajriba yaratamiz. Har bir detalda aniqlik, premium ritm va texnik ishonch saqlanadi.
-
+                        Мы ценим доверие клиентов и строим долгосрочное сотрудничество.
                     </p>
 
                     <div class="mirsaar-brand-showcase-actions">
                         <a href="#contact" class="mirsaar-showcase-button mirsaar-showcase-button--primary">
-                            Loyihani boshlash
+                            Начать проект
                         </a>
                         <a href="#services" class="mirsaar-showcase-button mirsaar-showcase-button--secondary">
-                            Xizmatlar
+                            Услуги
                         </a>
                         <a href="#reviews" class="mirsaar-showcase-button mirsaar-showcase-button--dark">
-                            Sharhlar
+                            Отзывы
                         </a>
                     </div>
                 </div>
@@ -472,9 +456,9 @@
                                     </svg>
                                 </span>
                                 <div>
-                                    <small>premium composition</small>
-                                    <strong>Kamroq tugma, ko'proq ishonch</strong>
-                                    <p>Foydalanuvchi ortiqcha tanlovda qolmaydi, sahifa esa boshqarilgan va premium his beradi.</p>
+                                    <small>премиальная композиция</small>
+                                    <strong>Меньше кнопок — больше доверия</strong>
+                                    <p>Пользователь не перегружен выбором, а интерфейс остаётся управляемым и создаёт ощущение премиальности.</p>
                                 </div>
                             </article>
 
@@ -486,9 +470,9 @@
                                     </svg>
                                 </span>
                                 <div>
-                                    <small>signature direction</small>
-                                    <strong>Dizayn va texnika bir tempda ishlaydi</strong>
-                                    <p>Tipografika, rang, glow va animatsiya bir-birini to'ldirib, brendni qimmatroq ko'rsatadi.</p>
+                                    <small>фирменное направление</small>
+                                    <strong>Дизайн и технология работают в одном ритме</strong>
+                                    <p>Типографика, цвет, glow и анимации дополняют друг друга, усиливая ощущение ценности бренда.</p>
                                 </div>
                             </article>
 
@@ -500,15 +484,15 @@
                                     </svg>
                                 </span>
                                 <div>
-                                    <small>stable delivery</small>
-                                    <strong>Web, CRM va admin bitta premium oqimga ulanadi</strong>
-                                    <p>Landing, boshqaruv paneli va aloqa jarayoni uzilmaydi, shu sabab first impression kuchliroq qoladi.</p>
+                                    <small>signature direction</small>
+                                    <strong>Единый ритм дизайна и технологий</strong>
+                                    <p>Шрифты, цвета и анимации синхронизированы, формируя цельный и более дорогой визуальный образ.</p>
                                 </div>
                             </article>
                         </div>
 
                         <a href="#contact" class="mirsaar-button mirsaar-button--primary mirsaar-craft-button">
-                            Yondashuv haqida ko'proq
+                            Подробнее о подходе
                             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                 <path d="M7 17L17 7" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
                                 <path d="M9 7H17V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
@@ -563,13 +547,13 @@
                             </article>
 
                             <article class="mirsaar-craft-float mirsaar-craft-float--left">
-                                <strong>Art in digital</strong>
-                                <p>Premium motion va sokin kompozitsiya.</p>
+                                <strong>Искусство в цифре</strong>
+                                <p>Премиальная анимация и спокойная композиция</p>
                             </article>
 
                             <article class="mirsaar-craft-float mirsaar-craft-float--right">
-                                <strong>01 main action</strong>
-                                <p>Foydalanuvchi yo'li ortiqcha chalg'imaydi.</p>
+                                <strong>01 основное действие</strong>
+                                <p>Пользовательский путь остаётся чистым и без лишних отвлечений</p>
                             </article>
 
                             <div class="mirsaar-craft-ring" aria-hidden="true"></div>
@@ -580,12 +564,11 @@
 
             <article class="mirsaar-works-section" id="projects">
                 <div class="mirsaar-works-head mirsaar-reveal">
-                    <p class="mirsaar-works-kicker">bizning ishlar</p>
-                    <h2 class="mirsaar-works-title">BIZNING ISHLAR</h2>
+                    <p class="mirsaar-works-kicker">наши работы</p>
+                    <h2 class="mirsaar-works-title">НАШИ РАБОТЫ</h2>
                     <p class="mirsaar-works-lead">
-                        DevSuite CRM blokining tagida portfolio previewlar screenshotdagi kayfiyatda
-                        ikki qatorli oqim bo'lib ko'rinadi. Asosiy preview yuqorida yirik ko'rsatiladi,
-                        pastda esa loyihalar carousel ritmida yuradi.
+                     Под блоком DevSuite CRM портфолио отображается в виде двухуровневого потока 
+                     в стиле скриншота. Основной превью показан крупно сверху, а ниже проекты идут в ритме карусели.
                     </p>
                 </div>
 
@@ -596,16 +579,17 @@
                         <p class="mirsaar-crm-feature__eyebrow">{{ $crmProject['label'] }}</p>
                         <h3 class="mirsaar-crm-feature__title">{{ $crmProject['title'] }}</h3>
                         <p class="mirsaar-crm-feature__lead">
-                            CRM showcase yuqorida yirik preview bilan ajratildi, tagiga esa qora-oltin
-                            ruhdagi oqadigan rasm lentasi qo'shildi. Shu bilan section ancha jonli,
-                            premium va screenshotga yaqin ko'rinish oldi.
+                           CRM-превью выделено крупным блоком сверху, а ниже добавлена плавная лента 
+                           изображений в чёрно-золотой стилистике. Это делает секцию более живой, 
+                           премиальной и близкой к реальному скриншот-опыту.
                         </p>
+                        
 
-                        <div class="mirsaar-crm-feature__meta">
-                            <span>Sales Pipeline</span>
-                            <span>Lead Tracking</span>
-                            <span>Client Activity</span>
-                        </div>
+                  <div class="mirsaar-crm-feature__meta">
+                            <span>Воронка продаж</span>
+                            <span>Отслеживание лидов</span>
+                            <span>Активность клиентов</span>
+                    </div>
                     </div>
 
                     <div class="mirsaar-crm-feature__stage">
@@ -664,11 +648,11 @@
 
             <article class="mirsaar-contact-strip" id="contact">
                 <div class="mirsaar-contact-strip__head">
-                    <p class="mirsaar-section-kicker">contact profiles</p>
-                    <h2 class="mirsaar-contact-strip__title">Tez bog'lanish uchun tayyor kontakt kartalari</h2>
+                    <p class="mirsaar-section-kicker">контактные профили</p>
+                    <h2 class="mirsaar-contact-strip__title">Готовые контактные карточки для быстрого связи</h2>
                     <p class="mirsaar-contact-strip__lead">
-                        Karuseldan keyin asosiy aloqa nuqtalari profil formatida joylashtirildi:
-                        kimga yozish, qaysi oqimdan boshlash va qanday tempda javob olish aniq ko'rinadi.
+                        После карусели основные точки контакта представлены в формате профилей:
+                        понятно, кому писать, с какого потока начать и с какой скоростью ожидать ответ.
                     </p>
                 </div>
 
@@ -691,11 +675,11 @@
             <article class="mirsaar-reviews-section" id="reviews" data-swiper-root>
                 <div class="mirsaar-reviews-section__head">
                     <div>
-                        <p class="mirsaar-section-kicker">mijozlar fikri</p>
-                        <h2 class="mirsaar-reviews-section__title">Sharhlar</h2>
+                        <p class="mirsaar-section-kicker">отзывы клиентов</p>
+                        <h2 class="mirsaar-reviews-section__title">Отзывы</h2>
                         <p class="mirsaar-reviews-section__lead">
-                            Asosiy sahifa uchun premium ko'rinishda slider qilindi: strelkalar, yumshoq
-                            autoplay va kartalarda yengil depth bilan.
+                            Для главной страницы реализован премиальный слайдер: 
+                            стрелки навигации, мягкий autoplay и лёгкая глубина в карточках.
                         </p>
                     </div>
 
@@ -777,25 +761,25 @@
 
                 <div class="mirsaar-support-panel__grid">
                     <div class="mirsaar-support-panel__copy">
-                        <p class="mirsaar-section-kicker">bizga murojaat</p>
-                        <h2 class="mirsaar-support-panel__title">Qo'llab-quvvatlash va yangi proekt briefi bir formda</h2>
+                        <p class="mirsaar-section-kicker">обращение к нам</p>
+                        <h2 class="mirsaar-support-panel__title">обращение к нам</h2>
                         <p class="mirsaar-support-panel__lead">
-                            Ism, telefon, xizmat turi va proekt haqida qisqacha ma'lumot qoldiring.
-                            Admin panel orqali har bir murojaat alohida ko'rinadi va status bilan kuzatiladi.
+                            Оставьте имя, телефон, тип услуги и краткое описание проекта.
+                            Каждое обращение отображается в админ-панели и отслеживается по статусу.
                         </p>
 
                         <div class="mirsaar-support-panel__points">
                             <article>
-                                <strong>Tez javob</strong>
-                                <span>Yangi lead bir joyga tushadi va admin darhol ko'radi.</span>
+                                <strong>Быстрый ответ</strong>
+                                <span>Новый лид сразу поступает в систему, и администратор его видит мгновенно</span>
                             </article>
                             <article>
-                                <strong>Xizmat tanlash</strong>
-                                <span>Landing, CRM, admin panel yoki support bo'limini to'g'ri tanlaysiz.</span>
+                                <strong>Выбор услуги</strong>
+                                <span>Вы можете корректно выбрать: лендинг, CRM, админ-панель или поддержку.</span>
                             </article>
                             <article>
-                                <strong>Premium oqim</strong>
-                                <span>Public form, baza va admin qismi bir ritmda yig'ildi.</span>
+                                <strong>Премиальный поток</strong>
+                                <span>Форма, база и админ-часть работают в едином ритме</span>
                             </article>
                         </div>
                     </div>
@@ -803,7 +787,7 @@
                     <div class="mirsaar-support-panel__form-card">
                         @if ($inquirySent)
                             <div class="mirsaar-support-success">
-                                Murojaatingiz yuborildi. Tez orada siz bilan bog'lanamiz.
+                               Отправлено. Скоро мы с вами свяжемся.
                             </div>
                         @endif
 
@@ -814,9 +798,9 @@
                         <form wire:submit="submitInquiry" class="mirsaar-support-form">
                             <div class="mirsaar-support-form__grid">
                                 <label class="mirsaar-support-field">
-                                    <span>Xizmat yoki qism</span>
+                                    <span>Услуга или раздел</span>
                                     <select wire:model="service_id">
-                                        <option value="">Tanlang</option>
+                                        <option value="">Выберите</option>
                                         @foreach ($serviceOptions as $service)
                                             <option value="{{ $service['id'] }}">{{ $service['title'] }}</option>
                                         @endforeach
@@ -828,7 +812,7 @@
 
                                 <label class="mirsaar-support-field">
                                     <span>Ism</span>
-                                    <input type="text" wire:model="name" placeholder="Ismingiz">
+                                    <input type="text" wire:model="name" placeholder="Ваше имя">
                                     @error('name')
                                         <small>{{ $message }}</small>
                                     @enderror
@@ -836,7 +820,7 @@
 
                                 <label class="mirsaar-support-field">
                                     <span>Telefon</span>
-                                    <input type="text" wire:model="phone" placeholder="+998 ...">
+                                    <input type="text" wire:model="phone" placeholder="+998 90 700 00 00...">
                                     @error('phone')
                                         <small>{{ $message }}</small>
                                     @enderror
@@ -851,18 +835,18 @@
                                 </label>
 
                                 <label class="mirsaar-support-field">
-                                    <span>Kompaniya</span>
-                                    <input type="text" wire:model="company" placeholder="Kompaniya nomi">
+                                    <span>компании</span>
+                                    <input type="text" wire:model="company" placeholder="Название компании">
                                     @error('company')
                                         <small>{{ $message }}</small>
                                     @enderror
                                 </label>
 
                                 <label class="mirsaar-support-field">
-                                    <span>Qulay aloqa</span>
+                                    <span>Удобная связь</span>
                                     <select wire:model="preferred_contact">
-                                        <option value="phone">Telefon</option>
-                                        <option value="telegram">Telegram</option>
+                                        <option value="phone">Телефон</option>
+                                        <option value="telegram">Telegram для связи</option>
                                         <option value="email">Email</option>
                                     </select>
                                     @error('preferred_contact')
@@ -870,30 +854,27 @@
                                     @enderror
                                 </label>
 
-                                <label class="mirsaar-support-field">
-                                    <span>Taxminiy byudjet</span>
-                                    <select wire:model="budget_range">
-                                        <option value="1000-3000">$1,000 - $3,000</option>
-                                        <option value="3000-7000">$3,000 - $7,000</option>
-                                        <option value="7000-15000">$7,000 - $15,000</option>
-                                        <option value="15000+">$15,000+</option>
-                                    </select>
-                                    @error('budget_range')
-                                        <small>{{ $message }}</small>
-                                    @enderror
-                                </label>
+                       <label class="mirsaar-support-field">
+                                <span>Примерный бюджет</span>
+                                <select wire:model="budget_range">
+                                    <option value="flexible">Индивидуальный расчёт под проект</option>
+                                </select>
+                                @error('budget_range')
+                                    <small>{{ $message }}</small>
+                                @enderror
+                            </label>
                             </div>
 
                             <label class="mirsaar-support-field">
                                 <span>Proekt haqida</span>
-                                <textarea wire:model="project_summary" rows="6" placeholder="Loyiha maqsadi, kerakli bo'limlar va deadline haqida yozing"></textarea>
+                                <textarea wire:model="project_summary" rows="6" placeholder="Цель проекта, нужные разделы и дедлайн."></textarea>
                                 @error('project_summary')
                                     <small>{{ $message }}</small>
                                 @enderror
                             </label>
 
                             <button type="submit" class="mirsaar-button mirsaar-button--primary mirsaar-support-submit">
-                                Yuborish
+                                Отправить
                                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <path d="M7 17L17 7" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
                                     <path d="M9 7H17V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
@@ -923,10 +904,11 @@
                             </span>
                         </a>
 
-                        <p class="mirsaar-footer__lead">
-                            Premium saytlar, CRM oqimlari va kuchli first impression beradigan
-                            raqamli taqdimotlar yaratamiz. Har bir detal brend qadrini oshirishi uchun ishlanadi.
-                        </p>
+                 <p class="mirsaar-footer__lead">
+                     Создаём премиальные сайты, CRM-системы и цифровые презентации 
+                     с сильным первым впечатлением. Каждый элемент прорабатывается для усиления 
+                     ценности бренда.
+                 </p>
 
                         <a href="mailto:hello@mirsaar.uz" class="mirsaar-footer__cta">
                             hello@mirsaar.uz
@@ -934,7 +916,7 @@
                     </div>
 
                     <div class="mirsaar-footer__menu mirsaar-reveal mirsaar-reveal--delay-1">
-                        <p class="mirsaar-footer__title">Menyu</p>
+                        <p class="mirsaar-footer__title">меню</p>
 
                         <nav class="mirsaar-footer__links" aria-label="Footer navigation">
                             @foreach ($footerMenu as $item)
@@ -946,7 +928,7 @@
                     </div>
 
                     <div class="mirsaar-footer__contact mirsaar-reveal mirsaar-reveal--delay-2">
-                        <p class="mirsaar-footer__title">Aloqa</p>
+                        <p class="mirsaar-footer__title">Связь</p>
 
                         <div class="mirsaar-footer__contact-list">
                             @foreach ($footerContacts as $item)
@@ -980,8 +962,8 @@
                 </div>
 
                 <div class="mirsaar-footer__bottom">
-                    <p>&copy; {{ now()->year }} Mirsaar. Barcha huquqlar himoyalangan.</p>
-                    <span class="mirsaar-footer__pill">Maxfiylik va sifat standarti</span>
+                    <p>&copy; {{ now()->year }} Mirsaar. Все права защищены.</p>
+                    <span class="mirsaar-footer__pill">Стандарт конфиденциальности и качества</span>
                 </div>
             </footer>
         </section>
