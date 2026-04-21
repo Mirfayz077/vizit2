@@ -11,12 +11,12 @@ use Livewire\Component;
 class StackShowcase extends Component
 {
     public array $navItems = [
-        ['label' => 'Bosh sahifa', 'href' => '#home'],
-        ['label' => 'Xizmatlar', 'href' => '#services'],
-        ['label' => 'Qo\'llab-quvvatlash', 'href' => '#support'],
-        ['label' => 'Loyihalar', 'href' => '#projects'],
-        ['label' => 'Sharhlar', 'href' => '#reviews'],
-        ['label' => 'Kontakt', 'href' => '#contact'],
+        ['label' => 'Главная', 'href' => '#home'],
+        ['label' => 'Услуги', 'href' => '#services'],
+        ['label' => 'Поддержка', 'href' => '#support'],
+        ['label' => 'Проекты', 'href' => '#projects'],
+        ['label' => 'Отзывы', 'href' => '#reviews'],
+        ['label' => 'Контакты', 'href' => '#contact'],
     ];
 
     public array $languages = [
@@ -47,7 +47,7 @@ class StackShowcase extends Component
 
             'id' => 'platform',
             'value' => 'Web Platform',
-            'label' => 'Premium sayt, CRM va admin oqimi bitta tizimga yig\'iladi.',
+            'label' => 'Премиальный сайт, CRM и админ-панель объединяются в единую систему.',
 
         ],
         [
@@ -143,33 +143,33 @@ class StackShowcase extends Component
         [
             'initials' => 'SD',
             'role' => 'Sales Desk',
-            'title' => 'Savdo bo\'limi',
+            'title' => 'Отдел продаж',
             'value' => 'hello@mirsaar.uz',
-            'meta' => 'Yangi loyiha bo\'yicha ilk javob 15 daqiqadan boshlab.',
+            'meta' => 'Первый ответ по новому проекту — от 15 минут.',
             'href' => 'mailto:hello@mirsaar.uz',
         ],
         [
             'initials' => 'PM',
             'role' => 'Project Lead',
-            'title' => 'Loyiha menejeri',
-            'value' => 'Roadmap va topshiriqlarni aniq yig\'amiz.',
-            'meta' => 'Brief, scope va ish boshlash tartibi bir joyda.',
+            'title' => 'Менеджер проекта',
+            'value' => 'Чётко формируем roadmap и задачи.',
+            'meta' => 'Бриф, scope и процесс запуска — в одном месте.',
             'href' => '#support',
         ],
         [
             'initials' => 'CX',
             'role' => 'Client Care',
-            'title' => 'Qo\'llab-quvvatlash',
-            'value' => '24/7 premium support',
-            'meta' => 'Mavjud klientlar uchun tezkor yordam va kuzatuv.',
+            'title' => 'Поддержка',
+            'value' => 'Премиальная поддержка 24/7',
+            'meta' => 'Оперативная помощь и сопровождение для действующих клиентов.',
             'href' => '#support',
         ],
         [
             'initials' => 'PR',
             'role' => 'Portfolio Call',
-            'title' => 'Presentation session',
-            'value' => 'Preview va demo ko\'rsatamiz',
-            'meta' => 'Karuseldagi keyslardan kelib chiqib mos yechim tavsiya qilamiz.',
+            'title' => 'Презентационная сессия',
+            'value' => 'Показываем превью и демо',
+            'meta' => 'На основе кейсов из карусели предлагаем подходящее решение.',
             'href' => '#projects',
         ],
     ];
@@ -206,9 +206,9 @@ class StackShowcase extends Component
     ];
 
     public array $footerMenu = [
-        ['label' => 'Bosh sahifa', 'href' => '#home'],
-        ['label' => 'Xizmatlar', 'href' => '#services'],
-        ['label' => 'Loyihalar', 'href' => '#projects'],
+        ['label' => 'Главная', 'href' => '#home'],
+        ['label' => 'Услуги', 'href' => '#services'],
+        ['label' => 'Проекты', 'href' => '#projects'],
     ];
 
     public array $footerContacts = [

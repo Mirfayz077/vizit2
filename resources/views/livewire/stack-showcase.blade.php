@@ -857,7 +857,7 @@
                        <label class="mirsaar-support-field">
                                 <span>Примерный бюджет</span>
                                 <select wire:model="budget_range">
-                                    <option value="flexible">Индивидуальный расчёт под проект</option>
+                                    <option value="flexible">Индивидуальный расчёт</option>
                                 </select>
                                 @error('budget_range')
                                     <small>{{ $message }}</small>
