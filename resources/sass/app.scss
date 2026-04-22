@@ -26,6 +26,18 @@ html {
     display: none !important;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 body {
     min-height: 100vh;
     color: var(--ink);
@@ -64,6 +76,19 @@ p {
     overflow-x: clip;
     overflow-y: visible;
     isolation: isolate;
+}
+
+@supports (content-visibility: auto) {
+    .mirsaar-story-section,
+    .mirsaar-craft-section,
+    .mirsaar-works-section,
+    .mirsaar-reviews-section,
+    .mirsaar-support-panel,
+    .mirsaar-footer,
+    .mirsaar-contact-page__footer {
+        content-visibility: auto;
+        contain-intrinsic-size: 1000px;
+    }
 }
 
 .mirsaar-orb {
