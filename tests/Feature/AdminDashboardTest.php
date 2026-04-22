@@ -32,7 +32,7 @@ class AdminDashboardTest extends TestCase
             'email' => 'samandar@example.com',
             'company' => 'DevSuite',
             'preferred_contact' => 'phone',
-            'budget_range' => '3000-7000',
+            'budget_range' => '5200',
             'project_summary' => 'CRM va admin panel uchun yangi loyiha haqida murojaat.',
             'status' => 'new',
         ]);

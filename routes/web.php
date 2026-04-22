@@ -4,10 +4,12 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\InquiryController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Livewire\ProjectContactPage;
 use App\Livewire\StackShowcase;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', StackShowcase::class);
+Route::get('/', StackShowcase::class)->name('home');
+Route::get('/contacts', ProjectContactPage::class)->name('contacts');
 Route::redirect('/login', '/admin/login')->name('login');
 
 Route::prefix('admin')->name('admin.')->group(function () {

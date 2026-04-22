@@ -174,6 +174,57 @@ class StackShowcase extends Component
         ],
     ];
 
+    public array $contactHubCards = [
+        [
+            'icon' => 'mail',
+            'eyebrow' => 'Email',
+            'title' => 'hello@mirsaar.uz',
+            'meta' => 'Yangi loyiha bo\'yicha ilk javob odatda 15 daqiqadan boshlanadi.',
+            'href' => 'mailto:hello@mirsaar.uz',
+        ],
+        [
+            'icon' => 'brief',
+            'eyebrow' => 'Brief Session',
+            'title' => 'Online yoki offline uchrashuv',
+            'meta' => 'Scope, deadline va kerakli bo\'limlarni bir joyda yig\'amiz.',
+            'href' => '#contact-form',
+        ],
+        [
+            'icon' => 'support',
+            'eyebrow' => 'Client Care',
+            'title' => '24/7 premium support',
+            'meta' => 'Mavjud klientlar uchun support va yangi lead uchun tezkor kuzatuv.',
+            'href' => '#contact-form',
+        ],
+    ];
+
+    public array $contactFaqs = [
+        [
+            'question' => 'Sayt yoki CRM narxi qanday shakllanadi?',
+            'answer' => 'Narx loyiha scope, kerakli bo\'limlar, animatsiya, admin panel va integratsiyalarga qarab belgilanadi. Briefdan keyin aniq smeta va bosqichma-bosqich taklif yuboramiz.',
+        ],
+        [
+            'question' => 'Ishlash muddati odatda qancha bo\'ladi?',
+            'answer' => 'Ko\'p holatda landing va korporativ saytlar 14-30 ish kuni oralig\'ida yakunlanadi. Kattaroq CRM yoki admin panel bo\'lsa, timeline alohida roadmap bilan beriladi.',
+        ],
+        [
+            'question' => 'Shartnoma va kafolat bilan ishlaysizlarmi?',
+            'answer' => 'Ha, loyiha boshlanishidan oldin ish hajmi, topshirish bosqichlari va support qamrovi aniq ko\'rsatilgan tartibda ishlaymiz.',
+        ],
+        [
+            'question' => 'To\'lov qanday qabul qilinadi?',
+            'answer' => 'To\'lov odatda bosqichma-bosqich olinadi: start, oraliq tasdiq va final topshirish. Format loyiha turiga qarab oldindan kelishiladi.',
+        ],
+        [
+            'question' => 'Start uchun sizga mendan nimalar kerak bo\'ladi?',
+            'answer' => 'Qisqacha brief, brend bo\'yicha materiallar, kerakli bo\'limlar ro\'yxati va deadline. Agar material tayyor bo\'lmasa, uni yig\'ish bo\'yicha ham yo\'nalish beramiz.',
+        ],
+        [
+            'question' => 'SEO va keyingi support ham bo\'ladimi?',
+            'answer' => 'Bazaviy optimizatsiya va topshirishdan keyingi kuzatuv oqimi mavjud. Keyingi support yoki kontent boshqaruvi uchun alohida xizmat oqimi ham ulab beriladi.',
+        ],
+    ];
+
     public array $testimonials = [
         [
             'quote' => '"Barcha bosqichlar tartibli ketdi, yakunda brendimiz ancha premium ko\'rina boshladi."',
@@ -246,7 +297,7 @@ class StackShowcase extends Component
 
     public string $preferred_contact = 'phone';
 
-    public string $budget_range = '1000-3000';
+    public string $budget_range = '';
 
     public string $project_summary = '';
 
@@ -297,7 +348,7 @@ class StackShowcase extends Component
             'email' => ['nullable', 'email', 'max:120'],
             'company' => ['nullable', 'string', 'max:120'],
             'preferred_contact' => ['required', Rule::in(['phone', 'telegram', 'email'])],
-            'budget_range' => ['required', Rule::in(['1000-3000', '3000-7000', '7000-15000', '15000+'])],
+            'budget_range' => ['required', 'string', 'max:40', 'regex:/^\$?\s*[0-9][0-9\s,.]*$/'],
             'project_summary' => ['required', 'string', 'min:20', 'max:2000'],
         ];
     }
@@ -311,7 +362,8 @@ class StackShowcase extends Component
             'phone.required' => 'Telefon raqamingizni kiriting.',
             'email.email' => 'Email formatini tekshiring.',
             'preferred_contact.required' => 'Qulay aloqa usulini tanlang.',
-            'budget_range.required' => 'Taxminiy byudjetni tanlang.',
+            'budget_range.required' => 'Taxminiy byudjetni kiriting.',
+            'budget_range.regex' => 'Taxminiy byudjetni raqam ko\'rinishida kiriting.',
             'project_summary.required' => 'Proekt haqida qisqacha yozing.',
             'project_summary.min' => 'Kamida 20 ta belgi yozing.',
         ];
@@ -351,7 +403,7 @@ class StackShowcase extends Component
         ]);
 
         $this->preferred_contact = 'phone';
-        $this->budget_range = '1000-3000';
+        $this->budget_range = '';
         $this->inquirySent = true;
         $this->resetValidation();
         $this->loadServices();

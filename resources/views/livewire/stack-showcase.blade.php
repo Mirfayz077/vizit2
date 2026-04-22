@@ -784,7 +784,16 @@
                         </div>
                     </div>
 
-                    <div class="mirsaar-support-panel__form-card">
+                    <div class="mirsaar-support-panel__form-card" id="contact-form">
+                        <div class="mirsaar-support-panel__form-head">
+                            <p class="mirsaar-section-kicker">brief form</p>
+                            <h3>Murojaat qoldiring</h3>
+                            <p>
+                                Xizmat turini tanlang, kontakt qoldiring va loyiha haqida yozing.
+                                Qolgan oqimni shu formdan keyin birga yig'amiz.
+                            </p>
+                        </div>
+
                         @if ($inquirySent)
                             <div class="mirsaar-support-success">
                                Отправлено. Скоро мы с вами свяжемся.

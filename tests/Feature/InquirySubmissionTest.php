@@ -26,7 +26,7 @@ class InquirySubmissionTest extends TestCase
             ->set('email', 'aziza@example.com')
             ->set('company', 'Mirsaar Client')
             ->set('preferred_contact', 'telegram')
-            ->set('budget_range', '3000-7000')
+            ->set('budget_range', '5200')
             ->set('project_summary', 'Premium landing page va admin qismi uchun toliq brief yuboryapman.')
             ->call('submitInquiry')
             ->assertHasNoErrors()
