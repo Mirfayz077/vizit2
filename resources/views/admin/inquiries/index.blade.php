@@ -7,7 +7,7 @@
         <div>
             <p class="admin-eyebrow">lead inbox</p>
             <h1>Murojaatlar</h1>
-            <p>Leadlarni qidiring, statusini almashtiring va tafsilotlarni bir necha klikda oching.</p>
+            <p>SMM brieflarini qidiring, statusini almashtiring va tafsilotlarni oching.</p>
         </div>
 
         <div class="admin-topbar__actions">
@@ -30,7 +30,7 @@
         <div class="admin-toolbar">
             <div class="admin-field">
                 <label for="search">Qidiruv</label>
-                <input id="search" type="text" name="search" value="{{ request('search') }}" placeholder="Ism, telefon, email, kompaniya...">
+                <input id="search" type="text" name="search" value="{{ request('search') }}" placeholder="Ism, telefon, niche, platforma, maqsad...">
             </div>
 
             <div class="admin-field">
@@ -67,15 +67,17 @@
                 </div>
 
                 <div class="admin-chip-row">
-                    <span class="admin-chip">{{ $inquiry->company ?: "Kompaniya yo'q" }}</span>
-                    <span class="admin-chip">Бюджет: {{ $inquiry->budget_range ?: "Noma'lum" }}</span>
-                    <span class="admin-chip">Связь: {{ ucfirst($inquiry->preferred_contact) }}</span>
+                    <span class="admin-chip">{{ $inquiry->business_niche ?: $inquiry->company ?: "Niche yo'q" }}</span>
+                    <span class="admin-chip">Platforma: {{ ucfirst($inquiry->platform ?: 'Belgilanmagan') }}</span>
+                    <span class="admin-chip">Maqsad: {{ str_replace('_', ' ', $inquiry->goal ?: 'Belgilanmagan') }}</span>
+                    <span class="admin-chip">Byudjet: {{ $inquiry->budget_range ?: "Noma'lum" }}</span>
+                    <span class="admin-chip">Aloqa: {{ ucfirst($inquiry->preferred_contact) }}</span>
                     @if ($inquiry->email)
                         <span class="admin-chip">{{ $inquiry->email }}</span>
                     @endif
                 </div>
 
-                <p class="admin-note">{{ \Illuminate\Support\Str::limit($inquiry->project_summary, 180) }}</p>
+                <p class="admin-note">{{ \Illuminate\Support\Str::limit($inquiry->project_summary ?: $inquiry->note, 180) }}</p>
 
                 <div class="admin-row admin-row--spread">
                     <div class="admin-meta">{{ $inquiry->created_at?->format('d.m.Y H:i') }}</div>

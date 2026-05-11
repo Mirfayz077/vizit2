@@ -81,20 +81,65 @@ class ProjectContactPage extends Component
 
     public string $phone = '';
 
+    public string $business_niche = '';
+
     public string $email = '';
 
     public string $company = '';
 
     public string $preferred_contact = 'phone';
 
+    public string $platform = 'instagram';
+
+    public string $goal = 'sales';
+
     public string $budget_range = '';
 
     public string $project_summary = '';
+
+    public string $note = '';
 
     public bool $inquirySent = false;
 
     public function mount(): void
     {
+        $this->navItems = [
+            ['label' => 'Bosh sahifa', 'href' => '/'],
+            ['label' => 'Xizmatlar', 'href' => '/#services'],
+            ['label' => 'Keyslar', 'href' => '/#projects'],
+            ['label' => 'Kontaktlar', 'href' => '/#contact'],
+        ];
+
+        $this->footerMenu = [
+            ['label' => 'Bosh sahifa', 'href' => '/'],
+            ['label' => 'Xizmatlar', 'href' => '/#services'],
+            ['label' => 'Keyslar', 'href' => '/#projects'],
+            ['label' => 'Brief', 'href' => '#contact-form'],
+        ];
+
+        $this->faqItems = [
+            [
+                'icon' => 'coins',
+                'question' => 'SMM xizmat narxi qanday belgilanadi?',
+                'answer' => 'Narx platforma, kontent hajmi, target reklama va audit chuqurligiga qarab belgilanadi. Briefdan keyin aniq taklif beriladi.',
+            ],
+            [
+                'icon' => 'calendar',
+                'question' => 'Kontent plan necha kunga tuziladi?',
+                'answer' => 'Odatda 2 yoki 4 haftalik kontent plan tayyorlanadi. Post, stories, reels va offerlar biznes maqsadiga qarab joylanadi.',
+            ],
+            [
+                'icon' => 'search',
+                'question' => 'Auditda nimalar tekshiriladi?',
+                'answer' => 'Profil bio, vizual, kontent rubrikalari, reach, engagement, reklama yo\'nalishi va raqobatchilar holati tekshiriladi.',
+            ],
+            [
+                'icon' => 'rocket',
+                'question' => 'Start uchun nimalar kerak?',
+                'answer' => 'Biznes niche, hozirgi sahifa linklari, maqsad, byudjet va mavjud kontent materiallari kifoya.',
+            ],
+        ];
+
         $this->loadServices();
     }
 
@@ -102,11 +147,11 @@ class ProjectContactPage extends Component
     {
         if (! Schema::hasTable('services')) {
             $this->serviceOptions = [
-                ['id' => '1', 'title' => 'Premium Landing Page'],
-                ['id' => '2', 'title' => 'DevSuite CRM'],
-                ['id' => '3', 'title' => 'Admin Dashboard'],
-                ['id' => '4', 'title' => 'Corporate Website'],
-                ['id' => '5', 'title' => 'Premium Support'],
+                ['id' => '1', 'title' => 'SMM strategiya'],
+                ['id' => '2', 'title' => 'Kontent plan'],
+                ['id' => '3', 'title' => 'Instagram yuritish'],
+                ['id' => '4', 'title' => 'Reels / TikTok content'],
+                ['id' => '5', 'title' => 'Target reklama'],
             ];
 
             return;
@@ -135,11 +180,15 @@ class ProjectContactPage extends Component
             'service_id' => $serviceRules,
             'name' => ['required', 'string', 'max:120'],
             'phone' => ['required', 'string', 'max:40'],
+            'business_niche' => ['required', 'string', 'max:120'],
             'email' => ['nullable', 'email', 'max:120'],
             'company' => ['nullable', 'string', 'max:120'],
             'preferred_contact' => ['required', Rule::in(['phone', 'telegram', 'email'])],
-            'budget_range' => ['required', 'string', 'max:40', 'regex:/^\$?\s*[0-9][0-9\s,.]*$/'],
-            'project_summary' => ['required', 'string', 'min:20', 'max:2000'],
+            'platform' => ['required', Rule::in(['instagram', 'tiktok', 'telegram'])],
+            'goal' => ['required', Rule::in(['followers', 'sales', 'leads', 'brand_awareness'])],
+            'budget_range' => ['required', 'string', 'max:40'],
+            'project_summary' => ['required', 'string', 'min:10', 'max:2000'],
+            'note' => ['nullable', 'string', 'max:2000'],
         ];
     }
 
@@ -150,12 +199,14 @@ class ProjectContactPage extends Component
             'service_id.exists' => 'Tanlangan xizmat topilmadi.',
             'name.required' => 'Ismingizni kiriting.',
             'phone.required' => 'Telefon raqamingizni kiriting.',
+            'business_niche.required' => 'Biznes yoki niche kiriting.',
             'email.email' => 'Email formatini tekshiring.',
             'preferred_contact.required' => 'Qulay aloqa usulini tanlang.',
+            'platform.required' => 'Qaysi platforma kerakligini tanlang.',
+            'goal.required' => 'Asosiy maqsadni tanlang.',
             'budget_range.required' => 'Taxminiy byudjetni kiriting.',
-            'budget_range.regex' => 'Taxminiy byudjetni raqam ko\'rinishida kiriting.',
-            'project_summary.required' => 'Proekt haqida qisqacha yozing.',
-            'project_summary.min' => 'Kamida 20 ta belgi yozing.',
+            'project_summary.required' => 'Izoh yoki qisqa brief yozing.',
+            'project_summary.min' => 'Kamida 10 ta belgi yozing.',
         ];
     }
 
@@ -175,11 +226,15 @@ class ProjectContactPage extends Component
             'service_id' => isset($validated['service_id']) ? (int) $validated['service_id'] : null,
             'name' => $validated['name'],
             'phone' => $validated['phone'],
+            'business_niche' => $validated['business_niche'],
             'email' => ($validated['email'] ?? null) ?: null,
-            'company' => ($validated['company'] ?? null) ?: null,
+            'company' => ($validated['company'] ?? null) ?: $validated['business_niche'],
             'preferred_contact' => $validated['preferred_contact'],
+            'platform' => $validated['platform'],
+            'goal' => $validated['goal'],
             'budget_range' => $validated['budget_range'],
             'project_summary' => $validated['project_summary'],
+            'note' => ($validated['note'] ?? null) ?: null,
             'status' => 'new',
         ]);
 
@@ -187,13 +242,17 @@ class ProjectContactPage extends Component
             'service_id',
             'name',
             'phone',
+            'business_niche',
             'email',
             'company',
             'budget_range',
             'project_summary',
+            'note',
         ]);
 
         $this->preferred_contact = 'phone';
+        $this->platform = 'instagram';
+        $this->goal = 'sales';
         $this->budget_range = '';
         $this->inquirySent = true;
         $this->resetValidation();

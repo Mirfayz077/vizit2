@@ -88,6 +88,9 @@ class ServiceController extends Controller
                 Rule::unique('services', 'slug')->ignore($service?->id),
             ],
             'description' => ['nullable', 'string', 'max:1000'],
+            'price' => ['nullable', 'string', 'max:80'],
+            'icon' => ['nullable', 'string', 'max:60'],
+            'benefit' => ['nullable', 'string', 'max:255'],
             'sort_order' => ['required', 'integer', 'min:0', 'max:9999'],
             'is_active' => ['nullable', 'boolean'],
         ]);
@@ -95,6 +98,9 @@ class ServiceController extends Controller
         $baseSlug = Str::slug($validated['slug'] ?: $validated['title']);
 
         $validated['slug'] = $this->makeUniqueSlug($baseSlug !== '' ? $baseSlug : 'service', $service);
+        $validated['price'] = $validated['price'] ?: null;
+        $validated['icon'] = $validated['icon'] ?: null;
+        $validated['benefit'] = $validated['benefit'] ?: null;
         $validated['is_active'] = $request->boolean('is_active');
 
         return $validated;

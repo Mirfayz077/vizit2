@@ -34,6 +34,9 @@ class InquiryController extends Controller
                         ->orWhere('phone', 'like', "%{$search}%")
                         ->orWhere('email', 'like', "%{$search}%")
                         ->orWhere('company', 'like', "%{$search}%")
+                        ->orWhere('business_niche', 'like', "%{$search}%")
+                        ->orWhere('platform', 'like', "%{$search}%")
+                        ->orWhere('goal', 'like', "%{$search}%")
                         ->orWhere('project_summary', 'like', "%{$search}%");
                 });
             })

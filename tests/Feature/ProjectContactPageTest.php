@@ -30,11 +30,14 @@ class ProjectContactPageTest extends TestCase
             ->set('service_id', (string) $service->id)
             ->set('name', 'Kamola')
             ->set('phone', '+998901112233')
+            ->set('business_niche', 'Online kurs')
             ->set('email', 'kamola@example.com')
-            ->set('company', 'Mirsaar Brief')
             ->set('preferred_contact', 'telegram')
-            ->set('budget_range', '8600')
-            ->set('project_summary', 'Alohida contacts page orqali brief yuboryapman va CRM bilan premium sayt kerak.')
+            ->set('platform', 'tiktok')
+            ->set('goal', 'sales')
+            ->set('budget_range', '500$ dan')
+            ->set('project_summary', 'Alohida contacts page orqali SMM brief yuboryapman va sotuvga kontent kerak.')
+            ->set('note', 'Telegram kanal ham bor.')
             ->call('submitInquiry')
             ->assertHasNoErrors()
             ->assertSet('inquirySent', true);
@@ -43,10 +46,14 @@ class ProjectContactPageTest extends TestCase
             'service_id' => $service->id,
             'name' => 'Kamola',
             'phone' => '+998901112233',
+            'business_niche' => 'Online kurs',
             'email' => 'kamola@example.com',
-            'company' => 'Mirsaar Brief',
+            'company' => 'Online kurs',
             'preferred_contact' => 'telegram',
-            'budget_range' => '8600',
+            'platform' => 'tiktok',
+            'goal' => 'sales',
+            'budget_range' => '500$ dan',
+            'note' => 'Telegram kanal ham bor.',
         ]);
     }
 }

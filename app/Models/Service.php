@@ -14,6 +14,9 @@ class Service extends Model
         'title',
         'slug',
         'description',
+        'price',
+        'icon',
+        'benefit',
         'is_active',
         'sort_order',
     ];

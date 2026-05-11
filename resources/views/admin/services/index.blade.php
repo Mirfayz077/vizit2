@@ -66,7 +66,13 @@
 
                     <p class="admin-note">{{ $service->description ?: 'Tavsif kiritilmagan.' }}</p>
 
+                    @if ($service->benefit)
+                        <p class="admin-note"><strong>Benefit:</strong> {{ $service->benefit }}</p>
+                    @endif
+
                     <div class="admin-chip-row">
+                        <span class="admin-chip">{{ $service->price ?: 'Narx kiritilmagan' }}</span>
+                        <span class="admin-chip">Icon: {{ $service->icon ?: 'default' }}</span>
                         <span class="admin-chip">Tartib: {{ $service->sort_order }}</span>
                         <span class="admin-chip">So'rovlar: {{ $service->inquiries_count }}</span>
                         <span class="admin-chip">{{ $service->updated_at?->format('d.m.Y') }}</span>

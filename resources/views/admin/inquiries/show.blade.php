@@ -19,8 +19,8 @@
         <article class="admin-card">
             <div class="admin-section-head">
                 <div>
-                    <h2>Proekt briefi</h2>
-                    <p class="admin-note">Lead yuborgan asosiy izoh va talablar.</p>
+                    <h2>SMM briefi</h2>
+                    <p class="admin-note">Lead yuborgan asosiy maqsad, platforma va izohlar.</p>
                 </div>
 
                 <span class="admin-pill" data-status="{{ $inquiry->status }}">
@@ -30,11 +30,18 @@
 
             <div class="admin-chip-row">
                 <span class="admin-chip">{{ $inquiry->service?->title ?? 'Xizmat tanlanmagan' }}</span>
+                <span class="admin-chip">Niche: {{ $inquiry->business_niche ?: $inquiry->company ?: 'Belgilanmagan' }}</span>
+                <span class="admin-chip">Platforma: {{ ucfirst($inquiry->platform ?: 'Belgilanmagan') }}</span>
+                <span class="admin-chip">Maqsad: {{ str_replace('_', ' ', $inquiry->goal ?: 'Belgilanmagan') }}</span>
                 <span class="admin-chip">Byudjet: {{ $inquiry->budget_range ?: 'Belgilanmagan' }}</span>
                 <span class="admin-chip">Aloqa: {{ ucfirst($inquiry->preferred_contact) }}</span>
             </div>
 
             <p class="admin-detail-copy">{{ $inquiry->project_summary }}</p>
+
+            @if ($inquiry->note)
+                <p class="admin-detail-copy"><strong>Qo'shimcha izoh:</strong> {{ $inquiry->note }}</p>
+            @endif
         </article>
 
         <div class="admin-stack">
@@ -64,8 +71,8 @@
                     </article>
 
                     <article class="admin-table-card">
-                        <strong>Kompaniya</strong>
-                        <div class="admin-meta">{{ $inquiry->company ?: 'Kiritilmagan' }}</div>
+                        <strong>Biznes / niche</strong>
+                        <div class="admin-meta">{{ $inquiry->business_niche ?: $inquiry->company ?: 'Kiritilmagan' }}</div>
                     </article>
                 </div>
 

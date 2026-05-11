@@ -14,11 +14,15 @@ class Inquiry extends Model
         'service_id',
         'name',
         'phone',
+        'business_niche',
         'email',
         'company',
         'preferred_contact',
+        'platform',
+        'goal',
         'budget_range',
         'project_summary',
+        'note',
         'status',
     ];
 

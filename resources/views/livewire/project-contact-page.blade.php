@@ -14,7 +14,7 @@
 
                 <span class="mirsaar-contact-page__brand-copy">
                     <strong>Mirsaar</strong>
-                    <small>premium experience</small>
+                    <small>SMM brief</small>
                 </span>
             </a>
 
@@ -24,18 +24,28 @@
                 @endforeach
             </nav>
 
+            <a href="{{ route('home') }}" class="mirsaar-contact-page__back-link">Bosh sahifa</a>
+            @if (false)
+
             <a href="{{ route('home') }}" class="mirsaar-contact-page__back-link">На главную</a>
+            @endif
         </header>
 
         <div class="mirsaar-contact-page__card">
             <div class="mirsaar-contact-page__head">
+                <h1 class="mirsaar-contact-page__title">SMM konsultatsiya uchun brief</h1>
+                @if (false)
                 <h1 class="mirsaar-contact-page__title">Свяжитесь с Нами</h1>
+                @endif
             </div>
 
             <div class="mirsaar-contact-page__content">
                 <div class="mirsaar-contact-page__faq-column">
                     <div class="mirsaar-contact-page__section-head">
+                        <h2 class="mirsaar-contact-page__section-title">SMM bo'yicha savollar</h2>
+                        @if (false)
                         <h2 class="mirsaar-contact-page__section-title">Частые вопросы (FAQ)</h2>
+                        @endif
                         <span class="mirsaar-contact-page__section-line" aria-hidden="true"></span>
                     </div>
 
@@ -131,7 +141,7 @@
                         <form wire:submit="submitInquiry" class="mirsaar-contact-form">
                             <div class="mirsaar-contact-form__meta">
                                 <strong>Brief forma</strong>
-                                <p>Bu forma asosiy sahifadagidek qo'shimcha ma'lumotlar bilan admin panelga yuboriladi.</p>
+                                <p>SMM xizmat, platforma, maqsad va byudjet bo'yicha murojaat admin panelga yuboriladi.</p>
                             </div>
 
                             <div class="mirsaar-contact-form__grid">
@@ -165,17 +175,42 @@
                                 </label>
 
                                 <label class="mirsaar-contact-form__field">
-                                    <span>Email</span>
-                                    <input type="email" wire:model="email" placeholder="hello@example.com" aria-label="Email">
-                                    @error('email')
+                                    <span>Biznes / niche</span>
+                                    <input type="text" wire:model="business_niche" placeholder="Beauty salon, kurs, cafe..." aria-label="Biznes yoki niche">
+                                    @error('business_niche')
                                         <small>{{ $message }}</small>
                                     @enderror
                                 </label>
 
                                 <label class="mirsaar-contact-form__field">
-                                    <span>Kompaniya</span>
-                                    <input type="text" wire:model="company" placeholder="Kompaniya nomi" aria-label="Kompaniya">
-                                    @error('company')
+                                    <span>Platforma</span>
+                                    <select wire:model="platform" aria-label="Platforma">
+                                        <option value="instagram">Instagram</option>
+                                        <option value="tiktok">TikTok</option>
+                                        <option value="telegram">Telegram</option>
+                                    </select>
+                                    @error('platform')
+                                        <small>{{ $message }}</small>
+                                    @enderror
+                                </label>
+
+                                <label class="mirsaar-contact-form__field">
+                                    <span>Maqsad</span>
+                                    <select wire:model="goal" aria-label="Maqsad">
+                                        <option value="followers">Followers</option>
+                                        <option value="sales">Sales</option>
+                                        <option value="leads">Leads</option>
+                                        <option value="brand_awareness">Brand awareness</option>
+                                    </select>
+                                    @error('goal')
+                                        <small>{{ $message }}</small>
+                                    @enderror
+                                </label>
+
+                                <label class="mirsaar-contact-form__field">
+                                    <span>Email</span>
+                                    <input type="email" wire:model="email" placeholder="ixtiyoriy" aria-label="Email">
+                                    @error('email')
                                         <small>{{ $message }}</small>
                                     @enderror
                                 </label>
@@ -195,7 +230,7 @@
                                 <label class="mirsaar-contact-form__field">
                                     <span>Taxminiy byudjet</span>
                                     <small class="mirsaar-contact-form__hint">Summani USD ($) da kiriting.</small>
-                                    <input type="text" wire:model="budget_range" inputmode="decimal" placeholder="Masalan: 2500" aria-label="Taxminiy byudjet">
+                                    <input type="text" wire:model="budget_range" inputmode="decimal" placeholder="Masalan: 300$ dan" aria-label="Taxminiy byudjet">
                                     @error('budget_range')
                                         <small>{{ $message }}</small>
                                     @enderror
@@ -203,9 +238,17 @@
                             </div>
 
                             <label class="mirsaar-contact-form__field">
-                                <span>Proekt haqida</span>
-                                <textarea wire:model="project_summary" rows="6" placeholder="Loyiha maqsadi, kerakli bo'limlar va deadline haqida yozing" aria-label="Proekt haqida"></textarea>
+                                <span>Izoh</span>
+                                <textarea wire:model="project_summary" rows="6" placeholder="Biznesingiz, hozirgi holat va kutayotgan natijangizni yozing" aria-label="Izoh"></textarea>
                                 @error('project_summary')
+                                    <small>{{ $message }}</small>
+                                @enderror
+                            </label>
+
+                            <label class="mirsaar-contact-form__field">
+                                <span>Qo'shimcha eslatma</span>
+                                <textarea wire:model="note" rows="3" placeholder="Ixtiyoriy" aria-label="Qo'shimcha eslatma"></textarea>
+                                @error('note')
                                     <small>{{ $message }}</small>
                                 @enderror
                             </label>

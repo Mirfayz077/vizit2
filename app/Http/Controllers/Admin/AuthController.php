@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
 class AuthController extends Controller
@@ -26,19 +29,35 @@ class AuthController extends Controller
             'password' => ['required', 'string'],
         ]);
 
+        $throttleKey = $this->throttleKey($request, $credentials['login']);
+
+        if (RateLimiter::tooManyAttempts($throttleKey, 5)) {
+            $seconds = RateLimiter::availableIn($throttleKey);
+
+            throw ValidationException::withMessages([
+                'login' => "Juda ko'p urinish bo'ldi. {$seconds} soniyadan keyin qayta urinib ko'ring.",
+            ]);
+        }
+
         $remember = $request->boolean('remember');
 
+        $loginField = filter_var($credentials['login'], FILTER_VALIDATE_EMAIL) ? 'email' : 'login';
+
         if (! Auth::attempt([
-            'login' => $credentials['login'],
+            $loginField => $credentials['login'],
             'password' => $credentials['password'],
             'is_admin' => true,
         ], $remember)) {
+            RateLimiter::hit($throttleKey, 60);
+
             return back()
                 ->withErrors([
                     'login' => 'Login yoki parol noto\'g\'ri.',
                 ])
                 ->onlyInput('login');
         }
+
+        RateLimiter::clear($throttleKey);
 
         $request->session()->regenerate();
 
@@ -53,5 +72,10 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('admin.login');
+    }
+
+    private function throttleKey(Request $request, string $login): string
+    {
+        return Str::lower($login).'|'.$request->ip();
     }
 }

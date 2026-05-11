@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Inquiry;
+use App\Models\Project;
 use App\Models\Service;
 use Illuminate\View\View;
 
@@ -18,6 +19,8 @@ class DashboardController extends Controller
             'today_inquiries' => Inquiry::query()->whereDate('created_at', today())->count(),
             'active_services' => Service::query()->where('is_active', true)->count(),
             'inactive_services' => Service::query()->where('is_active', false)->count(),
+            'active_projects' => Project::query()->where('is_active', true)->count(),
+            'featured_projects' => Project::query()->where('is_featured', true)->count(),
         ];
 
         $recentInquiries = Inquiry::query()

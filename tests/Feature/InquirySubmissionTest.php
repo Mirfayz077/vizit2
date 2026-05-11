@@ -23,11 +23,14 @@ class InquirySubmissionTest extends TestCase
             ->set('service_id', (string) $service->id)
             ->set('name', 'Aziza')
             ->set('phone', '+998909998877')
+            ->set('business_niche', 'Beauty salon')
             ->set('email', 'aziza@example.com')
-            ->set('company', 'Mirsaar Client')
             ->set('preferred_contact', 'telegram')
-            ->set('budget_range', '5200')
-            ->set('project_summary', 'Premium landing page va admin qismi uchun toliq brief yuboryapman.')
+            ->set('platform', 'instagram')
+            ->set('goal', 'leads')
+            ->set('budget_range', '300$ dan')
+            ->set('project_summary', 'Instagram yuritish va lead olib kelish uchun SMM brief yuboryapman.')
+            ->set('note', 'Reels ham kerak.')
             ->call('submitInquiry')
             ->assertHasNoErrors()
             ->assertSet('inquirySent', true);
@@ -35,7 +38,12 @@ class InquirySubmissionTest extends TestCase
         $this->assertDatabaseHas('inquiries', [
             'name' => 'Aziza',
             'phone' => '+998909998877',
+            'business_niche' => 'Beauty salon',
             'preferred_contact' => 'telegram',
+            'platform' => 'instagram',
+            'goal' => 'leads',
+            'budget_range' => '300$ dan',
+            'note' => 'Reels ham kerak.',
             'service_id' => $service->id,
         ]);
     }

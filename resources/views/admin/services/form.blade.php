@@ -51,6 +51,32 @@
                     @enderror
                 </div>
 
+                <div class="admin-form-grid admin-form-grid--compact">
+                    <div class="admin-field">
+                        <label for="price">Narx</label>
+                        <input id="price" type="text" name="price" value="{{ old('price', $service->price) }}" placeholder="300$ dan">
+                        @error('price')
+                            <div class="admin-error">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="admin-field">
+                        <label for="icon">Icon kaliti</label>
+                        <input id="icon" type="text" name="icon" value="{{ old('icon', $service->icon) }}" placeholder="strategy, instagram, target">
+                        @error('icon')
+                            <div class="admin-error">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="admin-field">
+                    <label for="benefit">Qisqa benefit</label>
+                    <input id="benefit" type="text" name="benefit" value="{{ old('benefit', $service->benefit) }}" placeholder="Mijoz uchun asosiy foyda">
+                    @error('benefit')
+                        <div class="admin-error">{{ $message }}</div>
+                    @enderror
+                </div>
+
                 <div class="admin-field">
                     <label for="sort_order">Tartib</label>
                     <input id="sort_order" type="number" name="sort_order" min="0" value="{{ old('sort_order', $service->sort_order ?? 0) }}" required>
@@ -100,6 +126,11 @@
                     </article>
 
                     <article class="admin-table-card">
+                        <strong>Narx va benefit</strong>
+                        <p class="admin-note">Narx, icon va benefit asosiy sahifadagi xizmat kartalarida chiqadi.</p>
+                    </article>
+
+                    <article class="admin-table-card">
                         <strong>Tartib</strong>
                         <p class="admin-note">Kichikroq son oldinroq chiqadi. Admin va front bir xil tartibdan foydalanadi.</p>
                     </article>
@@ -128,6 +159,11 @@
                     <article class="admin-table-card">
                         <strong>Tartib</strong>
                         <div class="admin-meta">{{ old('sort_order', $service->sort_order ?? 0) }}</div>
+                    </article>
+
+                    <article class="admin-table-card">
+                        <strong>Narx</strong>
+                        <div class="admin-meta">{{ old('price', $service->price ?: 'Kiritilmagan') }}</div>
                     </article>
                 </div>
             </article>

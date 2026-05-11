@@ -3,7 +3,10 @@
 namespace App\Livewire;
 
 use App\Models\Inquiry;
+use App\Models\HeroSection;
+use App\Models\Project;
 use App\Models\Service;
+use App\Models\SiteSetting;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
@@ -25,17 +28,21 @@ class StackShowcase extends Component
         ['label' => 'RU', 'active' => false],
     ];
 
+    public array $hero = [];
+
+    public array $siteSettings = [];
+
     public array $heroTags = [
-        'Signature Header',
-        'Code Motion',
-        'Live Systems',
-        'Full Screen',
+        'Instagram',
+        'TikTok',
+        'Kontent plan',
+        'Target',
     ];
 
     public array $stats = [
-        ['value' => '24/7', 'label' => 'premium support'],
-        ['value' => '3D', 'label' => 'hover va motion polish'],
-        ['value' => '100%', 'label' => 'responsive first-screen'],
+        ['value' => '25+', 'label' => 'loyiha'],
+        ['value' => '3 yil', 'label' => 'tajriba'],
+        ['value' => '10M+', 'label' => 'reach'],
     ];
 
     public array $storyMetrics = [
@@ -285,11 +292,15 @@ class StackShowcase extends Component
 
     public array $serviceOptions = [];
 
+    public array $services = [];
+
     public ?string $service_id = null;
 
     public string $name = '';
 
     public string $phone = '';
+
+    public string $business_niche = '';
 
     public string $email = '';
 
@@ -297,39 +308,228 @@ class StackShowcase extends Component
 
     public string $preferred_contact = 'phone';
 
+    public string $platform = 'instagram';
+
+    public string $goal = 'sales';
+
     public string $budget_range = '';
 
     public string $project_summary = '';
+
+    public string $note = '';
 
     public bool $inquirySent = false;
 
     public function mount(): void
     {
+        $this->navItems = [
+            ['label' => 'Bosh sahifa', 'href' => '#home'],
+            ['label' => 'Xizmatlar', 'href' => '#services'],
+            ['label' => 'Brief', 'href' => '#support'],
+            ['label' => 'Keyslar', 'href' => '#projects'],
+            ['label' => 'Sharhlar', 'href' => '#reviews'],
+            ['label' => 'Kontaktlar', 'href' => '#contact'],
+        ];
+
+        $this->footerMenu = [
+            ['label' => 'Bosh sahifa', 'href' => '#home'],
+            ['label' => 'Xizmatlar', 'href' => '#services'],
+            ['label' => 'Keyslar', 'href' => '#projects'],
+            ['label' => 'Brief', 'href' => '#support'],
+        ];
+
+        $this->loadHero();
+        $this->loadSiteSettings();
         $this->loadServices();
+        $this->loadProjects();
+    }
+
+    protected function loadHero(): void
+    {
+        $this->hero = $this->defaultHero();
+
+        if (! Schema::hasTable('hero_sections')) {
+            $this->stats = $this->hero['achievements'];
+
+            return;
+        }
+
+        $hero = HeroSection::singleton()->toHeroArray();
+        $hero['hero_image_url'] = $this->publicAssetUrl($hero['hero_image']);
+
+        $this->hero = $hero;
+        $this->stats = $hero['achievements'];
+    }
+
+    protected function defaultHero(): array
+    {
+        $hero = (new HeroSection(HeroSection::defaults()))->toHeroArray();
+        $hero['hero_image_url'] = $this->publicAssetUrl($hero['hero_image']);
+
+        return $hero;
+    }
+
+    protected function publicAssetUrl(?string $path): ?string
+    {
+        if (! filled($path)) {
+            return null;
+        }
+
+        if (preg_match('/^(https?:)?\/\//', $path) === 1) {
+            return $path;
+        }
+
+        return asset(ltrim($path, '/'));
+    }
+
+    protected function loadSiteSettings(): void
+    {
+        $settings = SiteSetting::defaults();
+
+        if (Schema::hasTable('site_settings')) {
+            $settings = SiteSetting::singleton()->only([
+                'phone',
+                'telegram',
+                'instagram',
+                'whatsapp',
+                'email',
+                'location',
+                'consultation_link',
+            ]);
+        }
+
+        $this->siteSettings = $settings;
+
+        $this->contactCards = [
+            [
+                'initials' => 'TG',
+                'role' => 'Telegram',
+                'title' => 'Tezkor aloqa',
+                'value' => $settings['phone'],
+                'meta' => 'SMM strategiya yoki konsultatsiya bo\'yicha yozing.',
+                'href' => $settings['telegram'],
+            ],
+            [
+                'initials' => 'IG',
+                'role' => 'Instagram',
+                'title' => 'Portfolio va kontent',
+                'value' => 'Instagram profil',
+                'meta' => 'Keyslar, reels va vizual yo\'nalishni ko\'rish uchun.',
+                'href' => $settings['instagram'],
+            ],
+            [
+                'initials' => 'WA',
+                'role' => 'WhatsApp',
+                'title' => 'Konsultatsiya',
+                'value' => 'WhatsApp orqali bog\'lanish',
+                'meta' => 'Brief, byudjet va platforma bo\'yicha tez kelishamiz.',
+                'href' => $settings['whatsapp'],
+            ],
+            [
+                'initials' => 'LO',
+                'role' => 'Location',
+                'title' => $settings['location'],
+                'value' => $settings['email'],
+                'meta' => 'Online konsultatsiya va loyiha muhokamasi.',
+                'href' => 'mailto:'.$settings['email'],
+            ],
+        ];
+
+        $this->footerContacts = [
+            [
+                'icon' => 'mail',
+                'label' => 'Email',
+                'value' => $settings['email'],
+                'href' => 'mailto:'.$settings['email'],
+            ],
+            [
+                'icon' => 'shield',
+                'label' => 'Telegram',
+                'value' => $settings['phone'],
+                'href' => $settings['telegram'],
+            ],
+            [
+                'icon' => 'spark',
+                'label' => 'Konsultatsiya',
+                'value' => $settings['location'],
+                'href' => $settings['consultation_link'],
+            ],
+        ];
     }
 
     protected function loadServices(): void
     {
         if (! Schema::hasTable('services')) {
-            $this->serviceOptions = [
-                ['id' => '1', 'title' => 'Premium Landing Page'],
-                ['id' => '2', 'title' => 'DevSuite CRM'],
-                ['id' => '3', 'title' => 'Admin Dashboard'],
-                ['id' => '4', 'title' => 'Corporate Website'],
-                ['id' => '5', 'title' => 'Premium Support'],
+            $this->services = [
+                ['id' => '1', 'title' => 'SMM strategiya', 'description' => 'Kontent va growth yo\'l xaritasi.', 'price' => '300$ dan', 'icon' => 'strategy', 'benefit' => 'SMM yo\'nalish aniq bo\'ladi.'],
+                ['id' => '2', 'title' => 'Kontent plan', 'description' => 'Post, reels va stories kalendar.', 'price' => '200$ dan', 'icon' => 'calendar', 'benefit' => 'Kontent tartibli chiqadi.'],
             ];
+            $this->serviceOptions = collect($this->services)->map(fn (array $service) => [
+                'id' => $service['id'],
+                'title' => $service['title'],
+            ])->all();
 
             return;
         }
 
-        $this->serviceOptions = Service::query()
+        $this->services = Service::query()
             ->where('is_active', true)
             ->orderBy('sort_order')
-            ->get(['id', 'title'])
+            ->get(['id', 'title', 'description', 'price', 'icon', 'benefit'])
             ->map(fn (Service $service) => [
                 'id' => (string) $service->id,
                 'title' => $service->title,
+                'description' => $service->description,
+                'price' => $service->price,
+                'icon' => $service->icon ?: 'spark',
+                'benefit' => $service->benefit,
             ])
+            ->all();
+
+        $this->serviceOptions = collect($this->services)->map(fn (array $service) => [
+            'id' => $service['id'],
+            'title' => $service['title'],
+        ])->all();
+    }
+
+    protected function loadProjects(): void
+    {
+        if (! Schema::hasTable('projects')) {
+            return;
+        }
+
+        $projects = Project::query()
+            ->where('is_active', true)
+            ->orderBy('row')
+            ->orderBy('sort_order')
+            ->orderBy('title')
+            ->get();
+
+        if ($projects->isEmpty()) {
+            return;
+        }
+
+        $this->portfolioRows = $projects
+            ->groupBy('row')
+            ->sortKeys()
+            ->map(fn ($row) => $row
+                ->map(fn (Project $project) => [
+                    'label' => $project->label ?: $project->slug,
+                    'title' => $project->title,
+                    'client_niche' => $project->client_niche,
+                    'theme' => $project->theme ?: 'bronze',
+                    'layout' => $project->layout ?: 'centered',
+                    'image' => $project->image ?: 'images/projects/devsuite-crm.svg',
+                    'description' => $project->description,
+                    'before_state' => $project->before_state,
+                    'work_done' => $project->work_done,
+                    'result' => $project->result,
+                    'platform' => $project->platform,
+                    'is_featured' => $project->is_featured,
+                ])
+                ->values()
+                ->all())
+            ->values()
             ->all();
     }
 
@@ -345,11 +545,15 @@ class StackShowcase extends Component
             'service_id' => $serviceRules,
             'name' => ['required', 'string', 'max:120'],
             'phone' => ['required', 'string', 'max:40'],
+            'business_niche' => ['required', 'string', 'max:120'],
             'email' => ['nullable', 'email', 'max:120'],
             'company' => ['nullable', 'string', 'max:120'],
             'preferred_contact' => ['required', Rule::in(['phone', 'telegram', 'email'])],
-            'budget_range' => ['required', 'string', 'max:40', 'regex:/^\$?\s*[0-9][0-9\s,.]*$/'],
-            'project_summary' => ['required', 'string', 'min:20', 'max:2000'],
+            'platform' => ['required', Rule::in(['instagram', 'tiktok', 'telegram'])],
+            'goal' => ['required', Rule::in(['followers', 'sales', 'leads', 'brand_awareness'])],
+            'budget_range' => ['required', 'string', 'max:40'],
+            'project_summary' => ['required', 'string', 'min:10', 'max:2000'],
+            'note' => ['nullable', 'string', 'max:2000'],
         ];
     }
 
@@ -360,12 +564,14 @@ class StackShowcase extends Component
             'service_id.exists' => 'Tanlangan xizmat topilmadi.',
             'name.required' => 'Ismingizni kiriting.',
             'phone.required' => 'Telefon raqamingizni kiriting.',
+            'business_niche.required' => 'Biznes yoki niche kiriting.',
             'email.email' => 'Email formatini tekshiring.',
             'preferred_contact.required' => 'Qulay aloqa usulini tanlang.',
+            'platform.required' => 'Qaysi platforma kerakligini tanlang.',
+            'goal.required' => 'Asosiy maqsadni tanlang.',
             'budget_range.required' => 'Taxminiy byudjetni kiriting.',
-            'budget_range.regex' => 'Taxminiy byudjetni raqam ko\'rinishida kiriting.',
-            'project_summary.required' => 'Proekt haqida qisqacha yozing.',
-            'project_summary.min' => 'Kamida 20 ta belgi yozing.',
+            'project_summary.required' => 'Izoh yoki qisqa brief yozing.',
+            'project_summary.min' => 'Kamida 10 ta belgi yozing.',
         ];
     }
 
@@ -385,11 +591,15 @@ class StackShowcase extends Component
             'service_id' => isset($validated['service_id']) ? (int) $validated['service_id'] : null,
             'name' => $validated['name'],
             'phone' => $validated['phone'],
+            'business_niche' => $validated['business_niche'],
             'email' => $validated['email'] ?: null,
-            'company' => $validated['company'] ?: null,
+            'company' => $validated['company'] ?: $validated['business_niche'],
             'preferred_contact' => $validated['preferred_contact'],
+            'platform' => $validated['platform'],
+            'goal' => $validated['goal'],
             'budget_range' => $validated['budget_range'],
             'project_summary' => $validated['project_summary'],
+            'note' => $validated['note'] ?: null,
             'status' => 'new',
         ]);
 
@@ -397,12 +607,16 @@ class StackShowcase extends Component
             'service_id',
             'name',
             'phone',
+            'business_niche',
             'email',
             'company',
             'project_summary',
+            'note',
         ]);
 
         $this->preferred_contact = 'phone';
+        $this->platform = 'instagram';
+        $this->goal = 'sales';
         $this->budget_range = '';
         $this->inquirySent = true;
         $this->resetValidation();

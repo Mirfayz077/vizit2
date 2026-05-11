@@ -19,9 +19,12 @@ class AdminServicesTest extends TestCase
 
         $this->actingAs($admin)
             ->post(route('admin.services.store'), [
-                'title' => 'Portfolio Website',
+                'title' => 'Instagram yuritish',
                 'slug' => '',
-                'description' => 'Kompaniya uchun premium showcase sayt.',
+                'description' => 'Profil kontenti, stories va reels oqimi.',
+                'price' => '450$ dan',
+                'icon' => 'instagram',
+                'benefit' => 'Profil tartibli va faol yuradi.',
                 'sort_order' => 4,
                 'is_active' => '1',
             ])
@@ -29,21 +32,27 @@ class AdminServicesTest extends TestCase
 
         $service = Service::query()->firstOrFail();
 
-        $this->assertSame('portfolio-website', $service->slug);
+        $this->assertSame('instagram-yuritish', $service->slug);
 
         $this->actingAs($admin)
             ->put(route('admin.services.update', $service), [
-                'title' => 'Platform Website',
-                'slug' => 'platform-website',
-                'description' => 'Yangilangan xizmat tavsifi.',
+                'title' => 'Reels / TikTok content',
+                'slug' => 'reels-tiktok-content',
+                'description' => 'Yangilangan SMM xizmat tavsifi.',
+                'price' => '350$ dan',
+                'icon' => 'video',
+                'benefit' => 'Short video kontent tizimli chiqadi.',
                 'sort_order' => 5,
             ])
             ->assertRedirect(route('admin.services.index'));
 
         $this->assertDatabaseHas('services', [
             'id' => $service->id,
-            'title' => 'Platform Website',
-            'slug' => 'platform-website',
+            'title' => 'Reels / TikTok content',
+            'slug' => 'reels-tiktok-content',
+            'price' => '350$ dan',
+            'icon' => 'video',
+            'benefit' => 'Short video kontent tizimli chiqadi.',
             'is_active' => false,
             'sort_order' => 5,
         ]);

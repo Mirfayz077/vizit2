@@ -11,6 +11,7 @@
         </div>
 
         <div class="admin-topbar__actions">
+            <a href="{{ route('admin.projects.create') }}" class="admin-button">Yangi proekt</a>
             <a href="{{ route('admin.services.create') }}" class="admin-button">Yangi xizmat</a>
 
             <form method="POST" action="{{ route('admin.logout') }}">
@@ -49,6 +50,12 @@
             <div class="admin-kpi__label">Aktiv xizmat</div>
             <div class="admin-kpi__value">{{ $stats['active_services'] }}</div>
             <div class="admin-kpi__meta">Yashirin: {{ $stats['inactive_services'] }}</div>
+        </article>
+
+        <article class="admin-card">
+            <div class="admin-kpi__label">Aktiv proekt</div>
+            <div class="admin-kpi__value">{{ $stats['active_projects'] }}</div>
+            <div class="admin-kpi__meta">Featured: {{ $stats['featured_projects'] }}</div>
         </article>
     </section>
 
