@@ -1,4 +1,5 @@
 
+<div class="stack-showcase-page">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   
@@ -999,8 +1000,6 @@
     .cta-row { flex-direction: column; align-items: flex-start; }
   }
 </style>
-</head>
-<body>
 
 <!-- NAV -->
 <nav class="nav" id="nav">
@@ -1783,5 +1782,4 @@
     });
   });
 </script>
-</body>
-</html>
+</div>
