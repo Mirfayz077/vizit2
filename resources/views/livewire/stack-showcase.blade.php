@@ -1682,8 +1682,7 @@
             <input type="text" wire:model="business_niche" placeholder="Ресторан, клиника, аптека, магазин...">
           </div>
           <div class="field">
-            
-<label>Проект</label>
+            <label>Проект</label>
             <select wire:model="platform"><option value="instagram">Instagram</option><option value="telegram">Telegram</option><option value="tiktok">TikTok</option><option value="website">Website</option><option value="other">Other</option></select>
           </div>
           <div class="field">
@@ -1791,7 +1790,6 @@
   </div>
 </footer>
 </div>
-
 <script>
 (function () {
   function initMirsaarLanding() {
