@@ -1,26 +1,27 @@
-
+﻿
 <div class="stack-showcase-page">
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   
   :root {
-    --gold: #C9A84C;
-    --gold-light: #E8C97A;
-    --gold-dim: #7A6130;
-    --amber: #F0A500;
-    --bg-void: #060608;
-    --bg-dark: #0C0D10;
-    --bg-panel: #11121A;
-    --bg-card: #161820;
-    --bg-glass: rgba(22,24,32,0.72);
-    --border-gold: rgba(201,168,76,0.22);
+    --gold: #D4AF37;
+    --gold-light: #F3D56B;
+    --gold-dim: #8A6A1F;
+    --amber: #B5121B;
+    --bg-void: #080304;
+    --bg-dark: #120507;
+    --bg-panel: #18080B;
+    --bg-card: #1E0B0F;
+    --bg-glass: rgba(30,11,15,0.74);
+    --border-gold: rgba(212,175,55,0.30);
     --border-subtle: rgba(255,255,255,0.06);
     --border-mid: rgba(255,255,255,0.1);
     --text-white: #F5F3EE;
     --text-muted: rgba(245,243,238,0.48);
     --text-dim: rgba(245,243,238,0.28);
-    --accent-orange: #E8782A;
-    --accent-glow: rgba(201,168,76,0.15);
+    --accent-orange: #B5121B;
+    --accent-glow: rgba(181,18,27,0.18);
     --font-display: 'Cormorant Garamond', serif;
     --font-ui: 'Syne', sans-serif;
     --font-body: 'DM Sans', sans-serif;
@@ -28,13 +29,16 @@
     --r-md: 14px;
     --r-lg: 22px;
     --r-xl: 32px;
-    --shadow-gold: 0 0 60px rgba(201,168,76,0.12), 0 0 120px rgba(201,168,76,0.06);
+    --shadow-gold: 0 0 60px rgba(212,175,55,0.16), 0 0 120px rgba(181,18,27,0.10);
     --shadow-card: 0 24px 80px rgba(0,0,0,0.6), 0 4px 20px rgba(0,0,0,0.4);
     --shadow-float: 0 40px 120px rgba(0,0,0,0.8), 0 8px 32px rgba(0,0,0,0.5);
   }
 
   html { scroll-behavior: smooth; }
-  body {
+  .mirsaar-page {
+    min-height: 100vh;
+    position: relative;
+    isolation: isolate;
     background: var(--bg-void);
     color: var(--text-white);
     font-family: var(--font-body);
@@ -45,7 +49,7 @@
   }
 
   /* ── NOISE OVERLAY ── */
-  body::before {
+  .mirsaar-page::before {
     content: '';
     position: fixed; inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
@@ -71,7 +75,7 @@
     border: 1.5px solid var(--gold);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    background: rgba(201,168,76,0.06);
+    background: rgba(181,18,27,0.10);
     flex-shrink: 0;
   }
   .nav-logo svg { width: 22px; height: 22px; color: var(--gold); }
@@ -102,10 +106,10 @@
     border: 1px solid var(--border-gold);
     border-radius: 100px;
     color: var(--gold);
-    background: rgba(201,168,76,0.05);
+    background: rgba(181,18,27,0.09);
     transition: all 0.3s;
   }
-  .nav-admin:hover { background: rgba(201,168,76,0.14); border-color: var(--gold); }
+  .nav-admin:hover { background: rgba(181,18,27,0.18); border-color: var(--gold); }
   .lang-pill {
     font-family: var(--font-ui); font-size: 11px; letter-spacing: 0.1em;
     cursor: pointer; border: none;
@@ -113,7 +117,7 @@
     background: transparent; color: var(--text-dim);
     transition: all 0.25s;
   }
-  .lang-pill.is-active { color: var(--gold); background: rgba(201,168,76,0.1); }
+  .lang-pill.is-active { color: var(--gold); background: rgba(181,18,27,0.14); }
 
   /* ── HERO ── */
   .hero {
@@ -134,19 +138,19 @@
   }
   .orb-1 {
     width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(181,18,27,0.16) 0%, transparent 70%);
     top: -200px; left: -200px;
     animation: orbFloat 12s ease-in-out infinite alternate;
   }
   .orb-2 {
     width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(232,120,42,0.09) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 70%);
     top: 30%; right: -100px;
     animation: orbFloat 16s ease-in-out infinite alternate-reverse;
   }
   .orb-3 {
     width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(181,18,27,0.12) 0%, transparent 70%);
     bottom: -100px; left: 40%;
     animation: orbFloat 10s ease-in-out infinite alternate;
   }
@@ -159,8 +163,8 @@
   .hero-grid-lines {
     position: absolute; inset: 0;
     background-image:
-      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(212,175,55,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,175,55,0.04) 1px, transparent 1px);
     background-size: 80px 80px;
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
   }
@@ -226,7 +230,7 @@
     font-family: var(--font-ui); font-size: 11px; letter-spacing: 0.08em;
     padding: 6px 14px; border-radius: 100px;
     border: 1px solid var(--border-gold);
-    color: var(--gold); background: rgba(201,168,76,0.06);
+    color: var(--gold); background: rgba(181,18,27,0.10);
   }
 
   .cta-row {
@@ -252,13 +256,13 @@
   .btn:hover::before { opacity: 1; }
 
   .btn-primary {
-    background: linear-gradient(135deg, var(--gold-light), var(--gold), #A87B2A);
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), #8B0F17);
     color: #0C0D10;
-    box-shadow: 0 4px 24px rgba(201,168,76,0.35), 0 0 0 0 rgba(201,168,76,0.3);
+    box-shadow: 0 4px 24px rgba(181,18,27,0.38), 0 0 0 0 rgba(212,175,55,0.36);
   }
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 40px rgba(201,168,76,0.5), 0 0 60px rgba(201,168,76,0.2);
+    box-shadow: 0 8px 40px rgba(212,175,55,0.52), 0 0 60px rgba(212,175,55,0.24);
   }
   .btn-primary svg { width: 16px; height: 16px; }
 
@@ -269,7 +273,7 @@
   }
   .btn-secondary:hover {
     border-color: var(--gold);
-    background: rgba(201,168,76,0.08);
+    background: rgba(181,18,27,0.14);
     transform: translateY(-2px);
   }
 
@@ -295,7 +299,7 @@
     text-align: center;
     transition: background 0.3s;
   }
-  .stat-card:hover { background: rgba(201,168,76,0.05); }
+  .stat-card:hover { background: rgba(181,18,27,0.09); }
   .stat-value {
     font-family: var(--font-display);
     font-size: 36px; font-weight: 600;
@@ -376,7 +380,7 @@
   }
   .float-badge-icon {
     width: 36px; height: 36px; border-radius: 10px;
-    background: linear-gradient(135deg, var(--gold), #A87B2A);
+    background: linear-gradient(135deg, var(--gold), #8B0F17);
     display: flex; align-items: center; justify-content: center;
     font-family: var(--font-ui); font-size: 11px; font-weight: 700;
     color: #0C0D10; flex-shrink: 0;
@@ -420,8 +424,8 @@
     border: 2px solid var(--gold);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    background: rgba(201,168,76,0.08);
-    box-shadow: 0 0 60px rgba(201,168,76,0.2), inset 0 0 30px rgba(201,168,76,0.05);
+    background: rgba(181,18,27,0.14);
+    box-shadow: 0 0 60px rgba(212,175,55,0.24), inset 0 0 30px rgba(181,18,27,0.09);
   }
   .showcase-logo svg { width: 42px; height: 42px; color: var(--gold); }
   .showcase-tag {
@@ -509,13 +513,13 @@
   .service-card::before {
     content: ''; position: absolute;
     top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.36), transparent);
     opacity: 0; transition: opacity 0.3s;
   }
   .service-card:hover {
     border-color: var(--border-gold);
     transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(201,168,76,0.06);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(181,18,27,0.10);
     background: rgba(22,24,32,0.95);
   }
   .service-card:hover::before { opacity: 1; }
@@ -525,7 +529,7 @@
   }
   .service-icon {
     width: 44px; height: 44px; border-radius: 12px;
-    background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+    background: linear-gradient(135deg, rgba(181,18,27,0.16), rgba(181,18,27,0.09));
     border: 1px solid var(--border-gold);
     display: flex; align-items: center; justify-content: center;
     font-family: var(--font-ui); font-size: 12px; font-weight: 700;
@@ -545,7 +549,7 @@
     display: inline-block;
     font-size: 11px; letter-spacing: 0.06em;
     padding: 5px 12px; border-radius: 100px;
-    background: rgba(201,168,76,0.08); border: 1px solid var(--border-gold);
+    background: rgba(181,18,27,0.14); border: 1px solid var(--border-gold);
     color: var(--gold); font-family: var(--font-ui);
   }
 
@@ -600,7 +604,7 @@
   .case-tag {
     font-size: 11px; padding: 6px 14px; border-radius: 100px;
     border: 1px solid var(--border-gold); color: var(--gold);
-    background: rgba(201,168,76,0.06); font-family: var(--font-ui);
+    background: rgba(181,18,27,0.10); font-family: var(--font-ui);
   }
   .case-steps { display: flex; flex-direction: column; gap: 12px; }
   .case-step {
@@ -635,7 +639,7 @@
     background: linear-gradient(135deg, #161820, #1e2030, #161820);
     display: flex; align-items: center; justify-content: center;
     font-family: var(--font-display); font-size: 64px; font-weight: 300;
-    color: rgba(201,168,76,0.15);
+    color: rgba(181,18,27,0.16);
     letter-spacing: -0.04em;
   }
   .case-image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
@@ -646,7 +650,7 @@
     font-family: var(--font-ui); font-size: 10px; font-weight: 700;
     letter-spacing: 0.1em; text-transform: uppercase;
     padding: 8px 16px; border-radius: 100px;
-    box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    box-shadow: 0 4px 20px rgba(212,175,55,0.42);
   }
 
   /* Gallery marquee */
@@ -678,7 +682,7 @@
   .gallery-card-frame img { width: 100%; height: 100%; object-fit: cover; }
   .gallery-placeholder {
     font-family: var(--font-display); font-size: 48px; font-weight: 300;
-    color: rgba(201,168,76,0.1); letter-spacing: -0.04em;
+    color: rgba(181,18,27,0.14); letter-spacing: -0.04em;
   }
   .gallery-caption { padding: 20px 22px; }
   .gallery-label {
@@ -714,18 +718,18 @@
   .contact-card::before {
     content: ''; position: absolute;
     top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.42), transparent);
     opacity: 0; transition: opacity 0.3s;
   }
   .contact-card:hover {
     border-color: var(--border-gold);
     transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(201,168,76,0.06);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(181,18,27,0.10);
   }
   .contact-card:hover::before { opacity: 1; }
   .contact-avatar {
     width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
-    background: linear-gradient(135deg, rgba(201,168,76,0.2), rgba(201,168,76,0.05));
+    background: linear-gradient(135deg, rgba(212,175,55,0.24), rgba(181,18,27,0.09));
     border: 1px solid var(--border-gold);
     display: flex; align-items: center; justify-content: center;
     font-family: var(--font-ui); font-size: 14px; font-weight: 700;
@@ -757,12 +761,12 @@
   .review-btn {
     width: 48px; height: 48px; border-radius: 50%;
     border: 1px solid var(--border-gold);
-    background: rgba(201,168,76,0.04);
+    background: rgba(181,18,27,0.08);
     color: var(--gold); cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: all 0.3s;
   }
-  .review-btn:hover { background: rgba(201,168,76,0.14); border-color: var(--gold); }
+  .review-btn:hover { background: rgba(181,18,27,0.18); border-color: var(--gold); }
   .review-btn svg { width: 20px; height: 20px; }
 
   .reviews-track-outer { overflow: hidden; }
@@ -782,7 +786,7 @@
   .review-quote-mark {
     position: absolute; top: 28px; right: 28px;
     font-family: var(--font-display); font-size: 72px; line-height: 1;
-    font-weight: 600; color: rgba(201,168,76,0.1);
+    font-weight: 600; color: rgba(181,18,27,0.14);
     pointer-events: none;
   }
   .review-text { font-size: 14px; color: var(--text-muted); line-height: 1.75; margin-bottom: 28px; font-style: italic; font-family: var(--font-display); font-size: 17px; }
@@ -795,7 +799,7 @@
     background: var(--border-mid); cursor: pointer;
     transition: all 0.3s;
   }
-  .dot.is-active { background: var(--gold); width: 24px; box-shadow: 0 0 12px rgba(201,168,76,0.5); }
+  .dot.is-active { background: var(--gold); width: 24px; box-shadow: 0 0 12px rgba(212,175,55,0.52); }
 
   /* ── FORM / SUPPORT ── */
   .support-section { padding: 120px 48px; }
@@ -814,7 +818,7 @@
   .support-points { display: flex; flex-direction: column; gap: 20px; }
   .support-point {
     padding-left: 20px;
-    border-left: 2px solid rgba(201,168,76,0.3);
+    border-left: 2px solid rgba(212,175,55,0.36);
   }
   .support-point strong { display: block; font-size: 14px; font-weight: 500; color: var(--text-white); margin-bottom: 4px; }
   .support-point span { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
@@ -859,8 +863,8 @@
   .field input::placeholder, .field textarea::placeholder { color: var(--text-dim); }
   .field select option { background: var(--bg-card); color: var(--text-white); }
   .field input:focus, .field select:focus, .field textarea:focus {
-    border-color: rgba(201,168,76,0.5);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.08);
+    border-color: rgba(212,175,55,0.52);
+    box-shadow: 0 0 0 3px rgba(181,18,27,0.14);
   }
   .field textarea { resize: vertical; min-height: 120px; }
   .field-full { grid-column: 1 / -1; }
@@ -885,7 +889,7 @@
   .footer-brand-copy strong { display: block; font-family: var(--font-ui); font-size: 14px; font-weight: 700; letter-spacing: 0.06em; }
   .footer-brand-copy small { font-size: 10px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 300; }
   .footer-lead { font-size: 13px; color: var(--text-muted); line-height: 1.75; margin-bottom: 20px; font-weight: 300; }
-  .footer-email { font-family: var(--font-ui); font-size: 13px; color: var(--gold); text-decoration: none; display: inline-block; padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.3); transition: border-color 0.3s; }
+  .footer-email { font-family: var(--font-ui); font-size: 13px; color: var(--gold); text-decoration: none; display: inline-block; padding: 8px 0; border-bottom: 1px solid rgba(212,175,55,0.36); transition: border-color 0.3s; }
   .footer-email:hover { border-color: var(--gold); }
   .footer-col-title { font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: block; }
   .footer-links { display: flex; flex-direction: column; gap: 12px; }
@@ -908,7 +912,7 @@
     font-family: var(--font-ui); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
     padding: 6px 16px; border-radius: 100px;
     border: 1px solid var(--border-gold); color: var(--gold);
-    background: rgba(201,168,76,0.04);
+    background: rgba(181,18,27,0.08);
   }
 
   /* ── SCROLL REVEAL ── */
@@ -999,7 +1003,70 @@
     .form-grid { grid-template-columns: 1fr; }
     .cta-row { flex-direction: column; align-items: flex-start; }
   }
+
+  /* ── EXTRA FIXES FOR LIVEWIRE / MOBILE ── */
+  .mirsaar-page a, .mirsaar-page button { -webkit-tap-highlight-color: transparent; }
+  .mirsaar-page img, .mirsaar-page svg { max-width: 100%; }
+  .mirsaar-page .btn { white-space: nowrap; }
+
+  @media (max-width: 768px) {
+    .nav { height: 66px; padding: 0 16px; }
+    .mobile-menu { top: 66px; padding: 28px 22px; }
+    .nav-brand-text strong { font-size: 13px; }
+    .nav-brand-text small { font-size: 8px; }
+    .nav-logo { width: 34px; height: 34px; }
+    .hero { padding: 104px 18px 64px; min-height: auto; }
+    .hero-lead { font-size: 14px; }
+    .chips { gap: 7px; }
+    .chip { font-size: 10px; padding: 5px 10px; }
+    .btn { width: 100%; justify-content: center; padding: 13px 20px; }
+    .btn-text { width: auto; justify-content: flex-start; padding-left: 0; }
+    .brand-showcase { padding: 40px 18px; }
+    .showcase-title { font-size: 40px; }
+    .showcase-copy { font-size: 14px; }
+    .services-section, .works-section, .contact-section, .reviews-section, .support-section, .section { padding-left: 18px; padding-right: 18px; }
+    .feature-case { padding: 24px 18px; }
+    .case-badge { top: 18px; right: 18px; }
+    .gallery-card { width: 280px; }
+    .review-card { padding: 26px 22px; }
+    .form-card { padding: 28px 20px; }
+    .footer-bottom { align-items: flex-start; flex-direction: column; }
+    .scroll-hint { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-admin, .nav-side > .lang-pill { display: none; }
+    .nav-brand { gap: 10px; }
+    .hero-title { font-size: 38px; }
+    .hero-eyebrow { font-size: 9px; letter-spacing: 0.12em; }
+    .showcase-actions, .cta-row { width: 100%; }
+    .metrics-row { grid-template-columns: 1fr; }
+    .contact-card { padding: 22px; }
+    .reviews-controls { width: 100%; }
+    .review-btn { width: 44px; height: 44px; }
+  }
+
+
+
+  /* ── RED + GOLD PREMIUM THEME OVERRIDES ── */
+  .btn-primary, .case-badge, .float-badge-icon {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), #B5121B);
+  }
+  .hero-title em, .showcase-title em, .works-title, .stat-value, .metric-val, .service-price {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), #B5121B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .service-card:hover, .contact-card:hover, .review-card:hover {
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45), 0 0 48px rgba(181,18,27,0.12);
+  }
+  .nav, footer, .works-section, .reviews-section {
+    background: linear-gradient(180deg, rgba(18,5,7,0.94), rgba(8,3,4,0.96));
+  }
+
 </style>
+<div class="mirsaar-page">
 
 <!-- NAV -->
 <nav class="nav" id="nav">
@@ -1013,20 +1080,20 @@
     </div>
     <div class="nav-brand-text">
       <strong>Mirsaar</strong>
-      <small>просто. точно. мощно.</small>
+      <small>IT решения для бизнеса</small>
     </div>
   </a>
   <nav class="nav-links">
-    <a href="#services">Xizmatlar</a>
-    <a href="#projects">Keyslar</a>
-    <a href="#contact">Kontakt</a>
-    <a href="#reviews">Sharhlar</a>
-    <a href="#support">Brief</a>
+    <a href="#services">Услуги</a>
+    <a href="#projects">Проекты</a>
+    <a href="#contact">Контакты</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#support">Заявка</a>
   </nav>
   <div class="nav-side">
     <a href="/admin/login" class="nav-admin">Admin</a>
-    <button class="lang-pill is-active">UZ</button>
-    <button class="lang-pill">RU</button>
+    <button class="lang-pill is-active">RU</button>
+    <button class="lang-pill">UZ</button>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none">
         <path d="M4 7H20" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
@@ -1039,15 +1106,15 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#services" class="mobile-link">Xizmatlar</a>
-  <a href="#projects" class="mobile-link">Keyslar</a>
-  <a href="#contact" class="mobile-link">Kontakt</a>
-  <a href="#reviews" class="mobile-link">Sharhlar</a>
-  <a href="#support" class="mobile-link">Brief</a>
-  <a href="/admin/login" class="mobile-link admin">Admin panel</a>
+  <a href="#services" class="mobile-link">Услуги</a>
+  <a href="#projects" class="mobile-link">Проекты</a>
+  <a href="#contact" class="mobile-link">Контакты</a>
+  <a href="#reviews" class="mobile-link">Отзывы</a>
+  <a href="#support" class="mobile-link">Заявка</a>
+  <a href="/admin/login" class="mobile-link admin">Панель администратора</a>
   <div class="mobile-lang">
-    <button class="lang-pill is-active">UZ</button>
-    <button class="lang-pill">RU</button>
+    <button class="lang-pill is-active">RU</button>
+    <button class="lang-pill">UZ</button>
   </div>
 </div>
 
@@ -1064,51 +1131,50 @@
     <div class="hero-copy">
       <div class="hero-eyebrow">
         <span class="eyebrow-dot"></span>
-        SMM Mutaxassis / Social Media Growth System
+        IT разработка / CRM / готовые программы / спецзаказы
       </div>
 
       <h1 class="hero-title">
         <span>Mirsaar</span>
-        <em>digital</em>
+        <em>IT Solutions</em>
       </h1>
 
       <p class="hero-lead">
-        Instagram, TikTok va Telegram uchun strategiya, kontent, target reklama va analitika — 
-        barchasi bitta aniq tizimda. Har bir qaror biznes maqsadga bog'liq.
+        Разрабатываем готовые программы и индивидуальные IT решения для ресторанов, клиник, аптек и малого бизнеса. CRM системы, Telegram боты, бухгалтерия, NFC карты и проекты под специальный заказ.
       </p>
 
       <div class="chips">
-        <span class="chip">Kontent strategiya</span>
-        <span class="chip">Target reklama</span>
-        <span class="chip">Reels & Stories</span>
-        <span class="chip">Brand building</span>
-        <span class="chip">Analitika</span>
+        <span class="chip">CRM системы</span>
+        <span class="chip">Telegram боты</span>
+        <span class="chip">Программы для ресторанов</span>
+        <span class="chip">NFC карты</span>
+        <span class="chip">Бухгалтерия</span>
       </div>
 
       <div class="cta-row">
         <a href="#support" class="btn btn-primary">
-          Konsultatsiya
+          Получить консультацию
           <svg viewBox="0 0 24 24" fill="none">
             <path d="M7 17L17 7" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
             <path d="M9 7H17V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           </svg>
         </a>
-        <a href="#projects" class="btn btn-secondary">Keyslar</a>
-        <a href="#services" class="btn btn-text">Xizmatlar →</a>
+        <a href="#projects" class="btn btn-secondary">Проекты</a>
+        <a href="#services" class="btn btn-text">Услуги →</a>
       </div>
 
       <div class="stats-grid">
         <article class="stat-card">
           <p class="stat-value">120+</p>
-          <p class="stat-label">Mijozlar</p>
+          <p class="stat-label">Клиентов</p>
         </article>
         <article class="stat-card">
           <p class="stat-value">3.2M</p>
-          <p class="stat-label">Umumiy Reach</p>
+          <p class="stat-label">Готовых решений</p>
         </article>
         <article class="stat-card">
           <p class="stat-value">4.8★</p>
-          <p class="stat-label">Reyting</p>
+          <p class="stat-label">Рейтинг</p>
         </article>
       </div>
     </div>
@@ -1118,31 +1184,31 @@
       <article class="profile-card">
         <div class="profile-img-fallback">M</div>
         <div class="profile-body">
-          <p class="profile-label">SMM growth system</p>
+          <p class="profile-label">IT business system</p>
           <p class="profile-name">Mirsaar</p>
-          <p class="profile-role">Social Media Mutaxassis</p>
+          <p class="profile-role">Разработка программ и автоматизация</p>
         </div>
       </article>
 
       <div class="float-badge float-top">
-        <div class="float-badge-icon">IG</div>
+        <div class="float-badge-icon">CRM</div>
         <div class="float-badge-text">
-          <strong>Kontent strategiya</strong>
-          <small>post, reels, stories ritmi</small>
+          <strong>CRM системы</strong>
+          <small>заказы, клиенты, склад, отчеты</small>
         </div>
       </div>
 
       <div class="float-badge float-bottom">
-        <div class="float-badge-icon">ROI</div>
+        <div class="float-badge-icon">BOT</div>
         <div class="float-badge-text">
-          <strong>Lead va reach</strong>
-          <small>analitika asosida o'sish</small>
+          <strong>Telegram автоматизация</strong>
+          <small>боты для заявок и продаж</small>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="scroll-hint">portfolio va xizmatlar pastda</div>
+  <div class="scroll-hint">ниже проекты и услуги</div>
 </section>
 
 <div class="gold-divider"></div>
@@ -1162,22 +1228,21 @@
         <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="2.5"/><path d="M18 39L28.5 22H35L25 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="M30 42L39 22H46L36.5 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/></svg>
       </div>
 
-      <span class="showcase-tag">nima uchun SMM bilan ishlashadi</span>
+      <span class="showcase-tag">почему бизнес выбирает Mirsaar</span>
 
       <h2 class="showcase-title">
-        <span>SMM</span>
-        <em>growth</em>
+        <span>IT</span>
+        <em>automation</em>
       </h2>
 
       <p class="showcase-copy">
-        Strategiya, kontent plan, reels, target reklama va analitika bitta ritmda ishlaydi.
-        Har bir post va kampaniya biznes maqsadga ulanadi: reach, lead, sotuv yoki personal brand.
+        CRM, Telegram боты, ресторанные программы, бухгалтерские модули, NFC карты и специальные IT заказы работают как единая система. Мы делаем решения, которые упрощают учет, продажи, обслуживание клиентов и управление бизнесом.
       </p>
 
       <div class="showcase-actions">
-        <a href="#support" class="btn btn-primary">Konsultatsiya olish</a>
-        <a href="#services" class="btn btn-secondary">Xizmatlar</a>
-        <a href="#projects" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);">Keyslar</a>
+        <a href="#support" class="btn btn-primary">Получить консультацию</a>
+        <a href="#services" class="btn btn-secondary">Услуги</a>
+        <a href="#projects" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);">Проекты</a>
       </div>
     </article>
   </div>
@@ -1188,26 +1253,26 @@
   <div class="services-wrapper">
     <div class="services-grid-layout">
       <div class="services-copy reveal">
-        <p class="section-kicker">xizmatlar</p>
-        <h2 class="services-copy-title">SMM strategiya, kontent va reklamani bitta aniq tizimga yig'amiz.</h2>
+        <p class="section-kicker">услуги</p>
+        <h2 class="services-copy-title">Создаем IT решения, которые помогают бизнесу работать быстрее, удобнее и точнее.</h2>
         <p class="services-copy-lead">
-          Xizmatlar admin paneldan boshqariladi: nomi, narxi, icon kaliti, benefit va aktiv holati o'zgarsa, asosiy sahifa ham darhol yangilanadi.
+          Разрабатываем готовые программы и индивидуальные системы под задачи бизнеса: от CRM и Telegram ботов до ресторанных, медицинских и аптечных программ.
         </p>
         <div class="story-note">
-          Har bir xizmat biznes maqsadga bog'lanadi: reach, lead, sotuv, personal brand yoki auditoriya ishonchi.
+          Каждый проект создается под реальную задачу: учет клиентов, заказы, склад, продажи, отчеты, автоматизация персонала и удобное управление.
         </div>
         <div class="metrics-row">
           <div class="metric-item">
             <div class="metric-val">120+</div>
-            <div class="metric-lbl">Mijozlar</div>
+            <div class="metric-lbl">Клиентов</div>
           </div>
           <div class="metric-item">
             <div class="metric-val">3.2M</div>
-            <div class="metric-lbl">Reach</div>
+            <div class="metric-lbl">Проекты</div>
           </div>
           <div class="metric-item">
             <div class="metric-val">98%</div>
-            <div class="metric-lbl">Mamnun</div>
+            <div class="metric-lbl">Довольны</div>
           </div>
         </div>
       </div>
@@ -1216,42 +1281,62 @@
         <!-- Service cards rendered from admin — showing sample 4 -->
         <article class="service-card">
           <div class="service-card-top">
-            <div class="service-icon">KO</div>
-            <span class="service-price">$200/oy</span>
+            <div class="service-icon">CRM</div>
+            <span class="service-price">от $300</span>
           </div>
-          <h3 class="service-name">Kontent Strategiya</h3>
-          <p class="service-desc">Oylik kontent plan, post kaloriy, stories va reels jadvaliga asoslangan to'liq strategiya.</p>
-          <span class="service-benefit">Reach + Brand</span>
+          <h3 class="service-name">CRM для бизнеса</h3>
+          <p class="service-desc">CRM система для учета клиентов, заказов, сотрудников, задач, оплат, склада и отчетов.</p>
+          <span class="service-benefit">Учет + Контроль</span>
         </article>
 
         <article class="service-card">
           <div class="service-card-top">
-            <div class="service-icon">TA</div>
-            <span class="service-price">$300/oy</span>
+            <div class="service-icon">BOT</div>
+            <span class="service-price">от $150</span>
           </div>
-          <h3 class="service-name">Target Reklama</h3>
-          <p class="service-desc">Facebook Ads va Instagram Ads orqali aniq auditoriyaga yo'naltirilgan kampaniyalar.</p>
-          <span class="service-benefit">Leads + Sales</span>
+          <h3 class="service-name">Telegram бот</h3>
+          <p class="service-desc">Боты для приема заявок, онлайн заказов, уведомлений, оплаты, записи и поддержки клиентов.</p>
+          <span class="service-benefit">Заявки + Продажи</span>
         </article>
 
         <article class="service-card">
           <div class="service-card-top">
-            <div class="service-icon">RE</div>
-            <span class="service-price">$150/oy</span>
+            <div class="service-icon">RES</div>
+            <span class="service-price">от $400</span>
           </div>
-          <h3 class="service-name">Reels Production</h3>
-          <p class="service-desc">Viral reels va stories skript, montaj va publish — oyiga 8-12 video.</p>
-          <span class="service-benefit">Viral Reach</span>
+          <h3 class="service-name">Программы для ресторанов</h3>
+          <p class="service-desc">Готовые и индивидуальные решения для меню, заказов, столов, кухни, доставки, кассы и отчетов.</p>
+          <span class="service-benefit">Ресторан + Касса</span>
         </article>
 
         <article class="service-card">
           <div class="service-card-top">
-            <div class="service-icon">AN</div>
-            <span class="service-price">$100/oy</span>
+            <div class="service-icon">ACC</div>
+            <span class="service-price">от $250</span>
           </div>
-          <h3 class="service-name">Analitika & Hisobot</h3>
-          <p class="service-desc">Har oyda to'liq analitika: reach, engagement, lead va ROI hisoboti.</p>
-          <span class="service-benefit">Data-driven</span>
+          <h3 class="service-name">Бухгалтерия и учет</h3>
+          <p class="service-desc">Программы для учета финансов, расходов, доходов, сотрудников, зарплат, отчетов и документов.</p>
+          <span class="service-benefit">Финансы + Отчеты</span>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon">NFC</div>
+            <span class="service-price">от $80</span>
+          </div>
+          <h3 class="service-name">NFC карты</h3>
+          <p class="service-desc">Цифровые визитки, карты сотрудников, быстрый переход на сайт, контакты, меню или профиль компании.</p>
+          <span class="service-benefit">Одно касание</span>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon">MED</div>
+            <span class="service-price">от $500</span>
+          </div>
+          <h3 class="service-name">Клиника и аптека</h3>
+          <p class="service-desc">Программы для записи пациентов, учета услуг, склада лекарств, продаж, отчетов и клиентской базы.</p>
+          <span class="service-benefit">Медицина + Учет</span>
         </article>
       </div>
     </div>
@@ -1262,30 +1347,30 @@
 <section class="works-section" id="projects">
   <div class="works-wrapper">
     <div class="works-header reveal">
-      <p class="section-kicker" style="justify-content: center;">keyslar / portfolio</p>
-      <h2 class="works-title">SMM Case Study</h2>
-      <p class="works-lead">Admin paneldan boshqariladigan portfolio: klient niche, oldingi holat, qilingan ish, platforma va natija.</p>
+      <p class="section-kicker" style="justify-content: center;">проекты / портфолио</p>
+      <h2 class="works-title">IT проекты для бизнеса</h2>
+      <p class="works-lead">Примеры решений: CRM, ресторанные системы, Telegram боты, NFC карты, программы для клиник, аптек и спецзаказы.</p>
     </div>
 
     <!-- Featured case -->
     <div class="feature-case reveal reveal-d1">
       <div class="case-copy">
-        <p class="case-eyebrow">Instagram / Featured Case</p>
-        <h3 class="case-title">Beauty Salon — Followers'dan Sales'ga</h3>
-        <p class="case-lead">3 oy davomida 0 dan 15,000 follower va oylik 40+ lead olgan kampaniya. Kontent + reklama + CRM integratsiyasi.</p>
+        <p class="case-eyebrow">CRM / Главный проект</p>
+        <h3 class="case-title">Ресторан — CRM, меню, заказы и кухня в одной системе</h3>
+        <p class="case-lead">Для ресторана была создана система приема заказов, управления столами, меню, кухней, доставкой, оплатами и ежедневными отчетами.</p>
         <div class="case-meta">
-          <span class="case-tag">Beauty & Wellness</span>
-          <span class="case-tag">Instagram</span>
-          <span class="case-tag">+412% Reach</span>
+          <span class="case-tag">Restaurant Tech</span>
+          <span class="case-tag">CRM система</span>
+          <span class="case-tag">Готовое решение</span>
         </div>
         <div class="case-steps">
           <article class="case-step">
-            <span>Oldingi holat</span>
-            <p>800 follower, kundalik post yo'q, reklama byudjeti sarflangan lekin natija yo'q.</p>
+            <span>До внедрения</span>
+            <p>Заказы велись вручную, отчеты собирались отдельно, персонал тратил много времени на повторные действия.</p>
           </article>
           <article class="case-step">
-            <span>Qilingan ish</span>
-            <p>Oylik kontent plan, haftalik 3 reels, target reklama + stories funnel, CRM integratsiya.</p>
+            <span>Что сделали</span>
+            <p>Разработали CRM, электронное меню, модуль заказов, кухонный экран, Telegram уведомления и отчетность.</p>
           </article>
         </div>
       </div>
@@ -1295,10 +1380,10 @@
             <span></span><span></span><span></span>
           </div>
           <div class="case-image-placeholder">
-            <span style="font-family: var(--font-display); font-size: 80px; font-weight: 300; color: rgba(201,168,76,0.1); letter-spacing: -0.04em;">IG</span>
+            <span style="font-family: var(--font-display); font-size: 80px; font-weight: 300; color: rgba(212,175,55,0.18); letter-spacing: -0.04em;">CRM</span>
           </div>
         </div>
-        <div class="case-badge">+412% Reach</div>
+        <div class="case-badge">Готовое решение</div>
       </div>
     </div>
 
@@ -1308,43 +1393,43 @@
         <div class="gallery-track" id="track1">
           <!-- Row 1 cards (duplicated in JS) -->
           <article class="gallery-card">
-            <div class="gallery-card-frame"><div class="gallery-placeholder">TK</div></div>
+            <div class="gallery-card-frame"><div class="gallery-placeholder">BOT</div></div>
             <div class="gallery-caption">
-              <p class="gallery-label">TikTok</p>
-              <h3 class="gallery-title">Restoran — Viral Content</h3>
-              <div class="gallery-meta"><span class="gallery-niche">F&B</span><strong class="gallery-result">2.1M views</strong></div>
+              <p class="gallery-label">Telegram бот</p>
+              <h3 class="gallery-title">Ресторан — онлайн заказы</h3>
+              <div class="gallery-meta"><span class="gallery-niche">HoReCa</span><strong class="gallery-result">заказы 24/7</strong></div>
             </div>
           </article>
           <article class="gallery-card">
-            <div class="gallery-card-frame"><div class="gallery-placeholder">IG</div></div>
+            <div class="gallery-card-frame"><div class="gallery-placeholder">MED</div></div>
             <div class="gallery-caption">
-              <p class="gallery-label">Instagram</p>
-              <h3 class="gallery-title">Fitnes Club — Lead Gen</h3>
-              <div class="gallery-meta"><span class="gallery-niche">Health</span><strong class="gallery-result">+240 leads</strong></div>
+              <p class="gallery-label">CRM система</p>
+              <h3 class="gallery-title">Клиника — запись пациентов</h3>
+              <div class="gallery-meta"><span class="gallery-niche">Clinic</span><strong class="gallery-result">онлайн запись</strong></div>
             </div>
           </article>
           <article class="gallery-card">
-            <div class="gallery-card-frame"><div class="gallery-placeholder">TG</div></div>
+            <div class="gallery-card-frame"><div class="gallery-placeholder">PHR</div></div>
             <div class="gallery-caption">
               <p class="gallery-label">Telegram</p>
-              <h3 class="gallery-title">Online Kurs — Subscriber</h3>
-              <div class="gallery-meta"><span class="gallery-niche">Education</span><strong class="gallery-result">8,400 sub</strong></div>
+              <h3 class="gallery-title">Аптека — склад и продажи</h3>
+              <div class="gallery-meta"><span class="gallery-niche">Pharmacy</span><strong class="gallery-result">учет товара</strong></div>
             </div>
           </article>
           <article class="gallery-card">
-            <div class="gallery-card-frame"><div class="gallery-placeholder">IG</div></div>
+            <div class="gallery-card-frame"><div class="gallery-placeholder">NFC</div></div>
             <div class="gallery-caption">
-              <p class="gallery-label">Instagram</p>
-              <h3 class="gallery-title">Fashion Brand — Sales</h3>
-              <div class="gallery-meta"><span class="gallery-niche">Fashion</span><strong class="gallery-result">×3.8 ROAS</strong></div>
+              <p class="gallery-label">CRM система</p>
+              <h3 class="gallery-title">NFC визитки и карты</h3>
+              <div class="gallery-meta"><span class="gallery-niche">NFC</span><strong class="gallery-result">быстрый контакт</strong></div>
             </div>
           </article>
           <article class="gallery-card">
-            <div class="gallery-card-frame"><div class="gallery-placeholder">TK</div></div>
+            <div class="gallery-card-frame"><div class="gallery-placeholder">CLN</div></div>
             <div class="gallery-caption">
-              <p class="gallery-label">TikTok</p>
-              <h3 class="gallery-title">Clinic — Brand Awareness</h3>
-              <div class="gallery-meta"><span class="gallery-niche">Medical</span><strong class="gallery-result">1.5M reach</strong></div>
+              <p class="gallery-label">Telegram бот</p>
+              <h3 class="gallery-title">Клиника — CRM и регистратура</h3>
+              <div class="gallery-meta"><span class="gallery-niche">Clinic</span><strong class="gallery-result">единая база</strong></div>
             </div>
           </article>
         </div>
@@ -1353,43 +1438,43 @@
       <div class="gallery-row is-reverse reveal reveal-d2">
         <div class="gallery-track" id="track2">
           <article class="gallery-card">
-            <div class="gallery-card-frame"><div class="gallery-placeholder">IG</div></div>
+            <div class="gallery-card-frame"><div class="gallery-placeholder">ACC</div></div>
             <div class="gallery-caption">
-              <p class="gallery-label">Instagram</p>
-              <h3 class="gallery-title">Real Estate — Leads</h3>
-              <div class="gallery-meta"><span class="gallery-niche">Property</span><strong class="gallery-result">+180 leads</strong></div>
+              <p class="gallery-label">CRM система</p>
+              <h3 class="gallery-title">Бухгалтерия — доходы и расходы</h3>
+              <div class="gallery-meta"><span class="gallery-niche">Accounting</span><strong class="gallery-result">финансовый учет</strong></div>
             </div>
           </article>
           <article class="gallery-card">
-            <div class="gallery-card-frame"><div class="gallery-placeholder">TG</div></div>
+            <div class="gallery-card-frame"><div class="gallery-placeholder">BOT</div></div>
             <div class="gallery-caption">
               <p class="gallery-label">Telegram</p>
-              <h3 class="gallery-title">Finance Coach — Community</h3>
-              <div class="gallery-meta"><span class="gallery-niche">Finance</span><strong class="gallery-result">12K sub</strong></div>
+              <h3 class="gallery-title">Telegram бот — заявки</h3>
+              <div class="gallery-meta"><span class="gallery-niche">Automation</span><strong class="gallery-result">быстрые заявки</strong></div>
             </div>
           </article>
           <article class="gallery-card">
-            <div class="gallery-card-frame"><div class="gallery-placeholder">TK</div></div>
+            <div class="gallery-card-frame"><div class="gallery-placeholder">CUS</div></div>
             <div class="gallery-caption">
-              <p class="gallery-label">TikTok</p>
-              <h3 class="gallery-title">Kids Brand — Viral</h3>
-              <div class="gallery-meta"><span class="gallery-niche">Children</span><strong class="gallery-result">4.7M views</strong></div>
+              <p class="gallery-label">Telegram бот</p>
+              <h3 class="gallery-title">Спецзаказ — программа под бизнес</h3>
+              <div class="gallery-meta"><span class="gallery-niche">Custom IT</span><strong class="gallery-result">под ключ</strong></div>
             </div>
           </article>
           <article class="gallery-card">
-            <div class="gallery-card-frame"><div class="gallery-placeholder">IG</div></div>
+            <div class="gallery-card-frame"><div class="gallery-placeholder">NFC</div></div>
             <div class="gallery-caption">
-              <p class="gallery-label">Instagram</p>
-              <h3 class="gallery-title">Photography — Portfolio</h3>
-              <div class="gallery-meta"><span class="gallery-niche">Creative</span><strong class="gallery-result">+22K followers</strong></div>
+              <p class="gallery-label">CRM система</p>
+              <h3 class="gallery-title">NFC карты — цифровой профиль</h3>
+              <div class="gallery-meta"><span class="gallery-niche">Digital Cards</span><strong class="gallery-result">одним касанием</strong></div>
             </div>
           </article>
           <article class="gallery-card">
-            <div class="gallery-card-frame"><div class="gallery-placeholder">TG</div></div>
+            <div class="gallery-card-frame"><div class="gallery-placeholder">CRM</div></div>
             <div class="gallery-caption">
               <p class="gallery-label">Telegram</p>
-              <h3 class="gallery-title">Tech Blog — Growth</h3>
-              <div class="gallery-meta"><span class="gallery-niche">Technology</span><strong class="gallery-result">6.2K sub</strong></div>
+              <h3 class="gallery-title">CRM — управление клиентами</h3>
+              <div class="gallery-meta"><span class="gallery-niche">CRM</span><strong class="gallery-result">контроль данных</strong></div>
             </div>
           </article>
         </div>
@@ -1402,27 +1487,27 @@
 <section class="contact-section" id="contact">
   <div class="contact-wrapper">
     <div class="contact-header reveal">
-      <p class="section-kicker">kontaktlar</p>
-      <h2 class="contact-title">Qaysi kanal qulay bo'lsa,<br>shu yerdan bog'laning.</h2>
-      <p class="contact-lead">Telegram, Instagram, WhatsApp, email va lokatsiya admin paneldagi kontakt sozlamalaridan olinadi. Konsultatsiya yoki brief uchun eng qulay kanalni tanlang.</p>
+      <p class="section-kicker">контакты</p>
+      <h2 class="contact-title">Свяжитесь с нами удобным способом<br>и расскажите о вашем проекте.</h2>
+      <p class="contact-lead">Напишите нам в Telegram, WhatsApp или на email. Обсудим вашу задачу, подберем подходящее решение и подготовим понятный план разработки.</p>
     </div>
     <div class="contact-cards">
       <a href="https://t.me/mirsaar" class="contact-card reveal">
-        <div class="contact-avatar">TG</div>
+        <div class="contact-avatar">NFC</div>
         <div class="contact-copy">
           <p class="contact-role">Telegram</p>
-          <h3 class="contact-name">Mirsaar SMM</h3>
-          <strong class="contact-value">@mirsaar_smm</strong>
-          <p class="contact-meta">Tezkor javob • 24/7</p>
+          <h3 class="contact-name">Mirsaar IT</h3>
+          <strong class="contact-value">@mirsaar</strong>
+          <p class="contact-meta">Быстрый ответ</p>
         </div>
       </a>
       <a href="https://instagram.com/mirsaar" class="contact-card reveal reveal-d1">
-        <div class="contact-avatar">IG</div>
+        <div class="contact-avatar">CRM</div>
         <div class="contact-copy">
-          <p class="contact-role">Instagram</p>
-          <h3 class="contact-name">Mirsaar SMM</h3>
-          <strong class="contact-value">@mirsaar.smm</strong>
-          <p class="contact-meta">Keyslar & Portfolio</p>
+          <p class="contact-role">Портфолио</p>
+          <h3 class="contact-name">Mirsaar IT</h3>
+          <strong class="contact-value">@mirsaar.digital</strong>
+          <p class="contact-meta">Проекты и портфолио</p>
         </div>
       </a>
       <a href="https://wa.me/998900000000" class="contact-card reveal reveal-d2">
@@ -1431,16 +1516,16 @@
           <p class="contact-role">WhatsApp</p>
           <h3 class="contact-name">Mirsaar</h3>
           <strong class="contact-value">+998 90 000 00 00</strong>
-          <p class="contact-meta">Brief & Konsultatsiya</p>
+          <p class="contact-meta">Заявка и консультация</p>
         </div>
       </a>
-      <a href="mailto:hello@mirsaar.uz" class="contact-card reveal reveal-d3">
+      <a href="mailto:mirsar@gmail.com" class="contact-card reveal reveal-d3">
         <div class="contact-avatar">ML</div>
         <div class="contact-copy">
           <p class="contact-role">Email</p>
-          <h3 class="contact-name">Mirsaar Studio</h3>
-          <strong class="contact-value">hello@mirsaar.uz</strong>
-          <p class="contact-meta">Rasmiy murojaat</p>
+          <h3 class="contact-name">Mirsaar IT Studio</h3>
+          <strong class="contact-value">mirsar@gmail.com</strong>
+          <p class="contact-meta">Официальное обращение</p>
         </div>
       </a>
     </div>
@@ -1454,9 +1539,9 @@
   <div class="reviews-wrapper">
     <div class="reviews-head reveal">
       <div>
-        <p class="section-kicker">sharhlar</p>
-        <h2 class="reviews-title">Mijozlar fikri</h2>
-        <p class="reviews-lead">Har bir mijoz bilan ishlangan natija — bu shunchaki raqam emas, balki ishonch va aloqa.</p>
+        <p class="section-kicker">отзывы</p>
+        <h2 class="reviews-title">Отзывы клиентов</h2>
+        <p class="reviews-lead">Каждый проект для нас это не просто код, а удобный инструмент для бизнеса и понятный результат для клиента.</p>
       </div>
       <div class="reviews-controls">
         <button class="review-btn" id="prevBtn">
@@ -1479,11 +1564,11 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4L14.3 8.6L19.3 9.35L15.65 12.9L16.5 17.95L12 15.55L7.5 17.95L8.35 12.9L4.7 9.35L9.7 8.6L12 4Z"/></svg>
           </div>
           <span class="review-quote-mark">❝</span>
-          <p class="review-text">Mirsaar bilan ishlash bizning Instagram'imizni to'liq o'zgartirdi. 3 oy ichida 15,000 follower va har oylik 40+ lead — bu kutganimizdan ancha yuqori natija.</p>
+          <p class="review-text">Mirsaar создал для нашего ресторана удобную систему заказов и отчетов. Теперь администратор, кухня и касса работают быстрее и без лишней путаницы.</p>
           <div class="review-author">
-            <strong>Aziza Karimova</strong>
-            <span>Beauty Palace Salon</span>
-            <small>2024-yil, Noyabr</small>
+            <strong>Анна Каримова</strong>
+            <span>Family Restaurant</span>
+            <small>Ноябрь 2024</small>
           </div>
         </div>
 
@@ -1496,11 +1581,11 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4L14.3 8.6L19.3 9.35L15.65 12.9L16.5 17.95L12 15.55L7.5 17.95L8.35 12.9L4.7 9.35L9.7 8.6L12 4Z"/></svg>
           </div>
           <span class="review-quote-mark">❝</span>
-          <p class="review-text">TikTok'da reels strategiyasi bizning restoran uchun 2.1 million ko'rishga olib keldi. Reklama va kontent birgalikda ishlashini birinchi marta his qildim.</p>
+          <p class="review-text">Нам сделали Telegram бот для заявок. Клиенты выбирают услугу, оставляют данные, а менеджер сразу получает уведомление и быстро отвечает.</p>
           <div class="review-author">
-            <strong>Jasur Toshmatov</strong>
-            <span>Diyor Restaurant</span>
-            <small>2024-yil, Oktyabr</small>
+            <strong>Жасур Тошматов</strong>
+            <span>Diyor Service</span>
+            <small>Октябрь 2024</small>
           </div>
         </div>
 
@@ -1513,11 +1598,11 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4L14.3 8.6L19.3 9.35L15.65 12.9L16.5 17.95L12 15.55L7.5 17.95L8.35 12.9L4.7 9.35L9.7 8.6L12 4Z"/></svg>
           </div>
           <span class="review-quote-mark">❝</span>
-          <p class="review-text">Online kursimiz uchun Telegram kanalini 8,400 ga olib keldi va bu orqali har oyda $3,000+ daromad qilyapmiz. Analitika va strategiya juda aniq.</p>
+          <p class="review-text">Для нашей клиники разработали программу записи пациентов и учета посещений. Администраторам стало удобнее работать, а база клиентов теперь в одном месте.</p>
           <div class="review-author">
-            <strong>Malika Yusupova</strong>
-            <span>ProLearn Academy</span>
-            <small>2024-yil, Sentyabr</small>
+            <strong>Малика Юсупова</strong>
+            <span>Medline Clinic</span>
+            <small>Сентябрь 2024</small>
           </div>
         </div>
 
@@ -1530,11 +1615,11 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4L14.3 8.6L19.3 9.35L15.65 12.9L16.5 17.95L12 15.55L7.5 17.95L8.35 12.9L4.7 9.35L9.7 8.6L12 4Z"/></svg>
           </div>
           <span class="review-quote-mark">❝</span>
-          <p class="review-text">Fashion brendimiz uchun Instagram ads + kontent kombinatsiyasida ROAS 3.8x ga yetkazildi. Har bir xarajat o'z samarasini berdi.</p>
+          <p class="review-text">NFC карты для сотрудников и клиентов получились очень удобными. Контакты, сайт и социальные сети открываются одним касанием.</p>
           <div class="review-author">
-            <strong>Sherzod Nazarov</strong>
-            <span>UrbanStyle Brand</span>
-            <small>2024-yil, Avgust</small>
+            <strong>Шерзод Назаров</strong>
+            <span>Nova Business</span>
+            <small>Август 2024</small>
           </div>
         </div>
       </div>
@@ -1548,107 +1633,98 @@
   <div class="support-wrapper">
     <div class="support-layout">
       <div class="support-copy reveal">
-        <p class="section-kicker">murojaat formasi</p>
-        <h2 class="support-title">SMM briefni to'ldiring, murojaat admin panelga tushadi.</h2>
-        <p class="support-lead">Ism, telefon, biznes niche, kerakli platforma, asosiy maqsad va byudjetni yuboring. Admin panelda har bir murojaat status bilan kuzatiladi.</p>
+        <p class="section-kicker">форма заявки</p>
+        <h2 class="support-title">Оставьте заявку, и мы обсудим ваш IT проект.</h2>
+        <p class="support-lead">Укажите тип проекта, сферу бизнеса, контакты и короткое описание задачи. Мы свяжемся с вами и предложим удобное решение.</p>
         <div class="support-points">
           <div class="support-point">
-            <strong>Platforma aniq</strong>
-            <span>Instagram, TikTok yoki Telegram bo'yicha ehtiyoj alohida saqlanadi.</span>
+            <strong>Задача понятна</strong>
+            <span>CRM, Telegram бот, ресторанная программа, клиника, аптека, NFC карта или индивидуальный заказ фиксируются отдельно.</span>
           </div>
           <div class="support-point">
-            <strong>Maqsad aniq</strong>
-            <span>Followers, sales, leads yoki brand awareness admin panelda ko'rinadi.</span>
+            <strong>Цель понятна</strong>
+            <span>Автоматизация, учет, продажи, заявки или управление бизнесом отражаются в заявке.</span>
           </div>
           <div class="support-point">
-            <strong>Brief tayyor</strong>
-            <span>Byudjet va izoh bilan lead keyingi suhbatga tayyor bo'ladi.</span>
+            <strong>Заявка готова</strong>
+            <span>Бюджет и описание помогают быстрее подготовить предложение.</span>
           </div>
         </div>
       </div>
 
-      <div class="form-card reveal reveal-d2" id="contact-form">
+      <form class="form-card reveal reveal-d2" id="contact-form" wire:submit.prevent="submitInquiry">
         <div class="form-head">
-          <p class="section-kicker">brief form</p>
-          <h3>Murojaat qoldiring</h3>
-          <p>Xizmat turini tanlang, kontakt qoldiring va loyiha haqida yozing.</p>
+          <p class="section-kicker">форма заявки</p>
+          <h3>Оставьте заявку</h3>
+          <p>Выберите услугу, оставьте контакт и напишите коротко о проекте.</p>
         </div>
 
         <div class="form-grid">
           <div class="field">
-            <label>Xizmat turi</label>
-            <select>
-              <option value="">Tanlang</option>
-              <option>Kontent Strategiya</option>
-              <option>Target Reklama</option>
-              <option>Reels Production</option>
-              <option>Analitika & Hisobot</option>
+            <label>Тип услуги</label>
+            <select wire:model="service_id">
+              <option value="">Выберите</option>
+              @foreach ($serviceOptions as $option)
+                <option value="{{ $option['id'] }}">{{ $option['title'] }}</option>
+              @endforeach
             </select>
           </div>
           <div class="field">
-            <label>Ism</label>
-            <input type="text" placeholder="Ismingiz">
+            <label>Имя</label>
+            <input type="text" wire:model="name" placeholder="Ваше имя">
           </div>
           <div class="field">
-            <label>Telefon</label>
-            <input type="text" placeholder="+998 90 700 00 00">
+            <label>Телефон</label>
+            <input type="text" wire:model="phone" placeholder="+998 90 700 00 00">
           </div>
           <div class="field">
-            <label>Biznes / niche</label>
-            <input type="text" placeholder="Beauty salon, kurs, cafe...">
+            <label>Бизнес / сфера</label>
+            <input type="text" wire:model="business_niche" placeholder="Ресторан, клиника, аптека, магазин...">
           </div>
           <div class="field">
-            <label>Platforma</label>
-            <select>
-              <option>Instagram</option>
-              <option>TikTok</option>
-              <option>Telegram</option>
-            </select>
+            
+<label>Проект</label>
+            <select wire:model="platform"><option value="instagram">Instagram</option><option value="telegram">Telegram</option><option value="tiktok">TikTok</option><option value="website">Website</option><option value="other">Other</option></select>
           </div>
           <div class="field">
-            <label>Maqsad</label>
-            <select>
-              <option>Followers</option>
-              <option>Sales</option>
-              <option>Leads</option>
-              <option>Brand awareness</option>
-            </select>
+            <label>Цель</label>
+            <select wire:model="goal"><option value="sales">Sales</option><option value="leads">Leads</option><option value="awareness">Awareness</option><option value="community">Community</option></select>
           </div>
           <div class="field">
-            <label>Qulay aloqa</label>
-            <select>
-              <option>Telefon</option>
-              <option>Telegram</option>
-              <option>Email</option>
-            </select>
+            <label>Удобная связь</label>
+            <select wire:model="preferred_contact"><option value="phone">Phone</option><option value="telegram">Telegram</option><option value="email">Email</option></select>
           </div>
           <div class="field">
-            <label>Byudjet</label>
-            <input type="text" placeholder="Masalan: 300$ dan">
+            <label>Бюджет</label>
+            <input type="text" wire:model="budget_range" placeholder="Например: от 300$">
           </div>
           <div class="field field-full">
             <label>Email</label>
-            <input type="email" placeholder="ixtiyoriy">
+            <input type="email" wire:model="email" placeholder="необязательно">
           </div>
         </div>
 
         <div class="field" style="margin-bottom: 16px;">
-          <label>Izoh</label>
-          <textarea rows="5" placeholder="Biznesingiz, hozirgi holat va kutayotgan natijangizni yozing."></textarea>
+          <label>Комментарий</label>
+          <textarea rows="5" wire:model="project_summary" placeholder="Опишите ваш бизнес, текущую ситуацию и нужный результат."></textarea>
         </div>
         <div class="field" style="margin-bottom: 28px;">
-          <label>Qo'shimcha eslatma</label>
-          <textarea rows="3" placeholder="Ixtiyoriy"></textarea>
+          <label>Дополнительное сообщение</label>
+          <textarea rows="3" wire:model="note" placeholder="Необязательно"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; border-radius: 12px; padding: 16px;">
-          Yuborish
+        @if ($inquirySent)
+          <div class="form-success" id="formSuccess" style="display:block;">Ваша заявка принята. Мы скоро свяжемся с вами.</div>
+        @endif
+
+        <button type="submit" class="btn btn-primary" wire:loading.attr="disabled" style="width: 100%; justify-content: center; border-radius: 12px; padding: 16px;">
+          Отправить заявку
           <svg viewBox="0 0 24 24" fill="none" style="width:18px;height:18px;">
             <path d="M7 17L17 7" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
             <path d="M9 7H17V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
           </svg>
         </button>
-      </div>
+      </form>
     </div>
   </div>
 </section>
@@ -1664,44 +1740,44 @@
           </div>
           <div class="footer-brand-copy">
             <strong>Mirsaar</strong>
-            <small>SMM mutaxassis vizitkasi</small>
+            <small>IT разработка и автоматизация</small>
           </div>
         </a>
-        <p class="footer-lead">Instagram, TikTok va Telegram uchun strategiya, kontent, target reklama va analitika. Xizmatlar, keyslar, kontaktlar va murojaatlar admin paneldan boshqariladi.</p>
-        <a href="mailto:hello@mirsaar.uz" class="footer-email">hello@mirsaar.uz</a>
+        <p class="footer-lead">CRM системы, Telegram боты, программы для ресторанов, бухгалтерия, NFC карты, решения для клиник и аптек, а также индивидуальная разработка под заказ.</p>
+        <a href="mailto:mirsar@gmail.com" class="footer-email">mirsar@gmail.com</a>
       </div>
 
       <div>
-        <span class="footer-col-title">menu</span>
+        <span class="footer-col-title">меню</span>
         <nav class="footer-links">
-          <a href="#home">Bosh sahifa</a>
-          <a href="#services">Xizmatlar</a>
-          <a href="#projects">Keyslar</a>
-          <a href="#contact">Kontakt</a>
-          <a href="#reviews">Sharhlar</a>
-          <a href="#support">Brief</a>
+          <a href="#home">Главная</a>
+          <a href="#services">Услуги</a>
+          <a href="#projects">Проекты</a>
+          <a href="#contact">Контакты</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#support">Заявка</a>
         </nav>
       </div>
 
       <div>
-        <span class="footer-col-title">kontakt</span>
+        <span class="footer-col-title">контакт</span>
         <div class="footer-contacts">
-          <a href="mailto:hello@mirsaar.uz" class="footer-contact-item">
+          <a href="+998-90-715-00-51" class="footer-contact-item">
             <div class="footer-contact-icon">
               <svg viewBox="0 0 24 24" fill="none"><path d="M4 7H20V17H4V7Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/><path d="M5 8L12 13L19 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
             </div>
             <div class="footer-contact-copy">
-              <small>Email</small>
-              <strong>hello@mirsaar.uz</strong>
+              <small>Телефон</small>
+              <strong>+998-90-715-00-51</strong>
             </div>
           </a>
-          <a href="https://t.me/mirsaar" class="footer-contact-item">
+          <a href="https://t.me/Mirfayzz07" class="footer-contact-item">
             <div class="footer-contact-icon">
               <svg viewBox="0 0 24 24" fill="none"><path d="M12 3L19 6V11.8C19 15.1 16.9 18.1 12 21C7.1 18.1 5 15.1 5 11.8V6L12 3Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/><path d="M9.4 11.8L11.3 13.7L14.8 10.2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
             </div>
             <div class="footer-contact-copy">
               <small>Telegram</small>
-              <strong>@mirsaar_smm</strong>
+              <strong>mirsaarr</strong>
             </div>
           </a>
         </div>
@@ -1709,77 +1785,135 @@
     </div>
 
     <div class="footer-bottom">
-      <p>© 2025 Mirsaar. Barcha huquqlar himoyalangan.</p>
-      <span class="footer-pill">Premium SMM Studio</span>
+      <p>© 2025 Mirsaar. Все права защищены.</p>
+      <span class="footer-pill">Premium IT Studio</span>
     </div>
   </div>
 </footer>
+</div>
 
 <script>
-  // Mobile menu
-  const toggle = document.getElementById('menuToggle');
-  const menu = document.getElementById('mobileMenu');
-  toggle.addEventListener('click', () => menu.classList.toggle('open'));
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+(function () {
+  function initMirsaarLanding() {
+    const root = document.querySelector('.mirsaar-page');
+    if (!root) return;
 
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => observer.observe(el));
+    // Mobile menu
+    const toggle = root.querySelector('#menuToggle');
+    const mobileMenu = root.querySelector('#mobileMenu');
+    if (toggle && mobileMenu) {
+      toggle.onclick = function () {
+        mobileMenu.classList.toggle('open');
+      };
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.onclick = function () { mobileMenu.classList.remove('open'); };
+      });
+    }
+    // Scroll reveal
+    const revealEls = root.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function (el) { observer.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    }
 
-  // Reviews slider
-  const track = document.getElementById('reviewsTrack');
-  const cards = track.querySelectorAll('.review-card');
-  const dotsContainer = document.getElementById('reviewsDots');
-  let current = 0;
-  const visibleCount = window.innerWidth < 768 ? 1 : 3;
-  const total = cards.length;
-  const maxIndex = total - visibleCount;
+    // Reviews slider
+    const track = root.querySelector('#reviewsTrack');
+    const dotsContainer = root.querySelector('#reviewsDots');
+    const prevBtn = root.querySelector('#prevBtn');
+    const nextBtn = root.querySelector('#nextBtn');
+    if (track && dotsContainer && prevBtn && nextBtn && !track.dataset.ready) {
+      track.dataset.ready = '1';
+      const cards = Array.from(track.querySelectorAll('.review-card'));
+      let current = 0;
 
-  cards.forEach((_, i) => {
-    const d = document.createElement('div');
-    d.className = 'dot' + (i === 0 ? ' is-active' : '');
-    d.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(d);
-  });
+      function getVisibleCount() {
+        if (window.innerWidth < 768) return 1;
+        if (window.innerWidth < 1100) return 2;
+        return 3;
+      }
 
-  function goTo(idx) {
-    current = Math.max(0, Math.min(idx, maxIndex));
-    const w = cards[0].offsetWidth + 20;
-    track.style.transform = `translateX(-${current * w}px)`;
-    dotsContainer.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('is-active', i === current));
+      function maxIndex() {
+        return Math.max(0, cards.length - getVisibleCount());
+      }
+
+      function buildDots() {
+        dotsContainer.innerHTML = '';
+        const count = maxIndex() + 1;
+        for (let i = 0; i < count; i++) {
+          const d = document.createElement('div');
+          d.className = 'dot' + (i === current ? ' is-active' : '');
+          d.addEventListener('click', function () { goTo(i); });
+          dotsContainer.appendChild(d);
+        }
+      }
+
+      function goTo(idx) {
+        current = Math.max(0, Math.min(idx, maxIndex()));
+        const gap = 20;
+        const width = cards[0] ? cards[0].offsetWidth + gap : 0;
+        track.style.transform = 'translateX(-' + (current * width) + 'px)';
+        dotsContainer.querySelectorAll('.dot').forEach(function (d, i) {
+          d.classList.toggle('is-active', i === current);
+        });
+      }
+
+      buildDots();
+      goTo(0);
+      prevBtn.onclick = function () { goTo(current - 1); };
+      nextBtn.onclick = function () { goTo(current + 1); };
+      window.addEventListener('resize', function () { buildDots(); goTo(current); });
+      setInterval(function () { goTo(current >= maxIndex() ? 0 : current + 1); }, 5000);
+    }
+
+    // Duplicate marquee cards once
+    ['track1', 'track2'].forEach(function (id) {
+      const t = root.querySelector('#' + id);
+      if (!t || t.dataset.ready) return;
+      t.dataset.ready = '1';
+      t.innerHTML = t.innerHTML + t.innerHTML;
+    });
+
+    // Nav background on scroll
+    const nav = root.querySelector('#nav');
+    if (nav) {
+      const updateNav = function () {
+        nav.style.background = window.scrollY > 60 ? 'rgba(6,6,8,0.92)' : 'rgba(6,6,8,0.7)';
+      };
+      updateNav();
+      window.addEventListener('scroll', updateNav, { passive: true });
+    }
+
+    // Parallax orbs desktop only
+    if (window.innerWidth > 768 && !root.dataset.parallaxReady) {
+      root.dataset.parallaxReady = '1';
+      window.addEventListener('mousemove', function (e) {
+        const x = (e.clientX / window.innerWidth - 0.5) * 30;
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        root.querySelectorAll('.orb').forEach(function (orb, i) {
+          const factor = (i + 1) * 0.4;
+          orb.style.transform = 'translate(' + (x * factor) + 'px, ' + (y * factor) + 'px)';
+        });
+      }, { passive: true });
+    }
   }
 
-  document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
-  document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
-
-  // Auto-advance
-  setInterval(() => goTo(current >= maxIndex ? 0 : current + 1), 5000);
-
-  // Duplicate marquee cards
-  ['track1', 'track2'].forEach(id => {
-    const t = document.getElementById(id);
-    if (!t) return;
-    const clone = t.innerHTML;
-    t.innerHTML = clone + clone;
-  });
-
-  // Nav bg on scroll
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.style.background = window.scrollY > 60 ? 'rgba(6,6,8,0.92)' : 'rgba(6,6,8,0.7)';
-  });
-
-  // Parallax orbs
-  window.addEventListener('mousemove', e => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 30;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
-    document.querySelectorAll('.orb').forEach((orb, i) => {
-      const factor = (i + 1) * 0.4;
-      orb.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
-    });
-  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMirsaarLanding);
+  } else {
+    initMirsaarLanding();
+  }
+  document.addEventListener('livewire:navigated', initMirsaarLanding);
+  document.addEventListener('livewire:load', initMirsaarLanding);
+})();
 </script>
 </div>
+
